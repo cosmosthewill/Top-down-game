@@ -85,11 +85,24 @@ public class EnemyBasic : MonoBehaviour
 
     public void TakeDamage(int amount)
     {
-        currentHealth -= amount;
-        GameObject points = Instantiate(popupDamage, transform.position, Quaternion.identity) as GameObject;
-        points.transform.GetChild(0).GetComponent<TextMesh>().text = amount.ToString();
+        if (Random.value < PlayerStatsManager.Instance.critChance) //critical hit
+        {
+            amount *= PlayerStatsManager.Instance.critMultiplier;
+            currentHealth -= amount;
+            GameObject points = Instantiate(popupDamage, transform.position, Quaternion.identity) as GameObject;
+            points.transform.localScale = new Vector3(1.5f, 1.5f, 1);
+            points.transform.GetChild(0).GetComponent<TextMesh>().text = amount.ToString();
+            points.transform.GetChild(0).GetComponent<TextMesh>().color = Color.yellow;
+        }
+        else //non-crit
+        {
+            currentHealth -= amount;
+            GameObject points = Instantiate(popupDamage, transform.position, Quaternion.identity) as GameObject;
+            points.transform.GetChild(0).GetComponent<TextMesh>().text = amount.ToString();
+        }
         if (currentHealth < 0) 
         {
+            PlayerExpBar.instance.GainExp(10);
             Destroy(gameObject);
         }
     }
@@ -97,7 +110,7 @@ public class EnemyBasic : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        currentHealth = maxHealth;
+        currentHealth = PlayerStatsManager.Instance.maxHealth;
     }
 
     // Update is called once per frame

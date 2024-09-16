@@ -6,10 +6,11 @@ public class Spawn : MonoBehaviour
 {
     public GameObject spawnEnemy;
     public float spawnInterval = 2f;
-    Vector3 spawnArea = new Vector3 (Random.Range(-10f, 10f), Random.Range(-10f, 10f), 0);
+    Vector3 spawnArea;
     // Start is called before the first frame update
     void Start()
     {
+        spawnArea = new Vector3(Random.Range(-10f, 10f), Random.Range(-10f, 10f), 0);
         StartCoroutine(SpawnEnemy(spawnInterval, spawnEnemy, spawnArea));
     }
 

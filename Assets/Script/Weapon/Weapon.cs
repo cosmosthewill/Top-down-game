@@ -43,7 +43,12 @@ public class Weapon : MonoBehaviour
 
         Rigidbody2D rb = _bulletTmp.GetComponent<Rigidbody2D>();
         rb.AddForce(transform.right * bulletForce, ForceMode2D.Impulse);
-
+        //damage calulator
+        Bullet bulletScript = _bulletTmp.GetComponent<Bullet>();
+        if (bulletScript != null)
+        {
+            bulletScript.Init(PlayerStatsManager.Instance.damage, true);
+        }
     }
     // Start is called before the first frame update
     void Start()

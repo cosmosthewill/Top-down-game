@@ -5,24 +5,20 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-
-    [Header("PlayerHealthStatus")]
-    public int currentHealth;
-    public int maxHealth = 100;
     public Slider healthSlider;
     // Start is called before the first frame update
     void Start()
     {
-        currentHealth = maxHealth;
-        healthSlider.maxValue = maxHealth;
-        healthSlider.value = currentHealth;
+        PlayerStatsManager.Instance.currentHealth = PlayerStatsManager.Instance.maxHealth;
+        healthSlider.maxValue = PlayerStatsManager.Instance.maxHealth;
+        healthSlider.value = PlayerStatsManager.Instance.currentHealth;
     }
 
     public void TakeDamage(int amount)
     {
-        currentHealth -= amount;
-        healthSlider.value = currentHealth;
-        if (currentHealth <= 0) 
+        PlayerStatsManager.Instance.currentHealth -= amount;
+        healthSlider.value = PlayerStatsManager.Instance.currentHealth;
+        if (PlayerStatsManager.Instance.currentHealth <= 0) 
         {
             Destroy(gameObject);
         }

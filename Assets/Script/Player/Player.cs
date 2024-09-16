@@ -5,9 +5,6 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     //public
-    public float moveSpeed = 50f;
-    public float rollBoost = 50f;
-    public float rollDuration;
     bool isRoll = false;
     public Rigidbody rb;
     public Animator  animator;
@@ -24,22 +21,22 @@ public class Player : MonoBehaviour
     {
         moveInput.x = Input.GetAxis("Horizontal");
         moveInput.y = Input.GetAxis("Vertical");
-        transform.position += moveInput * moveSpeed * Time.deltaTime;
+        transform.position += moveInput * PlayerStatsManager.Instance.moveSpeed * Time.deltaTime;
         animator.SetFloat("Speed", moveInput.sqrMagnitude);
 
         //Roll
         if(Input.GetKeyDown(KeyCode.Space) && rollTime <= 0)
         {
             animator.SetBool("Roll", true);
-            moveSpeed += rollBoost;
-            rollTime = rollDuration;
+            PlayerStatsManager.Instance.moveSpeed += PlayerStatsManager.Instance.rollBoost;
+            rollTime = PlayerStatsManager.Instance.rollDuration;
             isRoll = true;
         }
 
         if (rollTime <= 0 && isRoll) 
         {
             animator.SetBool("Roll", false);
-            moveSpeed -= rollBoost;
+            PlayerStatsManager.Instance.moveSpeed -= PlayerStatsManager.Instance.rollBoost;
             isRoll = false; 
         }
         else

@@ -7,6 +7,11 @@ public class Bullet : MonoBehaviour
     public int damage;
     public bool isPlayerBullet;
 
+    public void Init(int bulletDamage, bool isPlayerBullet)
+    {
+        this.damage = bulletDamage;
+        this.isPlayerBullet = isPlayerBullet;
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (isPlayerBullet && collision.gameObject.tag == "Enemy")
@@ -20,15 +25,5 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }
