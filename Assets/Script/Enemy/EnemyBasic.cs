@@ -65,7 +65,7 @@ public class EnemyBasic : MonoBehaviour
             {
                 _playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
             }
-            InvokeRepeating("DamagePlayer", 0, 2f);
+            InvokeRepeating("DamagePlayer", 0, 2f);//time to take dmg here
         }
     }
 
