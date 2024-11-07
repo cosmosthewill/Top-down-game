@@ -21,7 +21,7 @@ public class Bullet : MonoBehaviour
         }
         if (!isPlayerBullet && collision.gameObject.tag == "Player")
         {
-            collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(damage);
+            PlayerStatsManager.Instance.TakeDmg(damage);
             Destroy(gameObject);
         }
     }

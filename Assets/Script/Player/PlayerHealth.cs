@@ -14,18 +14,9 @@ public class PlayerHealth : MonoBehaviour
         healthSlider.value = PlayerStatsManager.Instance.currentHealth;
     }
 
-    public void TakeDamage(int amount)
-    {
-        PlayerStatsManager.Instance.currentHealth -= amount;
-        healthSlider.value = PlayerStatsManager.Instance.currentHealth;
-        if (PlayerStatsManager.Instance.currentHealth <= 0) 
-        {
-            Destroy(gameObject);
-        }
-    }
     // Update is called once per frame
     void Update()
     {
-        
+        healthSlider.value = PlayerStatsManager.Instance.currentHealth;
     }
 }

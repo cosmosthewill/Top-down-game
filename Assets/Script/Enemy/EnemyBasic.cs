@@ -25,8 +25,6 @@ public class EnemyBasic : MonoBehaviour
     //collision
     Player _playerTmp;
     public int monsterDmg;
-    public PlayerHealth _playerHealth;
-
     //floating damage
     public GameObject popupDamage;
 
@@ -61,10 +59,10 @@ public class EnemyBasic : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            if (_playerHealth !=  null) 
+            /*if (_playerHealth !=  null) 
             {
                 _playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
-            }
+            }*/
             InvokeRepeating("DamagePlayer", 0, 2f);//time to take dmg here
         }
     }
@@ -80,7 +78,7 @@ public class EnemyBasic : MonoBehaviour
     void DamagePlayer()
     {
         //Debug.Log("dmg");
-        _playerHealth.TakeDamage(monsterDmg);
+        PlayerStatsManager.Instance.TakeDmg(monsterDmg);
     }
 
     public void TakeDamage(int amount)
@@ -100,9 +98,10 @@ public class EnemyBasic : MonoBehaviour
             GameObject points = Instantiate(popupDamage, transform.position, Quaternion.identity) as GameObject;
             points.transform.GetChild(0).GetComponent<TextMesh>().text = amount.ToString();
         }
-        if (currentHealth < 0) 
+        if (currentHealth < 0) //dead
         {
             PlayerExpBar.instance.GainExp(10);
+            PlayerStatsManager.Instance.GainMana(10);
             Destroy(gameObject);
         }
     }
