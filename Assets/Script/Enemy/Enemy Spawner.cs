@@ -26,9 +26,9 @@ public class Spawn : MonoBehaviour
             yield return new WaitForSeconds(spawnInterval);
             GameObject _enemy = Instantiate(enemy, spawnArea, Quaternion.identity);
             EnemyBasic _enemyScript = _enemy.GetComponent<EnemyBasic>();
-            bool _shoting = (Random.Range(0, 2) == 0);
+            /*bool _shoting = (Random.Range(0, 2) == 0);//random shoting enemy
             _enemyScript.isRange = _shoting;
-            _enemyScript.isShotable = _shoting;
+            _enemyScript.isShotable = _shoting;*/
         }
     }
 }

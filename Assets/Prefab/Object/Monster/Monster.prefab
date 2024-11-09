@@ -93,8 +93,13 @@ MonoBehaviour:
   bulletSpeed: 90
   fireCd: 1
   monsterDmg: 20
-  _playerHealth: {fileID: 0}
   popupDamage: {fileID: 5848908426540080612, guid: 002a10d4319732841a98429e20c6bb28, type: 3}
+  expGain: 10
+  manaGain: 10
+  itemDrop: {fileID: 4961675843974353092, guid: 120cf1608732728449c9b2294cc4e92f, type: 3}
+  chanceDropExpLow: 0.2
+  chanceDropExpHigh: 0.7
+  chanceDropItem: 0.1
 --- !u!50 &5266747634350179069
 Rigidbody2D:
   serializedVersion: 4

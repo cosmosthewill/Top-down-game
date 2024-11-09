@@ -9,10 +9,10 @@ public class EnemyBasic : MonoBehaviour
     public float maxHealth;
     public float currentHealth;
     public bool isRange; //range enemy
-    public float moveSpeed = 5f;
+    public float moveSpeed;
     public Rigidbody2D rb;
     public Animator animator;
-    Vector3 moveDirection;
+    public Vector3 moveDirection;
     private Vector3 playerCenterOffset = new Vector3(0, -5f, 0);
     private float _fireTime;
 
@@ -28,8 +28,12 @@ public class EnemyBasic : MonoBehaviour
     //floating damage
     public GameObject popupDamage;
 
-
-    Vector3 FindTaget()
+    //drop
+    [SerializeField] private int expGain;       
+    [SerializeField] private int manaGain;      
+    [SerializeField] private GameObject itemDrop;
+    [SerializeField] private float chanceDropItem;
+    protected Vector3 FindTaget()
     {
         Vector3 playerPos = FindObjectOfType<Player>().transform.position;
         if (isRange) 
@@ -90,7 +94,7 @@ public class EnemyBasic : MonoBehaviour
             GameObject points = Instantiate(popupDamage, transform.position, Quaternion.identity) as GameObject;
             points.transform.localScale = new Vector3(1.5f, 1.5f, 1);
             points.transform.GetChild(0).GetComponent<TextMesh>().text = amount.ToString();
-            points.transform.GetChild(0).GetComponent<TextMesh>().color = Color.yellow;
+            points.transform.GetChild(0).GetComponent<TextMesh>().color = Color.red;
         }
         else //non-crit
         {
@@ -100,34 +104,38 @@ public class EnemyBasic : MonoBehaviour
         }
         if (currentHealth < 0) //dead
         {
-            PlayerExpBar.instance.GainExp(10);
-            PlayerStatsManager.Instance.GainMana(10);
-            Destroy(gameObject);
+            OnDeath();
         }
+    }
+    public void OnDeath()
+    {
+        PlayerExpBar.instance.GainExp(expGain);
+        PlayerStatsManager.Instance.GainMana(manaGain);
+        if (itemDrop != null)
+        {
+            Instantiate(itemDrop, transform.position, Quaternion.identity);
+        }
+        Destroy(gameObject);
     }
     // Start is called before the first frame update
     void Start()
     {
+        //Debug.Log("abc");
         rb = GetComponent<Rigidbody2D>();
-        currentHealth = PlayerStatsManager.Instance.maxHealth;
+        //Debug.Log("def");
+        currentHealth = Mathf.Round(Mathf.Pow(4, (3.6f + Timer.Instance.minutes / 8.5f)) - 127);
+        //Debug.Log("defghi");
+        moveSpeed = (0.35f + 0.015f * Timer.Instance.minutes);
+        //Debug.Log("abc");
+        monsterDmg = (int)(2 + Timer.Instance.minutes * 0.8f);
     }
 
     // Update is called once per frame
     void Update()
     {
+        //Debug.Log("abc");
         //moving
-        if (FindTaget() != null) 
-        {
-            moveDirection = FindTaget() -  transform.position;
-            //spining
-            //float angle = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg;
-            //if (angle < 0) angle += 360;
-            //rb.rotation = angle;
-            //if (rb.rotation > 90 && rb.rotation < 270) transform.localScale = new Vector3(10, -10, 0);
-            //else transform.localScale = new Vector3(10, 10, 0);
-            transform.position = Vector2.MoveTowards(transform.position, FindTaget(), moveSpeed * Time.deltaTime);
-            animator.SetFloat("Speed", moveDirection.sqrMagnitude);
-        }
+        move();
 
         //shoting
         if (isShotable)
@@ -138,6 +146,21 @@ public class EnemyBasic : MonoBehaviour
                 _fireTime = fireCd;
                 EnemyShot();
             }
+        }
+    }
+    protected virtual void move()
+    {
+        if (FindTaget() != null)
+        {
+            moveDirection = FindTaget() - transform.position;
+            //spining
+            //float angle = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg;
+            //if (angle < 0) angle += 360;
+            //rb.rotation = angle;
+            //if (rb.rotation > 90 && rb.rotation < 270) transform.localScale = new Vector3(10, -10, 0);
+            //else transform.localScale = new Vector3(10, 10, 0);
+            transform.position = Vector2.MoveTowards(transform.position, FindTaget(), moveSpeed * Time.deltaTime);
+            animator.SetFloat("Speed", moveDirection.sqrMagnitude);
         }
     }
 }
