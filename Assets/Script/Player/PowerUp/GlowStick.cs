@@ -48,7 +48,7 @@ public class GlowStick : PowerUp
 
             // Calculate the velocity vector based on circular motion
             Vector2 direction = new Vector2(Mathf.Cos(currentAngle), Mathf.Sin(currentAngle));
-            Vector2 orbitPosition = (Vector2)Player.Instance.transform.position + direction * orbitRadius;
+            Vector2 orbitPosition = (Vector2)Player.Instance.ReturnPlayerCenter() + direction * orbitRadius;
 
             // Move
             Vector2 velocity = (orbitPosition - rb.position) / Time.fixedDeltaTime;

@@ -83,11 +83,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 636a468857f76084cb148d582f411fe2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentStatus: 0
   maxHealth: 50
   currentHealth: 0
   isRange: 0
+  isBoss: 0
   moveSpeed: 30
   rb: {fileID: 5266747634350179069}
+  sr: {fileID: 7210808522553494621}
   animator: {fileID: 7951088380187842682}
   moveDirection: {x: 0, y: 0, z: 0}
   isShotable: 0
@@ -100,6 +103,7 @@ MonoBehaviour:
   manaGain: 10
   itemDrop: {fileID: 4961675843974353092, guid: 120cf1608732728449c9b2294cc4e92f, type: 3}
   chanceDropItem: 0.1
+  baseSpd: 0
 --- !u!50 &5266747634350179069
 Rigidbody2D:
   serializedVersion: 4
@@ -139,11 +143,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7173a67d1e6bd3f4dba52d3e3f3d71e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentStatus: 0
   maxHealth: 0
   currentHealth: 0
   isRange: 0
+  isBoss: 0
   moveSpeed: 0
   rb: {fileID: 0}
+  sr: {fileID: 0}
   animator: {fileID: 0}
   moveDirection: {x: 0, y: 0, z: 0}
   isShotable: 1
@@ -156,6 +163,7 @@ MonoBehaviour:
   manaGain: 0
   itemDrop: {fileID: 3161131047121433845, guid: c4bdfeb67aec83e4fa132c0f4a463745, type: 3}
   chanceDropItem: 0
+  baseSpd: 0
 --- !u!1 &7258643480362880596
 GameObject:
   m_ObjectHideFlags: 0

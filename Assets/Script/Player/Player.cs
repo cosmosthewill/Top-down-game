@@ -18,6 +18,7 @@ public class Player : MonoBehaviour
     public float attractionRadius = 2500f; // Radius within which items are attracted
     public float attractionSpeed = 250f;  // Speed at which items move toward the player
     public GameObject powerUpSlot1;
+    public GameObject debuffAni;
 
     //private
 
@@ -68,6 +69,10 @@ public class Player : MonoBehaviour
             case ItemType.Mana:
                 PlayerStatsManager.Instance.GainMana(item.GetComponent<CollectibleItems>().value);
                 break;
+            case ItemType.Coin:
+                //missing
+                break;
+
         }
 
         Destroy(item);
@@ -77,6 +82,11 @@ public class Player : MonoBehaviour
         // Draw the attraction radius in the editor
         Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(transform.position + playerCenterOffset, attractionRadius);
+    }
+
+    public Vector3  ReturnPlayerCenter()
+    {
+        return transform.position - playerCenterOffset;
     }
     private void Update()
     {
@@ -125,15 +135,7 @@ public class Player : MonoBehaviour
                 item.transform.position = Vector3.MoveTowards(item.transform.position, transform.position + playerCenterOffset, attractionSpeed * Time.deltaTime);
 
             }
-            if (item.CompareTag("Enemy"))
-            {
-                EnemyBasic enemy = item.GetComponent<EnemyBasic>();
-                if (Input.GetKeyDown(KeyCode.X))
-                {
-                    Vector2 distance = (enemy.transform.position - transform.position);
-                    enemy.ApplyKnockback(4 * distance);
-                }
-            }
+            
         }
         //testing powerup
         if(Input.GetKeyDown(KeyCode.Z)) 
@@ -141,6 +143,10 @@ public class Player : MonoBehaviour
             GameObject p1 = Instantiate(powerUpSlot1, transform.position, Quaternion.identity);
             PowerUp _p1 = p1.GetComponent<PowerUp>();
             _p1.lvl = 5;
+        }
+        if(Input.GetKeyDown(KeyCode.X))
+        {
+            Time.timeScale = (1 - Time.timeScale);
         }
     }
 }

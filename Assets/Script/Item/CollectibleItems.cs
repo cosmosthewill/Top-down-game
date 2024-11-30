@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CollectibleItems : MonoBehaviour
 {
-    public enum ItemType { Exp, Health, Speed, Mana }
+    public enum ItemType { Exp, Health, Speed, Mana, Coin }
     public ItemType itemType; // Set in the Inspector
     public int value = 10;    // Amount of experience, health, or speed
 
