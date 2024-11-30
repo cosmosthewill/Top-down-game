@@ -87,7 +87,9 @@ MonoBehaviour:
   isRange: 0
   moveSpeed: 30
   rb: {fileID: 5266747634350179069}
+  sr: {fileID: 7210808522553494621}
   animator: {fileID: 7951088380187842682}
+  moveDirection: {x: 0, y: 0, z: 0}
   isShotable: 0
   bullet: {fileID: 5809139123419231007, guid: c2c05f058f3fa4f489c949afe72e67cd, type: 3}
   bulletSpeed: 90
@@ -97,8 +99,6 @@ MonoBehaviour:
   expGain: 10
   manaGain: 10
   itemDrop: {fileID: 4961675843974353092, guid: 120cf1608732728449c9b2294cc4e92f, type: 3}
-  chanceDropExpLow: 0.2
-  chanceDropExpHigh: 0.7
   chanceDropItem: 0.1
 --- !u!50 &5266747634350179069
 Rigidbody2D:

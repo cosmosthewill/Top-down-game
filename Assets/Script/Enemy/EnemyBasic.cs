@@ -5,34 +5,50 @@ using Pathfinding;
 
 public class EnemyBasic : MonoBehaviour
 {
+    //status
+    public enum EnemyStatus
+    {
+        Normal,
+        Slow,
+        Freeze
+    }
+    public EnemyStatus currentStatus = EnemyStatus.Normal;
+    private float statusDuration = 0f;
+
     //basic
     public float maxHealth;
     public float currentHealth;
     public bool isRange; //range enemy
     public float moveSpeed;
     public Rigidbody2D rb;
+    public SpriteRenderer sr;
     public Animator animator;
     public Vector3 moveDirection;
     private Vector3 playerCenterOffset = new Vector3(0, -5f, 0);
     private float _fireTime;
-
+    private float normalSpeed;
     //shot
     public bool isShotable = true;
-    public GameObject bullet;
+    public UnityEngine.GameObject bullet;
     public float bulletSpeed;
     public float fireCd;
 
     //collision
     Player _playerTmp;
     public int monsterDmg;
+    private bool isKnockedBack = false;
+    private float knockbackDuration = 0.2f;
+    private Coroutine knockbackRoutine;
+
     //floating damage
-    public GameObject popupDamage;
+    public UnityEngine.GameObject popupDamage;
 
     //drop
     [SerializeField] private int expGain;       
     [SerializeField] private int manaGain;      
-    [SerializeField] private GameObject itemDrop;
+    [SerializeField] private UnityEngine.GameObject itemDrop;
     [SerializeField] private float chanceDropItem;
+    [SerializeField] private float baseSpd;
     protected Vector3 FindTaget()
     {
         Vector3 playerPos = FindObjectOfType<Player>().transform.position;
@@ -91,7 +107,7 @@ public class EnemyBasic : MonoBehaviour
         {
             amount *= PlayerStatsManager.Instance.critMultiplier;
             currentHealth -= amount;
-            GameObject points = Instantiate(popupDamage, transform.position, Quaternion.identity) as GameObject;
+            UnityEngine.GameObject points = Instantiate(popupDamage, transform.position, Quaternion.identity) as UnityEngine.GameObject;
             points.transform.localScale = new Vector3(1.5f, 1.5f, 1);
             points.transform.GetChild(0).GetComponent<TextMesh>().text = amount.ToString();
             points.transform.GetChild(0).GetComponent<TextMesh>().color = Color.red;
@@ -99,7 +115,7 @@ public class EnemyBasic : MonoBehaviour
         else //non-crit
         {
             currentHealth -= amount;
-            GameObject points = Instantiate(popupDamage, transform.position, Quaternion.identity) as GameObject;
+            UnityEngine.GameObject points = Instantiate(popupDamage, transform.position, Quaternion.identity) as UnityEngine.GameObject;
             points.transform.GetChild(0).GetComponent<TextMesh>().text = amount.ToString();
         }
         if (currentHealth < 0) //dead
@@ -122,18 +138,23 @@ public class EnemyBasic : MonoBehaviour
     {
         //Debug.Log("abc");
         rb = GetComponent<Rigidbody2D>();
+        //sr = GetComponent<SpriteRenderer>();
         //Debug.Log("def");
-        currentHealth = Mathf.Round(Mathf.Pow(4, (3.6f + Timer.Instance.minutes / 8.5f)) - 127);
-        //Debug.Log("defghi");
-        moveSpeed = (0.35f + 0.015f * Timer.Instance.minutes);
+        currentHealth = 5000; // Mathf.Round(Mathf.Pow(4, (3.6f + Timer.Instance.minutes / 8.5f)) - 127);
+        
+        //if (isRange) moveSpeed = (0.35f + 0.015f * Timer.Instance.minutes);
+        moveSpeed = 10f;
         //Debug.Log("abc");
         monsterDmg = (int)(2 + Timer.Instance.minutes * 0.8f);
-    }
+
+        currentStatus = EnemyStatus.Normal;
+        normalSpeed = moveSpeed;
+}
 
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log("abc");
+        HandleStatusEffects();
         //moving
         move();
 
@@ -147,20 +168,86 @@ public class EnemyBasic : MonoBehaviour
                 EnemyShot();
             }
         }
+        
     }
+
+    private void HandleStatusEffects()
+    {
+        if (statusDuration > 0f)
+        {
+            statusDuration -= Time.deltaTime;
+
+            // Apply status effects
+            switch (currentStatus)
+            {
+                case EnemyStatus.Normal:
+                    moveSpeed = normalSpeed;
+                    break;
+                case EnemyStatus.Slow:
+                    moveSpeed = normalSpeed * 0.2f;
+                    break;
+                case EnemyStatus.Freeze:
+                    moveSpeed = 0f;
+                    break;
+            }
+        }
+        else
+        {
+            // Reset to normal status
+            currentStatus = EnemyStatus.Normal;
+            moveSpeed = normalSpeed;
+        }
+    }
+
+    public void ApplyStatus(EnemyStatus status, float duration)
+    {
+        currentStatus = status;
+        statusDuration = duration;
+    }
+
     protected virtual void move()
     {
-        if (FindTaget() != null)
+        if (FindTaget() != null && !isKnockedBack)
         {
             moveDirection = FindTaget() - transform.position;
-            //spining
-            //float angle = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg;
-            //if (angle < 0) angle += 360;
-            //rb.rotation = angle;
-            //if (rb.rotation > 90 && rb.rotation < 270) transform.localScale = new Vector3(10, -10, 0);
-            //else transform.localScale = new Vector3(10, 10, 0);
-            transform.position = Vector2.MoveTowards(transform.position, FindTaget(), moveSpeed * Time.deltaTime);
+
+            //rotate
+            if (moveDirection.x > 0)
+            {
+                sr.flipX = false;
+            }
+            else sr.flipX = true;
+            
+            rb.velocity = moveDirection.normalized * moveSpeed;
             animator.SetFloat("Speed", moveDirection.sqrMagnitude);
         }
     }
+    public void ApplyKnockback(Vector2 knockbackForce)
+    {
+        
+
+        if (knockbackRoutine != null)
+        {
+            StopCoroutine(knockbackRoutine);
+        }
+        knockbackRoutine = StartCoroutine(KnockbackCoroutine(knockbackForce));
+    }
+
+    private IEnumerator KnockbackCoroutine(Vector2 knockbackForce)
+    {
+        isKnockedBack = true;
+        rb.velocity = Vector2.zero;
+        rb.AddForce(knockbackForce, ForceMode2D.Impulse);
+
+        yield return new WaitForSeconds(0.2f);
+        isKnockedBack = false;
+
+    }
 }
+
+//spining
+//float angle = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg;
+//if (angle < 0) angle += 360;
+//rb.rotation = angle;
+//if (rb.rotation > 90 && rb.rotation < 270) transform.localScale = new Vector3(10, -10, 0);
+//else transform.localScale = new Vector3(10, 10, 0);

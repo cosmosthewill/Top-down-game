@@ -5,7 +5,7 @@ using TMPro;
 
 public class StatUI : MonoBehaviour
 {
-    public GameObject[] statsSlots;
+    public UnityEngine.GameObject[] statsSlots;
     // 0: Hp
     // 1: ATK
     // 2: SPD

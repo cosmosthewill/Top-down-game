@@ -6,7 +6,7 @@ using UnityEngine;
 public class Weapon : MonoBehaviour
 {
 
-    public GameObject bullet;
+    public UnityEngine.GameObject bullet;
     public Transform firePos;
     public float fireCd = 0.2f;
     public float bulletForce;
@@ -39,10 +39,19 @@ public class Weapon : MonoBehaviour
     {
         _fireTime = fireCd;
 
-        GameObject _bulletTmp = Instantiate(bullet, firePos.position, Quaternion.identity);
+        UnityEngine.GameObject _bulletTmp = Instantiate(bullet, firePos.position, Quaternion.identity);
+        //GameObject _bulletTmp1 = Instantiate(bullet, firePos.position, Quaternion.identity);
+        //GameObject _bulletTmp2 = Instantiate(bullet, firePos.position, Quaternion.identity);
 
         Rigidbody2D rb = _bulletTmp.GetComponent<Rigidbody2D>();
+        //Rigidbody2D rb1 = _bulletTmp1.GetComponent<Rigidbody2D>();
+        //Rigidbody2D rb2 = _bulletTmp2.GetComponent<Rigidbody2D>();
+
+        //Vector3 center = transform.right;
         rb.AddForce(transform.right * bulletForce, ForceMode2D.Impulse);
+        //rb1.AddForce(new Vector3 (Mathf.Cos(20 * Mathf.Deg2Rad), Mathf.Sin(20 * Mathf.Deg2Rad),center.z) * bulletForce, ForceMode2D.Impulse);
+        //rb2.AddForce(new Vector3 (Mathf.Cos(-20 * Mathf.Deg2Rad), Mathf.Sin(-20 * Mathf.Deg2Rad), center.z) * bulletForce, ForceMode2D.Impulse);
+        //Debug.Log(center);
         //damage calulator
         Bullet bulletScript = _bulletTmp.GetComponent<Bullet>();
         if (bulletScript != null)

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2501382464489563735}
   - component: {fileID: 1442713919517550384}
   - component: {fileID: 7704450567023480812}
-  - component: {fileID: 4333979092072030422}
+  - component: {fileID: -4023309830536234472}
   m_Layer: 0
   m_Name: spr_Deadbeat3_0
   m_TagString: Enemy
@@ -171,7 +171,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &4333979092072030422
+--- !u!114 &-4023309830536234472
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -180,23 +180,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 6407870162615636511}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7173a67d1e6bd3f4dba52d3e3f3d71e9, type: 3}
+  m_Script: {fileID: 11500000, guid: 636a468857f76084cb148d582f411fe2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 0
+  maxHealth: 5000
   currentHealth: 0
   isRange: 0
-  moveSpeed: 0
+  moveSpeed: 20
   rb: {fileID: 1442713919517550384}
+  sr: {fileID: 9208178270783694805}
   animator: {fileID: 7704450567023480812}
   moveDirection: {x: 0, y: 0, z: 0}
   isShotable: 0
-  bullet: {fileID: 0}
-  bulletSpeed: 0
-  fireCd: 0
-  monsterDmg: 0
+  bullet: {fileID: 5809139123419231007, guid: c2c05f058f3fa4f489c949afe72e67cd, type: 3}
+  bulletSpeed: 90
+  fireCd: 1
+  monsterDmg: 20
   popupDamage: {fileID: 5848908426540080612, guid: 002a10d4319732841a98429e20c6bb28, type: 3}
-  expGain: 0
-  manaGain: 0
+  expGain: 10
+  manaGain: 10
   itemDrop: {fileID: 3161131047121433845, guid: c4bdfeb67aec83e4fa132c0f4a463745, type: 3}
-  chanceDropItem: 0
+  chanceDropItem: 0.1
+  baseSpd: 0

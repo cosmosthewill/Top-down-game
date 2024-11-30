@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 using static CollectibleItems;
 using static UnityEditor.Progress;
 
@@ -9,13 +10,14 @@ public class Player : MonoBehaviour
 {
     //public
     bool isRoll = false;
-    public Rigidbody rb;
+    public Rigidbody2D rb;
     public Animator  animator;
     public Vector3 moveInput;
     public SpriteRenderer characterSR;
     public static Player Instance;
     public float attractionRadius = 2500f; // Radius within which items are attracted
     public float attractionSpeed = 250f;  // Speed at which items move toward the player
+    public GameObject powerUpSlot1;
 
     //private
 
@@ -47,7 +49,7 @@ public class Player : MonoBehaviour
         }
     }
     //Collect Items
-    void CollectItem(GameObject item)
+    void CollectItem(UnityEngine.GameObject item)
     {
         // Determine item type and apply effect
         ItemType itemType = item.GetComponent<CollectibleItems>().itemType;
@@ -78,9 +80,8 @@ public class Player : MonoBehaviour
     }
     private void Update()
     {
-        moveInput.x = Input.GetAxis("Horizontal");
-        moveInput.y = Input.GetAxis("Vertical");
-        transform.position += moveInput * PlayerStatsManager.Instance.moveSpeed * Time.deltaTime;
+        Vector2 moveInput = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        rb.velocity = moveInput * PlayerStatsManager.Instance.moveSpeed;
         animator.SetFloat("Speed", moveInput.sqrMagnitude);
 
         //Roll
@@ -124,7 +125,22 @@ public class Player : MonoBehaviour
                 item.transform.position = Vector3.MoveTowards(item.transform.position, transform.position + playerCenterOffset, attractionSpeed * Time.deltaTime);
 
             }
+            if (item.CompareTag("Enemy"))
+            {
+                EnemyBasic enemy = item.GetComponent<EnemyBasic>();
+                if (Input.GetKeyDown(KeyCode.X))
+                {
+                    Vector2 distance = (enemy.transform.position - transform.position);
+                    enemy.ApplyKnockback(4 * distance);
+                }
+            }
         }
-        
+        //testing powerup
+        if(Input.GetKeyDown(KeyCode.Z)) 
+        {
+            GameObject p1 = Instantiate(powerUpSlot1, transform.position, Quaternion.identity);
+            PowerUp _p1 = p1.GetComponent<PowerUp>();
+            _p1.lvl = 5;
+        }
     }
 }
