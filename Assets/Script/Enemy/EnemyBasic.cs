@@ -140,7 +140,7 @@ public class EnemyBasic : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         //sr = GetComponent<SpriteRenderer>();
         //Debug.Log("def");
-        currentHealth = 5000; // Mathf.Round(Mathf.Pow(4, (3.6f + Timer.Instance.minutes / 8.5f)) - 127);
+        currentHealth = 50; // Mathf.Round(Mathf.Pow(4, (3.6f + Timer.Instance.minutes / 8.5f)) - 127);
         
         //if (isRange) moveSpeed = (0.35f + 0.015f * Timer.Instance.minutes);
         moveSpeed = 10f;
@@ -219,7 +219,7 @@ public class EnemyBasic : MonoBehaviour
             else sr.flipX = true;
             
             rb.velocity = moveDirection.normalized * moveSpeed;
-            animator.SetFloat("Speed", moveDirection.sqrMagnitude);
+            //animator.SetFloat("Speed", moveDirection.sqrMagnitude);
         }
     }
     public void ApplyKnockback(Vector2 knockbackForce)

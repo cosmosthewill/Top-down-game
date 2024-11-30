@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using Script;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerExpBar : MonoBehaviour
 {
+    [SerializeField] private GameObject levelUpPopUp;
     public static PlayerExpBar instance;
     public float maxExp;
     public float currentExp;
@@ -44,6 +46,8 @@ public class PlayerExpBar : MonoBehaviour
             currentExp = 0;
             maxExp *= 2;
             lvlText.text = "Lv: " + playerLvl.ToString();
+            GamePause.PauseGame();
+            levelUpPopUp.SetActive(true);
         }
 
     }

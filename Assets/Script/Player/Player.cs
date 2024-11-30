@@ -136,11 +136,11 @@ public class Player : MonoBehaviour
             }
         }
         //testing powerup
-        if(Input.GetKeyDown(KeyCode.Z)) 
+        /*if(Input.GetKeyDown(KeyCode.Z)) 
         {
             GameObject p1 = Instantiate(powerUpSlot1, transform.position, Quaternion.identity);
             PowerUp _p1 = p1.GetComponent<PowerUp>();
             _p1.lvl = 5;
-        }
+        }*/
     }
 }
