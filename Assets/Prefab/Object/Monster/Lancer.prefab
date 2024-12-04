@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5809139123419231007
+--- !u!1 &8895264513967183943
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,41 +8,41 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4040604250993535457}
-  - component: {fileID: 2590186413600234875}
-  - component: {fileID: -3258465635176750555}
-  - component: {fileID: 1795222139216889329}
-  - component: {fileID: -3318636941195325680}
-  - component: {fileID: 1575088527811282983}
+  - component: {fileID: 2677928020517756727}
+  - component: {fileID: 4936689177377028241}
+  - component: {fileID: 6529063747405559713}
+  - component: {fileID: 1336193515314018332}
+  - component: {fileID: 8009469246470531848}
+  - component: {fileID: 2857673792869258203}
   m_Layer: 0
-  m_Name: bulletEnemy
-  m_TagString: EnemyBullet
+  m_Name: Lancer
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4040604250993535457
+--- !u!4 &2677928020517756727
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5809139123419231007}
+  m_GameObject: {fileID: 8895264513967183943}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -21.8, y: 3.2, z: 0}
+  m_LocalPosition: {x: 27, y: -5.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &2590186413600234875
+--- !u!212 &4936689177377028241
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5809139123419231007}
+  m_GameObject: {fileID: 8895264513967183943}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -74,28 +74,28 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 47799acb99ad8944fb413b09d925a7b9, type: 3}
-  m_Color: {r: 0.6784314, g: 0.21960786, b: 0.25882354, a: 1}
+  m_SortingLayerID: 605830267
+  m_SortingLayer: 2
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: 71c507eb5ca103b479ca16940e9c3f2c, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 6.4, y: 6.4}
+  m_Size: {x: 0.82, y: 0.57}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &-3258465635176750555
+--- !u!50 &6529063747405559713
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5809139123419231007}
+  m_GameObject: {fileID: 8895264513967183943}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -114,14 +114,14 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!58 &1795222139216889329
+  m_Constraints: 4
+--- !u!58 &1336193515314018332
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5809139123419231007}
+  m_GameObject: {fileID: 8895264513967183943}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -147,33 +147,63 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.0016546249, y: 0.4696579}
   serializedVersion: 2
-  m_Radius: 1
---- !u!114 &-3318636941195325680
+  m_Radius: 2.622323
+--- !u!95 &8009469246470531848
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8895264513967183943}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 596d3d413491b1c4a89f5554c3494b5f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2857673792869258203
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5809139123419231007}
+  m_GameObject: {fileID: 8895264513967183943}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e811e082014caf489121f818be6a192, type: 3}
+  m_Script: {fileID: 11500000, guid: 5d96904ac06cab044ae6b0976985b78a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  removeTime: 5
---- !u!114 &1575088527811282983
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5809139123419231007}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e55ff797210bcbd478696baf929dfb5e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 10
-  isPlayerBullet: 0
+  currentStatus: 0
+  debuffAni: {fileID: 4960081531694143134, guid: 4a2f08881a1e54a4fac75531fc21a174, type: 3}
+  currentHealth: 0
+  isRange: 0
+  isBoss: 0
+  moveSpeed: 0
+  rb: {fileID: 6529063747405559713}
+  sr: {fileID: 4936689177377028241}
+  animator: {fileID: 8009469246470531848}
+  moveDirection: {x: 0, y: 0, z: 0}
+  isShotable: 1
+  bullet: {fileID: 5809139123419231007, guid: c2c05f058f3fa4f489c949afe72e67cd, type: 3}
+  bulletSpeed: 50
+  fireCd: 2
+  monsterDmg: 0
+  popupDamage: {fileID: 5848908426540080612, guid: 002a10d4319732841a98429e20c6bb28, type: 3}
+  expGain: 50
+  manaGain: 5
+  itemDrop: {fileID: 3161131047121433845, guid: c4bdfeb67aec83e4fa132c0f4a463745, type: 3}
+  chanceDropItem: 1
+  baseSpd: 200
+  baseHp: 50
+  baseDmg: 20
+  updateMoveCd: 2

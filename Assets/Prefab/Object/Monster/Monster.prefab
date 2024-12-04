@@ -86,7 +86,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentStatus: 0
   debuffAni: {fileID: 4960081531694143134, guid: 4a2f08881a1e54a4fac75531fc21a174, type: 3}
-  maxHealth: 50
   currentHealth: 0
   isRange: 0
   isBoss: 0
@@ -105,7 +104,9 @@ MonoBehaviour:
   manaGain: 10
   itemDrop: {fileID: 4961675843974353092, guid: 120cf1608732728449c9b2294cc4e92f, type: 3}
   chanceDropItem: 0.1
-  baseSpd: 0
+  baseSpd: 30
+  baseHp: 100
+  baseDmg: 20
 --- !u!50 &5266747634350179069
 Rigidbody2D:
   serializedVersion: 4

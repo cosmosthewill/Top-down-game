@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
@@ -25,5 +27,11 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(transform.position, GetComponent<CircleCollider2D>().radius);
+    }
 }
+

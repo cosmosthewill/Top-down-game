@@ -29,7 +29,7 @@ public class EnemyBasic : MonoBehaviour
     protected float _fireTime;
     protected float normalSpeed;
     protected float updateMove = 0f;
-    protected float updateMoveCd = 2f;
+    
     //shot
     public bool isShotable = true;
     public UnityEngine.GameObject bullet;
@@ -46,6 +46,7 @@ public class EnemyBasic : MonoBehaviour
     public UnityEngine.GameObject popupDamage;
 
     //drop
+    [Header("Combat Stat")]
     [SerializeField] private int expGain;
     [SerializeField] private int manaGain;
     [SerializeField] private UnityEngine.GameObject itemDrop;
@@ -53,7 +54,8 @@ public class EnemyBasic : MonoBehaviour
     [SerializeField] private float baseSpd;
     [SerializeField] private float baseHp;
     [SerializeField] private int baseDmg;
-    protected Vector3 FindTaget()
+    public float updateMoveCd = 2f;
+    protected Vector3 FindTarget()
     {
         Vector3 playerPos = Player.Instance.ReturnPlayerCenter();
         if (isRange)
@@ -146,6 +148,8 @@ public class EnemyBasic : MonoBehaviour
         if (isRange) moveSpeed = baseSpd * (1 + 0.15f * Timer.Instance.minutes);
         monsterDmg = (int)(baseDmg * (1 + Timer.Instance.minutes * 0.8f + Timer.Instance.seconds * 0.15f));
 
+        //drop
+        expGain += Timer.Instance.minutes * 10 + Timer.Instance.seconds * 5;
         currentStatus = EnemyStatus.Normal;
         normalSpeed = moveSpeed;
         currentHealth = maxHealth;
@@ -231,9 +235,9 @@ public class EnemyBasic : MonoBehaviour
             return;
         }
 
-        if (FindTaget() != null && !isKnockedBack)
+        if (FindTarget() != null && !isKnockedBack)
         {
-            moveDirection = FindTaget() - transform.position;
+            moveDirection = FindTarget() - transform.position;
 
             //rotate
             if (moveDirection.x > 0)
