@@ -17,7 +17,7 @@ public class EnemyBasic : MonoBehaviour
     public GameObject debuffAni;
 
     //basic
-    public float maxHealth;
+    protected float maxHealth;
     public float currentHealth;
     public bool isRange; //range enemy
     public bool isBoss;
@@ -26,10 +26,10 @@ public class EnemyBasic : MonoBehaviour
     public SpriteRenderer sr;
     public Animator animator;
     public Vector3 moveDirection;
-    private Vector3 playerCenterOffset = new Vector3(0, -5f, 0);
-    private float _fireTime;
-    private float normalSpeed;
-
+    protected float _fireTime;
+    protected float normalSpeed;
+    protected float updateMove = 0f;
+    protected float updateMoveCd = 2f;
     //shot
     public bool isShotable = true;
     public UnityEngine.GameObject bullet;
@@ -37,45 +37,49 @@ public class EnemyBasic : MonoBehaviour
     public float fireCd;
 
     //collision
-    Player _playerTmp;
     public int monsterDmg;
-    private bool isKnockedBack = false;
-    private float knockbackDuration = 0.2f;
-    private Coroutine knockbackRoutine;
-    private GameObject _debuffAni;
+    protected bool isKnockedBack = false;
+    protected float knockbackDuration = 0.2f;
+    protected Coroutine knockbackRoutine;
+    protected GameObject _debuffAni;
     //floating damage
     public UnityEngine.GameObject popupDamage;
 
     //drop
-    [SerializeField] private int expGain;       
-    [SerializeField] private int manaGain;      
+    [SerializeField] private int expGain;
+    [SerializeField] private int manaGain;
     [SerializeField] private UnityEngine.GameObject itemDrop;
     [SerializeField] private float chanceDropItem;
     [SerializeField] private float baseSpd;
+    [SerializeField] private float baseHp;
+    [SerializeField] private int baseDmg;
     protected Vector3 FindTaget()
     {
-        Vector3 playerPos = FindObjectOfType<Player>().transform.position;
-        if (isRange) 
+        Vector3 playerPos = Player.Instance.ReturnPlayerCenter();
+        if (isRange)
         {
+            //if (Vector3.Distance(playerPos, transform.position) <= 50f && Vector3.Distance(playerPos, transform.position) >= 25f) return transform.position;
             // If range enemy, move to a random point around the player
-            float range = Random.Range(100f, 200f);
+            float range = Random.Range(25f, 50f);
+            //Vector3 diffDirection = (transform.position - playerPos).normalized;
             Vector3 randomDirection = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0).normalized;
             return playerPos + randomDirection * range;
         }
-        else 
-            return  playerPos + playerCenterOffset;
+        else
+            return playerPos;
     }
 
-    void EnemyShot()
+    protected virtual void EnemyShot()
     {
         var bulletTmp = Instantiate(bullet, transform.position, Quaternion.identity);
-
+        Bullet _bulletTmp = bulletTmp.GetComponent<Bullet>();
+        _bulletTmp.Init(monsterDmg, false);
         Rigidbody2D rb = bulletTmp.GetComponent<Rigidbody2D>();
-        Vector3 playerPos = FindObjectOfType<Player>().transform.position + playerCenterOffset;
+        Vector3 playerPos = Player.Instance.ReturnPlayerCenter();
         Vector3 shotDirection = playerPos - transform.position;
         rb.AddForce(shotDirection.normalized * bulletSpeed, ForceMode2D.Impulse);
     }
-
+    protected virtual void EnemyShot(Vector2 direction) { }
     //Collision
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -94,7 +98,6 @@ public class EnemyBasic : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            _playerTmp = null;
             CancelInvoke("DamagePlayer");
         }
     }
@@ -136,22 +139,24 @@ public class EnemyBasic : MonoBehaviour
         }
         Destroy(gameObject);
     }
+    public void InitStat()
+    {
+        maxHealth = baseHp * (1 + Timer.Instance.minutes * 0.8f + Timer.Instance.seconds * 0.2f);
+        moveSpeed = baseSpd * (1 + 0.3f * Timer.Instance.minutes);
+        if (isRange) moveSpeed = baseSpd * (1 + 0.15f * Timer.Instance.minutes);
+        monsterDmg = (int)(baseDmg * (1 + Timer.Instance.minutes * 0.8f + Timer.Instance.seconds * 0.15f));
+
+        currentStatus = EnemyStatus.Normal;
+        normalSpeed = moveSpeed;
+        currentHealth = maxHealth;
+    }
     // Start is called before the first frame update
     void Start()
     {
         //Debug.Log("abc");
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
-        //Debug.Log("def");
-        currentHealth = 50; // Mathf.Round(Mathf.Pow(4, (3.6f + Timer.Instance.minutes / 8.5f)) - 127);
-        
-        //if (isRange) moveSpeed = (0.35f + 0.015f * Timer.Instance.minutes);
-        moveSpeed = 0f;
-        //Debug.Log("abc");
-        monsterDmg = (int)(2 + Timer.Instance.minutes * 0.8f);
-
-        currentStatus = EnemyStatus.Normal;
-        normalSpeed = moveSpeed;
+        InitStat();
     }
 
     // Update is called once per frame
@@ -171,12 +176,12 @@ public class EnemyBasic : MonoBehaviour
                 EnemyShot();
             }
         }
-        
+
     }
 
-    private void HandleStatusEffects()
+    protected void HandleStatusEffects()
     {
-        if (statusDuration > 0f)
+        if (statusDuration > 0f && !isBoss)
         {
             statusDuration -= Time.deltaTime;
 
@@ -217,6 +222,15 @@ public class EnemyBasic : MonoBehaviour
 
     protected virtual void move()
     {
+        updateMove += Time.deltaTime;
+        if (updateMove >= updateMoveCd) updateMove = 0f;
+        else if (isRange)
+        {
+            float distance = Vector3.Distance(Player.Instance.ReturnPlayerCenter(), transform.position);
+            if (distance >= 50f && distance <= 75f) rb.velocity = Vector3.zero;
+            return;
+        }
+
         if (FindTaget() != null && !isKnockedBack)
         {
             moveDirection = FindTaget() - transform.position;
@@ -224,18 +238,19 @@ public class EnemyBasic : MonoBehaviour
             //rotate
             if (moveDirection.x > 0)
             {
-                sr.flipX = false;
+                transform.eulerAngles = Vector3.zero;
             }
-            else sr.flipX = true;
-            
+            else transform.eulerAngles = new Vector3(0, 180, 0);
+
             rb.velocity = moveDirection.normalized * moveSpeed;
             //animator.SetFloat("Speed", moveDirection.sqrMagnitude);
         }
+
+
     }
     public void ApplyKnockback(Vector2 knockbackForce)
     {
-        
-
+        if (isBoss) return;
         if (knockbackRoutine != null)
         {
             StopCoroutine(knockbackRoutine);

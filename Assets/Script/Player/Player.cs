@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
     //public
     bool isRoll = false;
     public Rigidbody2D rb;
-    public Animator  animator;
+    public Animator animator;
     public Vector3 moveInput;
     public SpriteRenderer characterSR;
     public static Player Instance;
@@ -84,9 +84,9 @@ public class Player : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position + playerCenterOffset, attractionRadius);
     }
 
-    public Vector3  ReturnPlayerCenter()
+    public Vector3 ReturnPlayerCenter()
     {
-        return transform.position - playerCenterOffset;
+        return transform.position + playerCenterOffset;
     }
     private void Update()
     {
@@ -95,7 +95,7 @@ public class Player : MonoBehaviour
         animator.SetFloat("Speed", moveInput.sqrMagnitude);
 
         //Roll
-        if(Input.GetKeyDown(KeyCode.Space) && rollTime <= 0)
+        if (Input.GetKeyDown(KeyCode.Space) && rollTime <= 0)
         {
             animator.SetBool("Roll", true);
             PlayerStatsManager.Instance.moveSpeed += PlayerStatsManager.Instance.rollBoost;
@@ -103,11 +103,11 @@ public class Player : MonoBehaviour
             isRoll = true;
         }
 
-        if (rollTime <= 0 && isRoll) 
+        if (rollTime <= 0 && isRoll)
         {
             animator.SetBool("Roll", false);
             PlayerStatsManager.Instance.moveSpeed -= PlayerStatsManager.Instance.rollBoost;
-            isRoll = false; 
+            isRoll = false;
         }
         else
         {
@@ -121,7 +121,7 @@ public class Player : MonoBehaviour
             {
                 characterSR.transform.localScale = new Vector3(1, 1, 0);
             }
-            else characterSR.transform.localScale = new Vector3 (-1, 1, 0);
+            else characterSR.transform.localScale = new Vector3(-1, 1, 0);
         }
 
         // Find all colliders within the attraction radius
@@ -135,18 +135,19 @@ public class Player : MonoBehaviour
                 item.transform.position = Vector3.MoveTowards(item.transform.position, transform.position + playerCenterOffset, attractionSpeed * Time.deltaTime);
 
             }
-            
+
         }
         //testing powerup
-        if(Input.GetKeyDown(KeyCode.Z)) 
+        if (Input.GetKeyDown(KeyCode.Z))
         {
             GameObject p1 = Instantiate(powerUpSlot1, transform.position, Quaternion.identity);
             PowerUp _p1 = p1.GetComponent<PowerUp>();
             _p1.lvl = 5;
         }
-        if(Input.GetKeyDown(KeyCode.X))
+        if (Input.GetKeyDown(KeyCode.X))
         {
-            Time.timeScale = (1 - Time.timeScale);
+            //Time.timeScale = (1 - Time.timeScale);
+            //PlayerExpBar.instance.LevelUp();
         }
     }
 }
