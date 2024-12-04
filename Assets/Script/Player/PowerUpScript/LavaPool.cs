@@ -4,8 +4,9 @@ using UnityEngine;
 
 namespace Script.Player.PowerUpScript
 {
-    public class LavaPool : global::Script.Player.PowerUpScript.PowerUp
+    public class LavaPool : PowerUp
     {
+        public override string powerUpName => "Lava Pool";
         public override float cdTime => 5f;
         public override int lvl
         {
@@ -28,7 +29,7 @@ namespace Script.Player.PowerUpScript
         private Rigidbody2D rb;
         private bool isOrbiting;
         private float currentAngle = 0f;
-        private float _spawnTime;
+        public float _spawnTime;
         private int _lvl;
 
         private void Start()

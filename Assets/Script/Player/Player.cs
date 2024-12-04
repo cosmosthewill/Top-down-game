@@ -148,7 +148,7 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.X))
         {
             //Time.timeScale = (1 - Time.timeScale);
-            //PlayerExpBar.instance.LevelUp();
+            PlayerExpBar.instance.LevelUp();
         }
     }
 }

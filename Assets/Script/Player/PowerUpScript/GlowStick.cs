@@ -2,8 +2,9 @@ using UnityEngine;
 
 namespace Script.Player.PowerUpScript
 {
-    public class GlowStick : global::Script.Player.PowerUpScript.PowerUp
+    public class GlowStick : PowerUp
     {
+        public override string powerUpName => "Glow Stick";
         public override float cdTime => 8f;
         public override int lvl
         {

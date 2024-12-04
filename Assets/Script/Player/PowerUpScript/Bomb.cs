@@ -2,8 +2,9 @@ using UnityEngine;
 
 namespace Script.Player.PowerUpScript
 {
-    public class Bomb : global::Script.Player.PowerUpScript.PowerUp
+    public class Bomb : PowerUp
     {
+        public override string powerUpName => "Bomb";
         public override float cdTime => 1f;
         public override int lvl
         {
@@ -24,7 +25,7 @@ namespace Script.Player.PowerUpScript
         private float timer;
         private bool isExploded = false;
         private int _lvl;
-        private float _spawnTime;
+        public float _spawnTime;
         void Explode()
         {
             var hitcolliders = Physics2D.OverlapCircleAll(transform.position, explosionRadius);

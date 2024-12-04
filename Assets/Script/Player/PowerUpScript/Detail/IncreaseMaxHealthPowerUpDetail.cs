@@ -12,7 +12,7 @@ namespace Script.Player.PowerUpScript.Detail
         {
             get
             {
-                return $"Increase the max health by {randId}%";
+                return $"Increase the max health by {randPercent[randId]}%";
             }
         }
 

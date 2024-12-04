@@ -2,8 +2,9 @@ using UnityEngine;
 
 namespace Script.Player.PowerUpScript
 {
-    public class Axe : global::Script.Player.PowerUpScript.PowerUp
+    public class Axe : PowerUp
     {
+        public override string powerUpName => "Axe";
         public override float cdTime => 3f;
         public override int lvl
         {
