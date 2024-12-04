@@ -40,8 +40,8 @@ public class PlayerStatsManager : MonoBehaviour
         currentHealth -= amount;
         if (currentHealth < 0)
         {
-            Destroy(gameObject);
-            Time.timeScale = 0;
+            //Destroy(gameObject);
+            //Time.timeScale = 0;
         }
         if (currentHealth > maxHealth) currentHealth = maxHealth;
     }

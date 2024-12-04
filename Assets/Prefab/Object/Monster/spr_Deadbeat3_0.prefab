@@ -185,11 +185,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentStatus: 0
   debuffAni: {fileID: 4960081531694143134, guid: 4a2f08881a1e54a4fac75531fc21a174, type: 3}
-  maxHealth: 5000
   currentHealth: 0
   isRange: 0
   isBoss: 0
-  moveSpeed: 20
+  moveSpeed: 0
   rb: {fileID: 1442713919517550384}
   sr: {fileID: 9208178270783694805}
   animator: {fileID: 7704450567023480812}
@@ -205,3 +204,5 @@ MonoBehaviour:
   itemDrop: {fileID: 3161131047121433845, guid: c4bdfeb67aec83e4fa132c0f4a463745, type: 3}
   chanceDropItem: 0.1
   baseSpd: 0
+  baseHp: 100
+  baseDmg: 10
