@@ -14,11 +14,13 @@ public class EnemyBasic : MonoBehaviour
     }
     public EnemyStatus currentStatus = EnemyStatus.Normal;
     private float statusDuration = 0f;
+    public GameObject debuffAni;
 
     //basic
     public float maxHealth;
     public float currentHealth;
     public bool isRange; //range enemy
+    public bool isBoss;
     public float moveSpeed;
     public Rigidbody2D rb;
     public SpriteRenderer sr;
@@ -27,6 +29,7 @@ public class EnemyBasic : MonoBehaviour
     private Vector3 playerCenterOffset = new Vector3(0, -5f, 0);
     private float _fireTime;
     private float normalSpeed;
+
     //shot
     public bool isShotable = true;
     public UnityEngine.GameObject bullet;
@@ -39,7 +42,7 @@ public class EnemyBasic : MonoBehaviour
     private bool isKnockedBack = false;
     private float knockbackDuration = 0.2f;
     private Coroutine knockbackRoutine;
-
+    private GameObject _debuffAni;
     //floating damage
     public UnityEngine.GameObject popupDamage;
 
@@ -138,18 +141,18 @@ public class EnemyBasic : MonoBehaviour
     {
         //Debug.Log("abc");
         rb = GetComponent<Rigidbody2D>();
-        //sr = GetComponent<SpriteRenderer>();
+        sr = GetComponent<SpriteRenderer>();
         //Debug.Log("def");
         currentHealth = 50; // Mathf.Round(Mathf.Pow(4, (3.6f + Timer.Instance.minutes / 8.5f)) - 127);
         
         //if (isRange) moveSpeed = (0.35f + 0.015f * Timer.Instance.minutes);
-        moveSpeed = 10f;
+        moveSpeed = 0f;
         //Debug.Log("abc");
         monsterDmg = (int)(2 + Timer.Instance.minutes * 0.8f);
 
         currentStatus = EnemyStatus.Normal;
         normalSpeed = moveSpeed;
-}
+    }
 
     // Update is called once per frame
     void Update()
@@ -184,9 +187,14 @@ public class EnemyBasic : MonoBehaviour
                     moveSpeed = normalSpeed;
                     break;
                 case EnemyStatus.Slow:
+                    if (_debuffAni == null) _debuffAni = Instantiate(debuffAni, transform.position, Quaternion.identity);
+                    _debuffAni.transform.position = transform.position;
                     moveSpeed = normalSpeed * 0.2f;
                     break;
                 case EnemyStatus.Freeze:
+                    if (_debuffAni == null) _debuffAni = Instantiate(debuffAni, transform.position, Quaternion.identity);
+                    _debuffAni.transform.position = transform.position;
+                    sr.color = Color.blue;
                     moveSpeed = 0f;
                     break;
             }
@@ -196,6 +204,8 @@ public class EnemyBasic : MonoBehaviour
             // Reset to normal status
             currentStatus = EnemyStatus.Normal;
             moveSpeed = normalSpeed;
+            sr.color = Color.white;
+            Destroy(_debuffAni);
         }
     }
 
@@ -239,7 +249,7 @@ public class EnemyBasic : MonoBehaviour
         rb.velocity = Vector2.zero;
         rb.AddForce(knockbackForce, ForceMode2D.Impulse);
 
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(knockbackDuration);
         isKnockedBack = false;
 
     }

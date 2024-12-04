@@ -46,3 +46,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: PU
+    uniqueID: 3340791047
+    locked: 0
+  - name: Enemy
+    uniqueID: 605830267
+    locked: 0
+  - name: Player
+    uniqueID: 3749255227
+    locked: 0
+  - name: Debuff
+    uniqueID: 3363290439
+    locked: 0

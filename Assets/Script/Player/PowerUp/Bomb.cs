@@ -68,13 +68,17 @@ public class Bomb : PowerUp
         if (timer <= 0f && !isExploded)
         {
             isExploded = true;
-            Explode();
-            if (explodeAni != null)
-            {
-                GameObject _explode = Instantiate(explodeAni, transform.position, Quaternion.identity);
-                Destroy(_explode, 0.3f);
-            }
             Destroy(gameObject, 0.3f);
+        }
+    }
+
+    private void OnDestroy()
+    {
+        Explode();
+        if (explodeAni != null)
+        {
+            GameObject _explode = Instantiate(explodeAni, transform.position, Quaternion.identity);
+            Destroy(_explode, 0.3f);
         }
     }
 }

@@ -17,6 +17,7 @@ public class LavaPool : PowerUp
     }
 
     public Animator animator;
+    private HashSet<Collider2D> activeCollisions = new HashSet<Collider2D>();
 
     [SerializeField] private float baseDmg = 20f;
 
@@ -47,16 +48,21 @@ public class LavaPool : PowerUp
 
     private IEnumerator Onhit(Collider2D collision, float dmg)
     {
+        if (activeCollisions.Contains(collision)) yield break;
+
+        activeCollisions.Add(collision);
         float duration = 1.5f;//time to take dmg
         collision.gameObject.GetComponent<EnemyBasic>().TakeDamage((int)dmg);
         if (lvl == 5) //slow
         {
             collision.gameObject.GetComponent<EnemyBasic>().ApplyStatus(EnemyBasic.EnemyStatus.Slow, duration);
         }
-        yield return new WaitForSeconds(duration); 
+        yield return new WaitForSeconds(duration);
+
+        activeCollisions.Remove(collision);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.CompareTag("Enemy"))
         {
