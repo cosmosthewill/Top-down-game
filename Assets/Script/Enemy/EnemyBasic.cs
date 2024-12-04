@@ -143,7 +143,7 @@ public class EnemyBasic : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         //Debug.Log("def");
-        currentHealth = 50; // Mathf.Round(Mathf.Pow(4, (3.6f + Timer.Instance.minutes / 8.5f)) - 127);
+        currentHealth = 100; // Mathf.Round(Mathf.Pow(4, (3.6f + Timer.Instance.minutes / 8.5f)) - 127);
         
         //if (isRange) moveSpeed = (0.35f + 0.015f * Timer.Instance.minutes);
         moveSpeed = 0f;

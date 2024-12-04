@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Script.Player.PowerUpScript;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
@@ -86,7 +87,7 @@ public class Player : MonoBehaviour
 
     public Vector3  ReturnPlayerCenter()
     {
-        return transform.position - playerCenterOffset;
+        return transform.position + playerCenterOffset;
     }
     private void Update()
     {
@@ -146,7 +147,8 @@ public class Player : MonoBehaviour
         }
         if(Input.GetKeyDown(KeyCode.X))
         {
-            Time.timeScale = (1 - Time.timeScale);
+            //Time.timeScale = (1 - Time.timeScale);
+            PlayerExpBar.instance.LevelUp();
         }
     }
 }

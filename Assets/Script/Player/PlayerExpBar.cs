@@ -51,4 +51,9 @@ public class PlayerExpBar : MonoBehaviour
         }
 
     }
+
+    public void LevelUp()
+    {
+        currentExp = maxExp;
+    }
 }
