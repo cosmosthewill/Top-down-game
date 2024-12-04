@@ -25,9 +25,5 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.blue;
-        Gizmos.DrawWireSphere(transform.position, GetComponent<CircleCollider2D>().radius);
-    }
+    
 }
