@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5328950336709579311}
   - component: {fileID: 2510634165081543939}
   m_Layer: 0
-  m_Name: bombimg
+  m_Name: Bomb
   m_TagString: PowerUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -101,3 +101,4 @@ MonoBehaviour:
   explosionForce: 50
   explosionRadius: 5
   baseDmg: 20
+  _spawnTime: 2.5
