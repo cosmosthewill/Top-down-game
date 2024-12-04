@@ -1,4 +1,4 @@
-namespace Script.Player.PowerUp.Detail
+namespace Script.Player.PowerUpScript.Detail
 {
     public class BombPowerUpDetail : PowerUpDetail
     {

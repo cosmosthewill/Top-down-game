@@ -1,0 +1,31 @@
+using UnityEngine;
+
+namespace Script.Player.PowerUpScript.Detail
+{
+    public class IncreaseMaxHealthPowerUpDetail : PowerUpDetail
+    {
+        private int[] randPercent = { 10, 15, 20, 25 };
+        private int randId = 0;
+        public override string PowerUpName => "Increase Max Health";
+
+        public override string PowerUpDescription
+        {
+            get
+            {
+                return $"Increase the max health by {randId}%";
+            }
+        }
+
+        public override void Init()
+        {
+            randId = Random.Range(0, randPercent.Length);
+        }
+
+        public override void SetUpPowerUp()
+        {
+            float increase = PlayerStatsManager.Instance.maxHealth * randPercent[randId] / 100f;
+            PlayerStatsManager.Instance.maxHealth += increase;
+            PlayerStatsManager.Instance.currentHealth += increase;
+        }
+    }
+}

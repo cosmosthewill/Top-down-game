@@ -5,27 +5,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7eee735a-3046-41fe-a0d8-441b41fcdf0a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Script/GamePause.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Script/GamePause.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Script/Player/PowerUp/Detail.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Script/Player/PowerUp/Detail/BombPowerUpDetail.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Script/Player/PowerUp/Detail/BombPowerUpDetail.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Script/Player/PowerUp/Detail/IncreaseMaxHealthPowerUpDetail.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Script/Player/PowerUp/Detail/IncreaseMaxHealthPowerUpDetail.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Script/Player/PowerUp/Detail/LavaPoolPowerUpDetail.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Script/Player/PowerUp/Detail/LavaPoolPowerUpDetail.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Script/Player/PowerUp/Detail/PowerUpManifest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Script/Player/PowerUp/Detail/PowerUpManifest.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Script/Player/PowerUp/LevelUpPopUp.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Script/Player/PowerUp/LevelUpPopUp.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Script/Player/PowerUp/UIPowerUpDetail.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Script/Player/PowerUp/UIPowerUpDetail.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animation/PowerUp/LavaPool/LavaPool.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animation/PowerUp/LavaPool/LavaPool.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Enemy/EnemyBasic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Enemy/EnemyBasic.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Script/Player/PowerUpScript/Detail/PowerUpManifest.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Script/Player/PowerUpScript/WeaponPowerUpManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Script/Player/PowerUpScript/WeaponPowerUpManager.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.TDG/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TDG/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Script/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Player/Player.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Player/PlayerExpBar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Player/PlayerExpBar.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/Player/PowerUp.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Player/PowerUpScript.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/Player/PowerUp/Axe.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Player/PowerUpScript/Axe.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/Player/PowerUp/Axe.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Player/PowerUpScript/Axe.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/Player/PowerUp/Bomb.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Player/PowerUpScript/Bomb.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/Player/PowerUp/Bomb.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Player/PowerUpScript/Bomb.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/Player/PowerUp/Curse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Player/PowerUpScript/Curse.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/Player/PowerUp/Curse.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Player/PowerUpScript/Curse.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/Player/PowerUp/Detail.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Player/PowerUpScript/Detail.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/Player/PowerUp/Detail/BombPowerUpDetail.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Player/PowerUpScript/Detail/BombPowerUpDetail.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/Player/PowerUp/Detail/BombPowerUpDetail.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Player/PowerUpScript/Detail/BombPowerUpDetail.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/Player/PowerUp/Detail/IncreaseMaxHealthPowerUpDetail.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Player/PowerUpScript/Detail/IncreaseMaxHealthPowerUpDetail.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/Player/PowerUp/Detail/IncreaseMaxHealthPowerUpDetail.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Player/PowerUpScript/Detail/IncreaseMaxHealthPowerUpDetail.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/Player/PowerUp/Detail/LavaPoolPowerUpDetail.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Player/PowerUpScript/Detail/LavaPoolPowerUpDetail.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/Player/PowerUp/Detail/LavaPoolPowerUpDetail.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Player/PowerUpScript/Detail/LavaPoolPowerUpDetail.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/Player/PowerUp/Detail/PowerUpManifest.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/Player/PowerUp/Detail/PowerUpManifest.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Player/PowerUpScript/Detail/PowerUpManifest.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/Player/PowerUp/GlowStick.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Player/PowerUpScript/GlowStick.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/Player/PowerUp/GlowStick.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Player/PowerUpScript/GlowStick.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/Player/PowerUp/LavaPool.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Player/PowerUpScript/LavaPool.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/Player/PowerUp/LavaPool.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Player/PowerUpScript/LavaPool.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/Player/PowerUp/LevelUpPopUp.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Player/PowerUpScript/LevelUpPopUp.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/Player/PowerUp/LevelUpPopUp.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Player/PowerUpScript/LevelUpPopUp.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/Player/PowerUp/PowerUp.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Player/PowerUpScript/PowerUp.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/Player/PowerUp/PowerUp.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Player/PowerUpScript/PowerUp.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/Player/PowerUp/UIPowerUpDetail.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Player/PowerUpScript/UIPowerUpDetail.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/Player/PowerUp/UIPowerUpDetail.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Player/PowerUpScript/UIPowerUpDetail.cs.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,6 +128,7 @@
       <workItem from="1732707142675" duration="3949000" />
       <workItem from="1732933503457" duration="8059000" />
       <workItem from="1732952970596" duration="7442000" />
+      <workItem from="1733296577529" duration="1365000" />
     </task>
     <servers />
   </component>

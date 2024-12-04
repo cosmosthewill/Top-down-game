@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Script.Player.PowerUpScript;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
