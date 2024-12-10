@@ -10,12 +10,18 @@ public class Weapon : MonoBehaviour
         Normal,
         Shotgun
     }
+    public enum Character
+    {
+        Solider,
+        Electro,
+        Rambo
+    }
+    public Character character;
     public ShootingMode shootingMode = ShootingMode.Normal;
     public UnityEngine.GameObject bullet;
     public Transform firePos;
     public float fireCd = 0.2f;
     public float bulletForce;
-    public AudioSource shootingSound;
 
     private float _fireTime;
 
@@ -113,7 +119,18 @@ public class Weapon : MonoBehaviour
         _fireTime -= Time.deltaTime;
         if(Input.GetMouseButton(0) && _fireTime < 0)
         {
-            shootingSound.Play();
+            switch (character)
+            {
+                case Character.Solider:
+                    SoundManager.Instance.PlaySfx(SfxType.SoliderGunSound);
+                    break;
+                case Character.Electro:
+                    SoundManager.Instance.PlaySfx(SfxType.ElectroGunSound);
+                    break;
+                case Character.Rambo:
+                    SoundManager.Instance.PlaySfx(SfxType.ShotgunSound);
+                    break;
+            }
             switch (shootingMode)
             {
                 case ShootingMode.Normal:

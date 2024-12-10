@@ -37,6 +37,7 @@ public class PlayerStatsManager : MonoBehaviour
     }
     public void TakeDmg(int amount)
     {
+        if (amount > 0) SoundManager.Instance.PlaySfx(SfxType.Hurt);
         currentHealth -= amount;
         if (currentHealth < 0)
         {

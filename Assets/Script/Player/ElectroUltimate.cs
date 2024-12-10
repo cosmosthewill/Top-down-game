@@ -14,6 +14,7 @@ public class ElectroUltimate : UltimateBase
     // Start is called before the first frame update
     void Start()
     {
+        SoundManager.Instance.PlaySfx(SfxType.ElectroUltimate, true);
         dmg = (int)(PlayerStatsManager.Instance.damage * 0.7);
     }
     private void OnTriggerStay2D(Collider2D collision)

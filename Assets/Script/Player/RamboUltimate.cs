@@ -13,6 +13,7 @@ public class RamboUltimate : UltimateBase
     
     private void Start()
     {
+        SoundManager.Instance.PlaySfx(SfxType.RamboUltimate);
         GameObject reaper = Instantiate(theReaper,transform.position, Quaternion.identity);
         reaper.transform.SetParent(Player.Instance.transform);
         Destroy(reaper, 1.1f);

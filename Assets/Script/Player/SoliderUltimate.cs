@@ -15,7 +15,7 @@ public class SoliderUltimate : UltimateBase
     // Start is called before the first frame update
     void Start()
     {
-        
+        SoundManager.Instance.PlaySfx(SfxType.SoliderUltimate);
     }
 
     // Update is called once per frame

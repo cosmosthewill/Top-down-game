@@ -14,6 +14,7 @@ namespace Script.Player.PowerUpScript
 
         private void Init()
         {
+            SoundManager.Instance.PlaySfx(SfxType.LevelUpSound);
             var statPowerUp0 = powerUpManifest.GetRandomStatPowerUp();
             statPowerUp0.Init();
             powerUpDetail[0].SetUp(statPowerUp0);
