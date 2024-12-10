@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class SoliderUltimate : UltimateBase
 {
-    public int healAmount = 10 + Timer.Instance.minutes * 4 + Timer.Instance.seconds * 2;
     public override float UltDuration => 5f;
 
     private float _healTimer;
@@ -12,10 +11,12 @@ public class SoliderUltimate : UltimateBase
     {
         transform.SetParent(playerTransform);
     }
+    public int healAmount;
     // Start is called before the first frame update
     void Start()
     {
         SoundManager.Instance.PlaySfx(SfxType.SoliderUltimate);
+        healAmount = (int)(PlayerStatsManager.Instance.maxHealth * 0.1f);
     }
 
     // Update is called once per frame

@@ -91,15 +91,11 @@ public class EnemyBasic : MonoBehaviour
     protected virtual void EnemyShot(Vector2 direction) { }
     //Collision
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
-            /*if (_playerHealth !=  null) 
-            {
-                _playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
-            }*/
-            InvokeRepeating("DamagePlayer", 0, 2f);//time to take dmg here
+            InvokeRepeating("DamagePlayer", 0, 1.5f);//time to take dmg here
         }
     }
 
@@ -138,7 +134,7 @@ public class EnemyBasic : MonoBehaviour
             OnDeath();
         }
     }
-    public void OnDeath()
+    public virtual void OnDeath()
     {
         PlayerExpBar.instance.GainExp(expGain);
         PlayerStatsManager.Instance.GainMana(manaGain);
@@ -151,13 +147,13 @@ public class EnemyBasic : MonoBehaviour
     }
     public void InitStat()
     {
-        maxHealth = baseHp * (1 + Timer.Instance.minutes * 0.8f + Timer.Instance.seconds * 0.2f);
+        maxHealth = baseHp * (1 + Timer.Instance.minutes * 0.8f);
         moveSpeed = baseSpd * (1 + 0.3f * Timer.Instance.minutes);
         if (isRange) moveSpeed = baseSpd * (1 + 0.15f * Timer.Instance.minutes);
-        monsterDmg = (int)(baseDmg * (1 + Timer.Instance.minutes * 0.8f + Timer.Instance.seconds * 0.15f));
+        monsterDmg = (int)(baseDmg * (1 + Timer.Instance.minutes * 0.8f));
 
         //drop
-        expGain = baseExpGain + Timer.Instance.minutes * 10 + Timer.Instance.seconds * 5;
+        expGain = baseExpGain + Timer.Instance.minutes * 10;
         manaGain = baseManaGain;
         currentStatus = EnemyStatus.Normal;
         normalSpeed = moveSpeed;
@@ -190,17 +186,7 @@ public class EnemyBasic : MonoBehaviour
                 EnemyShot();
             }
         }
-        /*/test
-        if (rb.velocity.sqrMagnitude > 0)
-        {
-            afterImage.Activate(true);
-            Debug.Log("Boss is moving. Activating AfterImage.");
-        }
-        else
-        {
-            Debug.Log("Boss is idle. Deactivating AfterImage.");
-            afterImage.Activate(false);
-        }*/
+        if(currentHealth < 0) OnDeath();
     }
 
     protected void HandleStatusEffects()

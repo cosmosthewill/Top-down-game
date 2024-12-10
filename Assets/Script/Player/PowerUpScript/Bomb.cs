@@ -43,8 +43,6 @@ namespace Script.Player.PowerUpScript
                         {
                             float pushBackForce = explosionForce / distance.magnitude;
                             enemy.ApplyKnockback(pushBackForce * distance);
-                            Debug.Log(distance);
-                            Debug.Log(pushBackForce);
                         }
                     }
                 }

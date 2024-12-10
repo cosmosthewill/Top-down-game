@@ -85,7 +85,7 @@ namespace Script.Player.PowerUpScript
             {
                 rb.velocity = firstDirection.normalized * moveSpeed;
                 // Rotate the bullet to face the target
-                float angle = Mathf.Atan2(ThrowDirection().normalized.y, ThrowDirection().normalized.x) * Mathf.Rad2Deg;
+                float angle = Mathf.Atan2(firstDirection.normalized.y, firstDirection.normalized.x) * Mathf.Rad2Deg;
                 transform.rotation = Quaternion.Euler(0, 0, angle);
             }
             else if (target != null && bounceCount <= lvl)

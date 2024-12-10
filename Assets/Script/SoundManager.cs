@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public enum SfxType
@@ -9,7 +10,11 @@ public enum SfxType
     ShotgunSound,
     ElectroGunSound,
     SoliderGunSound,
-    LevelUpSound
+    LevelUpSound,
+    BossAppear,
+    BossDeath,
+    Explode,
+    ExplodeAlert
 }
 public enum BGMType
 {
@@ -30,7 +35,8 @@ public class SoundManager : MonoBehaviour
     // Separate audio sources for different sound types
     public AudioSource sfxAudioSource;
     public AudioSource backgroundAudioSource;
-
+    private List<AudioSource> sfxAudioSources = new List<AudioSource>(); // Pool of audio sources for SFX
+    private Queue<AudioSource> activeSfxQueue = new Queue<AudioSource>(); // Queue to track active SFX
     public static SoundManager Instance { get; private set; }
 
     private void Awake()
@@ -45,11 +51,42 @@ public class SoundManager : MonoBehaviour
 
             // bgm loop
             backgroundAudioSource.loop = true;
+            InitializeSFXAudioSources();
         }
         else
         {
             Destroy(gameObject);
         }
+    }
+    // Initialize a pool of AudioSource components for SFX
+    private void InitializeSFXAudioSources()
+    {
+        for (int i = 0; i < 5; i++) // You can adjust the size of the pool as needed
+        {
+            AudioSource newAudioSource = gameObject.AddComponent<AudioSource>();
+            newAudioSource.playOnAwake = false;
+            sfxAudioSources.Add(newAudioSource);
+        }
+    }
+
+    // Get an available AudioSource from the pool
+    private AudioSource GetAvailableSFXAudioSource()
+    {
+        if (activeSfxQueue.Count < 5) // If there are less than 5 active sounds, use an available one from the pool
+        {
+            foreach (var audioSource in sfxAudioSources)
+            {
+                if (!audioSource.isPlaying)
+                {
+                    return audioSource;
+                }
+            }
+        }
+
+        // If more than 5 sounds are playing, remove the oldest one (from the front of the queue)
+        AudioSource oldestAudioSource = activeSfxQueue.Dequeue();
+        oldestAudioSource.Stop(); // Stop it before reusing
+        return oldestAudioSource;
     }
 
     public void PlaySfx(SfxType sound, bool loop = false, float volumeScale = 1f)
@@ -57,19 +94,23 @@ public class SoundManager : MonoBehaviour
         if (Instance == null) return;
         AudioClip clip = Instance.sfxList[(int)sound];
         float finalVolume = Instance.sfxVolume * volumeScale;
+        AudioSource audioSource = GetAvailableSFXAudioSource();
 
         if (loop)
         {
-            Instance.sfxAudioSource.clip = clip;
-            Instance.sfxAudioSource.volume = finalVolume;
-            Instance.sfxAudioSource.loop = true;
-            Instance.sfxAudioSource.Play();
+            audioSource.clip = clip;
+            audioSource.volume = finalVolume;
+            audioSource.loop = true;
+            audioSource.Play();
         }
         else
         {
-            Instance.sfxAudioSource.loop = false; // Ensure no loop
-            Instance.sfxAudioSource.PlayOneShot(clip, finalVolume);
+            audioSource.loop = false;
+            audioSource.PlayOneShot(clip, finalVolume);
         }
+
+        // Track active sound in the queue
+        activeSfxQueue.Enqueue(audioSource);
     }
 
     public void PlayBackgroundMusic(BGMType musicType, bool loop = true)

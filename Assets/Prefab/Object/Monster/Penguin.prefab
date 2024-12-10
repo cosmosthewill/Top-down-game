@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 6529063747405559713}
   - component: {fileID: 1336193515314018332}
   - component: {fileID: 8994999406940492377}
-  - component: {fileID: 2934627210887858610}
+  - component: {fileID: 3155630461769685706}
   m_Layer: 0
-  m_Name: Ghost
+  m_Name: Penguin
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 605830267
   m_SortingLayer: 2
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: afa3a0f51705df2459532399bf59cc68, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8e8002efa3e45634d892c7a9bd9c07c2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -147,9 +147,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.3278494, y: 0.021140099}
+  m_Offset: {x: -0.0016546249, y: 0.4696579}
   serializedVersion: 2
-  m_Radius: 2.5
+  m_Radius: 2.622323
 --- !u!114 &8994999406940492377
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,7 +186,7 @@ MonoBehaviour:
   baseExpGain: 10
   baseManaGain: 5
   updateMoveCd: 2
---- !u!95 &2934627210887858610
+--- !u!95 &3155630461769685706
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -196,7 +196,7 @@ Animator:
   m_GameObject: {fileID: 8895264513967183943}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 801a5ac095a3c4045b9601d82d30cddb, type: 2}
+  m_Controller: {fileID: 9100000, guid: 7f3cea4c9ba6ab441a6dc90ab0b17ea4, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

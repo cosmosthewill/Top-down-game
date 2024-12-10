@@ -180,12 +180,12 @@ MonoBehaviour:
   monsterDmg: 0
   popupDamage: {fileID: 5848908426540080612, guid: 002a10d4319732841a98429e20c6bb28, type: 3}
   itemDrop: {fileID: 2806206630459991220, guid: 3caaf2ada1a5f924ca8ef9783802c480, type: 3}
-  chanceDropItem: 0
+  chanceDropItem: 1
   baseSpd: 30
   baseHp: 500
   baseDmg: 50
-  baseExpGain: 0
-  baseManaGain: 0
+  baseExpGain: 100
+  baseManaGain: 10
   updateMoveCd: 2
   waveShotCd: 4
   angleBetweenDirections: 45

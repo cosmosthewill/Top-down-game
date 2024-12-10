@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1957188872634550041}
   - component: {fileID: 2351468915105561437}
-  - component: {fileID: 6368899693375747740}
   - component: {fileID: 5266747634350179069}
   - component: {fileID: 6965962669069491462}
+  - component: {fileID: 6368899693375747740}
   - component: {fileID: 2403402044215901263}
   m_Layer: 0
   m_Name: Monster
@@ -72,41 +72,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.02804563}
   serializedVersion: 2
   m_Radius: 0.28943154
---- !u!114 &6368899693375747740
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1330997194386975117}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 636a468857f76084cb148d582f411fe2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentStatus: 0
-  debuffAni: {fileID: 4960081531694143134, guid: 4a2f08881a1e54a4fac75531fc21a174, type: 3}
-  currentHealth: 0
-  isRange: 0
-  isBoss: 0
-  moveSpeed: 20
-  rb: {fileID: 5266747634350179069}
-  sr: {fileID: 7210808522553494621}
-  animator: {fileID: 7951088380187842682}
-  moveDirection: {x: 0, y: 0, z: 0}
-  isShotable: 0
-  bullet: {fileID: 5809139123419231007, guid: c2c05f058f3fa4f489c949afe72e67cd, type: 3}
-  bulletSpeed: 90
-  fireCd: 1
-  monsterDmg: 20
-  popupDamage: {fileID: 5848908426540080612, guid: 002a10d4319732841a98429e20c6bb28, type: 3}
-  expGain: 10
-  manaGain: 10
-  itemDrop: {fileID: 4961675843974353092, guid: 120cf1608732728449c9b2294cc4e92f, type: 3}
-  chanceDropItem: 0.1
-  baseSpd: 30
-  baseHp: 100
-  baseDmg: 20
 --- !u!50 &5266747634350179069
 Rigidbody2D:
   serializedVersion: 4
@@ -186,6 +151,42 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6368899693375747740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1330997194386975117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 636a468857f76084cb148d582f411fe2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentStatus: 0
+  debuffAni: {fileID: 4960081531694143134, guid: 4a2f08881a1e54a4fac75531fc21a174, type: 3}
+  currentHealth: 0
+  isRange: 0
+  isBoss: 0
+  moveSpeed: 20
+  rb: {fileID: 5266747634350179069}
+  sr: {fileID: 7210808522553494621}
+  animator: {fileID: 7951088380187842682}
+  moveDirection: {x: 0, y: 0, z: 0}
+  isShotable: 0
+  bullet: {fileID: 5809139123419231007, guid: c2c05f058f3fa4f489c949afe72e67cd, type: 3}
+  bulletSpeed: 90
+  fireCd: 1
+  monsterDmg: 20
+  popupDamage: {fileID: 5848908426540080612, guid: 002a10d4319732841a98429e20c6bb28, type: 3}
+  itemDrop: {fileID: 4961675843974353092, guid: 120cf1608732728449c9b2294cc4e92f, type: 3}
+  chanceDropItem: 0.5
+  baseSpd: 30
+  baseHp: 100
+  baseDmg: 20
+  baseExpGain: 10
+  baseManaGain: 5
+  updateMoveCd: 2
 --- !u!95 &2403402044215901263
 Animator:
   serializedVersion: 5

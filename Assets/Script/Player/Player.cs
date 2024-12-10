@@ -25,7 +25,9 @@ public class Player : MonoBehaviour
 
     private float rollTime;
     private Vector3 playerCenterOffset = new Vector3(0, -5f, 0);
-
+    protected Coroutine knockbackRoutine;
+    protected bool isKnockedBack = false;
+    protected float knockbackDuration = 0.2f;
     void Awake()
     {
         if (Instance == null)
@@ -91,8 +93,29 @@ public class Player : MonoBehaviour
     {
         return transform.position + playerCenterOffset;
     }
+    public void ApplyKnockback(Vector2 knockbackForce)
+    {
+        if (knockbackRoutine != null)
+        {
+            StopCoroutine(knockbackRoutine);
+        }
+        knockbackRoutine = StartCoroutine(KnockbackCoroutine(knockbackForce));
+    }
+
+    private IEnumerator KnockbackCoroutine(Vector2 knockbackForce)
+    {
+        //Debug.Log("a");
+        isKnockedBack = true;
+        rb.velocity = Vector2.zero;
+        rb.AddForce(knockbackForce, ForceMode2D.Impulse);
+
+        yield return new WaitForSeconds(knockbackDuration);
+        isKnockedBack = false;
+
+    }
     private void Update()
     {
+        if (isKnockedBack) return;
         Vector2 moveInput = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         rb.velocity = moveInput * PlayerStatsManager.Instance.moveSpeed;
         //if (rb.velocity.sqrMagnitude > 0) afterImage.Activate(true);
@@ -149,7 +172,7 @@ public class Player : MonoBehaviour
             PowerUp _p1 = p1.GetComponent<PowerUp>();
             _p1.lvl = 5;
         }
-        if (Input.GetKeyDown(KeyCode.X))
+        if (Input.GetKeyDown(KeyCode.X))//cheat
         {
             //Time.timeScale = (1 - Time.timeScale);
             PlayerExpBar.instance.LevelUp();

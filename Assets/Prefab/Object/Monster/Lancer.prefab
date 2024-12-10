@@ -200,13 +200,13 @@ MonoBehaviour:
   fireCd: 2
   monsterDmg: 0
   popupDamage: {fileID: 5848908426540080612, guid: 002a10d4319732841a98429e20c6bb28, type: 3}
-  expGain: 50
-  manaGain: 5
   itemDrop: {fileID: 3161131047121433845, guid: c4bdfeb67aec83e4fa132c0f4a463745, type: 3}
   chanceDropItem: 1
   baseSpd: 200
   baseHp: 50
   baseDmg: 20
+  baseExpGain: 50
+  baseManaGain: 5
   updateMoveCd: 2
 --- !u!114 &7231506986563138825
 MonoBehaviour:
