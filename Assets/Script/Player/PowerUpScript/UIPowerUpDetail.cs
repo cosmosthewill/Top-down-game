@@ -9,6 +9,7 @@ namespace Script.Player.PowerUpScript
     {
         [SerializeField] private Text powerUpName;
         [SerializeField] private Text powerUpDescription;
+        [SerializeField] private Image icon;
         private PowerUpDetail powerUpDetail;
 
         public void SetUp(PowerUpDetail powerUpDetail)
@@ -16,6 +17,7 @@ namespace Script.Player.PowerUpScript
             this.powerUpDetail = powerUpDetail;
             powerUpName.text = powerUpDetail.PowerUpName;
             powerUpDescription.text = powerUpDetail.PowerUpDescription;
+            icon.sprite = powerUpDetail.Icon;
         }
 
         public void OnPointerClick(PointerEventData eventData)

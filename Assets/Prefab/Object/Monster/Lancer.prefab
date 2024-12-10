@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1336193515314018332}
   - component: {fileID: 8009469246470531848}
   - component: {fileID: 2857673792869258203}
+  - component: {fileID: 7231506986563138825}
   m_Layer: 0
   m_Name: Lancer
   m_TagString: Enemy
@@ -207,3 +208,17 @@ MonoBehaviour:
   baseHp: 50
   baseDmg: 20
   updateMoveCd: 2
+--- !u!114 &7231506986563138825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8895264513967183943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cb9887c26d19e9489f3fda700213c04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rate: 2
+  lifeTime: 0.15

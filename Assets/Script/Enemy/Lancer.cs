@@ -11,6 +11,7 @@ public class Lancer : EnemyBasic
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         InitStat();
+        afterImage = GetComponent<AfterImage>();
         StartCoroutine(LancerBehavior());
     }
     private void Update()
@@ -18,6 +19,7 @@ public class Lancer : EnemyBasic
         HandleStatusEffects();
     }
     private bool isCharging = false;
+    private AfterImage afterImage;
     //public float chargeDuration = 0.2f;
     private IEnumerator LancerBehavior()
     {
@@ -25,22 +27,25 @@ public class Lancer : EnemyBasic
         {
             if (FindTarget() != null)
             {
+                yield return new WaitForSeconds(1.5f);
                 Vector3 targetPosition = FindTarget();
                 moveDirection = targetPosition - transform.position;
-                yield return new WaitForSeconds(1f);//charge to previous 1s target
+                yield return new WaitForSeconds(0.5f);//charge to previous 1s target
                 isCharging = true;
-                Vector3 chargePosition = transform.position;
-                normalSpeed = moveSpeed;
-                rb.velocity = moveDirection.normalized * normalSpeed;
+                afterImage.Activate(true);
+                //Vector3 chargePosition = transform.position;
+                //normalSpeed = moveSpeed;
+                rb.velocity = moveDirection.normalized * moveSpeed;
                 //rotate
                 if (moveDirection.x > 0)
                 {
                     transform.eulerAngles = Vector3.zero;
                 }
                 else transform.eulerAngles = new Vector3(0, 180, 0);
-                yield return new WaitUntil(() => Vector3.Distance(transform.position, targetPosition) <= 2f);
+                yield return new WaitForSeconds(0.2f);
                 rb.velocity = Vector2.zero; // Stop moving
                 isCharging = false;
+                afterImage.Activate(false);
             }
         }
     }

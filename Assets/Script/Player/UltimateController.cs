@@ -12,7 +12,7 @@ public class UltimateController : MonoBehaviour
 
     public void ActiveUlt()
     {
-        GameObject ultimateObject = Instantiate(UltPrefab, transform.position, Quaternion.identity);
+        GameObject ultimateObject = Instantiate(UltPrefab, Player.Instance.ReturnPlayerCenter(), Quaternion.identity);
         // Check if it inherits from UltimateAbilityBase
         UltimateBase ultimateAbility = ultimateObject.GetComponent<UltimateBase>();
         if (ultimateAbility != null)

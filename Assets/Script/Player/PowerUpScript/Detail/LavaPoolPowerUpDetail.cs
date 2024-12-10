@@ -5,8 +5,11 @@ namespace Script.Player.PowerUpScript.Detail
     public class LavaPoolPowerUpDetail : PowerUpDetail
     {
         [SerializeField] private PowerUp prefab;
+        [SerializeField] private Sprite icon;
         private int nextLevel = 0;
         public override string PowerUpName => "Lava Pool";
+
+        public override Sprite Icon => icon;
 
         public override string PowerUpDescription
         {

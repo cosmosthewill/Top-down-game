@@ -49,6 +49,8 @@ namespace Script.Player.PowerUpScript.Detail
         
         public virtual string PowerUpDescription { get; }
 
+        public virtual Sprite Icon { get; }
+
         public virtual void Init()
         {
         }

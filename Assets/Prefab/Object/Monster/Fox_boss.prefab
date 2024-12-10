@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1336193515314018332}
   - component: {fileID: 3621376672599367475}
   - component: {fileID: 5912624491904984803}
+  - component: {fileID: 2459616888795196077}
   m_Layer: 0
   m_Name: Fox_boss
   m_TagString: Enemy
@@ -74,9 +75,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 605830267
+  m_SortingLayer: 2
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: fb03c5b59ab40354590be12c98ac6b16, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -178,13 +179,14 @@ MonoBehaviour:
   fireCd: 0
   monsterDmg: 0
   popupDamage: {fileID: 5848908426540080612, guid: 002a10d4319732841a98429e20c6bb28, type: 3}
-  expGain: 0
-  manaGain: 0
   itemDrop: {fileID: 2806206630459991220, guid: 3caaf2ada1a5f924ca8ef9783802c480, type: 3}
   chanceDropItem: 0
   baseSpd: 30
   baseHp: 500
   baseDmg: 50
+  baseExpGain: 0
+  baseManaGain: 0
+  updateMoveCd: 2
   waveShotCd: 4
   angleBetweenDirections: 45
 --- !u!95 &5912624491904984803
@@ -208,3 +210,17 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2459616888795196077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8895264513967183943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cb9887c26d19e9489f3fda700213c04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rate: 2
+  lifeTime: 0.2

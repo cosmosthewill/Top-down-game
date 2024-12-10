@@ -69,7 +69,7 @@ namespace Script.Player.PowerUpScript
         {
             if (collision.CompareTag("Enemy"))
             {
-                Debug.Log("a");
+                //Debug.Log("a");
                 float dmg = (PlayerStatsManager.Instance.damage + baseDmg) * (1 + lvl / 5);
                 StartCoroutine(Onhit(collision, dmg));
             }

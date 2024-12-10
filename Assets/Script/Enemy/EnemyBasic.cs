@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
+using System.Runtime.CompilerServices;
 
 public class EnemyBasic : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class EnemyBasic : MonoBehaviour
         Freeze
     }
     public EnemyStatus currentStatus = EnemyStatus.Normal;
+    private EnemyStatus previousStatus = EnemyStatus.Normal;
     private float statusDuration = 0f;
     public GameObject debuffAni;
 
@@ -47,14 +49,20 @@ public class EnemyBasic : MonoBehaviour
 
     //drop
     [Header("Combat Stat")]
-    [SerializeField] private int expGain;
-    [SerializeField] private int manaGain;
     [SerializeField] private UnityEngine.GameObject itemDrop;
     [SerializeField] private float chanceDropItem;
     [SerializeField] private float baseSpd;
     [SerializeField] private float baseHp;
     [SerializeField] private int baseDmg;
+    [SerializeField] private int baseExpGain;
+    [SerializeField] private int baseManaGain;
     public float updateMoveCd = 2f;
+
+    //exp
+    private int expGain;
+    private int manaGain;
+    //test
+    //private AfterImage afterImage;
     protected Vector3 FindTarget()
     {
         Vector3 playerPos = Player.Instance.ReturnPlayerCenter();
@@ -139,6 +147,7 @@ public class EnemyBasic : MonoBehaviour
         {
             Instantiate(itemDrop, transform.position, Quaternion.identity);
         }
+        CoinDropManager.Instance.GenerateCoin(transform.position, isBoss);
         Destroy(gameObject);
     }
     public void InitStat()
@@ -149,7 +158,8 @@ public class EnemyBasic : MonoBehaviour
         monsterDmg = (int)(baseDmg * (1 + Timer.Instance.minutes * 0.8f + Timer.Instance.seconds * 0.15f));
 
         //drop
-        expGain += Timer.Instance.minutes * 10 + Timer.Instance.seconds * 5;
+        expGain = baseExpGain + Timer.Instance.minutes * 10 + Timer.Instance.seconds * 5;
+        manaGain = baseManaGain;
         currentStatus = EnemyStatus.Normal;
         normalSpeed = moveSpeed;
         currentHealth = maxHealth;
@@ -160,6 +170,7 @@ public class EnemyBasic : MonoBehaviour
         //Debug.Log("abc");
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
+        //afterImage = GetComponent<AfterImage>();
         InitStat();
     }
 
@@ -180,7 +191,17 @@ public class EnemyBasic : MonoBehaviour
                 EnemyShot();
             }
         }
-
+        /*/test
+        if (rb.velocity.sqrMagnitude > 0)
+        {
+            afterImage.Activate(true);
+            Debug.Log("Boss is moving. Activating AfterImage.");
+        }
+        else
+        {
+            Debug.Log("Boss is idle. Deactivating AfterImage.");
+            afterImage.Activate(false);
+        }*/
     }
 
     protected void HandleStatusEffects()
@@ -220,6 +241,7 @@ public class EnemyBasic : MonoBehaviour
 
     public void ApplyStatus(EnemyStatus status, float duration)
     {
+        if (status == EnemyStatus.Slow && currentStatus == EnemyStatus.Freeze) return;
         currentStatus = status;
         statusDuration = duration;
     }
@@ -231,7 +253,7 @@ public class EnemyBasic : MonoBehaviour
         else if (isRange)
         {
             float distance = Vector3.Distance(Player.Instance.ReturnPlayerCenter(), transform.position);
-            if (distance >= 50f && distance <= 75f) rb.velocity = Vector3.zero;
+            if (distance >= 15f && distance <= 40f) rb.velocity = Vector3.zero;
             return;
         }
 

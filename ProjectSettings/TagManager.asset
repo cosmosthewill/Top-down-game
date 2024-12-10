@@ -9,6 +9,7 @@ TagManager:
   - EnemyBullet
   - CollectibleItems
   - PowerUp
+  - UltimatePlayer
   layers:
   - Default
   - TransparentFX
@@ -57,4 +58,7 @@ TagManager:
     locked: 0
   - name: Debuff
     uniqueID: 3363290439
+    locked: 0
+  - name: UltimatePlayer
+    uniqueID: 414640399
     locked: 0

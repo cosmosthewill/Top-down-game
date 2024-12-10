@@ -5,7 +5,12 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-
+    public enum ShootingMode
+    {
+        Normal,
+        Shotgun
+    }
+    public ShootingMode shootingMode = ShootingMode.Normal;
     public UnityEngine.GameObject bullet;
     public Transform firePos;
     public float fireCd = 0.2f;
@@ -59,6 +64,40 @@ public class Weapon : MonoBehaviour
             bulletScript.Init(PlayerStatsManager.Instance.damage, true);
         }
     }
+    void ShotGunFire()
+    {
+        _fireTime = fireCd;
+        int bulletCount = 5;
+        float spreadAngle = 30f;
+
+        // Calculate the angle between each bullet
+        float angleStep = spreadAngle / (bulletCount - 1);
+
+        for (int i = 0; i < bulletCount; i++)
+        {
+            // Calculate the rotation offset
+            float offsetAngle = -spreadAngle / 2f + (i * angleStep);
+
+            // Create the bullet
+            UnityEngine.GameObject _bulletTmp = Instantiate(bullet, firePos.position, Quaternion.identity);
+
+            // Get the Rigidbody2D component
+            Rigidbody2D rb = _bulletTmp.GetComponent<Rigidbody2D>();
+
+            // Calculate the rotated direction
+            Vector3 spreadDirection = Quaternion.Euler(0, 0, offsetAngle) * transform.right;
+
+            // Apply force to the bullet
+            rb.AddForce(spreadDirection * bulletForce, ForceMode2D.Impulse);
+
+            // Initialize bullet damage
+            Bullet bulletScript = _bulletTmp.GetComponent<Bullet>();
+            if (bulletScript != null)
+            {
+                bulletScript.Init(PlayerStatsManager.Instance.damage, true);
+            }
+        }
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -75,7 +114,15 @@ public class Weapon : MonoBehaviour
         if(Input.GetMouseButton(0) && _fireTime < 0)
         {
             shootingSound.Play();
-            FireBullet();
+            switch (shootingMode)
+            {
+                case ShootingMode.Normal:
+                    FireBullet();
+                    break;
+                case ShootingMode.Shotgun:
+                    ShotGunFire();
+                    break;
+            }
         }
         
     }

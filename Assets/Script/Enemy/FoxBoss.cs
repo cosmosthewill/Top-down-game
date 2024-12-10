@@ -7,6 +7,7 @@ public class Fox_boss : EnemyBasic
     private float shotTime = 0f;
     public float waveShotCd = 4f;
     public float angleBetweenDirections = 45f;
+    private AfterImage afterImage;
     private void Start()
     {
         updateMoveCd = 2f;
@@ -14,6 +15,7 @@ public class Fox_boss : EnemyBasic
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         InitStat();
+        afterImage = GetComponent<AfterImage>();
     }
     private void Update()
     {
@@ -25,7 +27,8 @@ public class Fox_boss : EnemyBasic
             shotTime = 0f;
             BossShotting();
         }
-
+        if (rb.velocity.sqrMagnitude > 0) afterImage.Activate(true);
+        else afterImage.Activate(false);
     }
     public void BossShotting()
     {

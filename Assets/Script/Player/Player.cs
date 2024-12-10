@@ -16,11 +16,11 @@ public class Player : MonoBehaviour
     public Vector3 moveInput;
     public SpriteRenderer characterSR;
     public static Player Instance;
-    public float attractionRadius = 2500f; // Radius within which items are attracted
-    public float attractionSpeed = 250f;  // Speed at which items move toward the player
+    public float attractionRadius; // Radius within which items are attracted
+    public float attractionSpeed;  // Speed at which items move toward the player
     public GameObject powerUpSlot1;
     public GameObject debuffAni;
-
+    //public AfterImage afterImage;
     //private
 
     private float rollTime;
@@ -82,7 +82,9 @@ public class Player : MonoBehaviour
     {
         // Draw the attraction radius in the editor
         Gizmos.color = Color.blue;
-        Gizmos.DrawWireSphere(transform.position + playerCenterOffset, attractionRadius);
+        Gizmos.DrawWireSphere(transform.position + playerCenterOffset, 15f);
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position + playerCenterOffset, 40f);
     }
 
     public Vector3 ReturnPlayerCenter()
@@ -93,6 +95,8 @@ public class Player : MonoBehaviour
     {
         Vector2 moveInput = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         rb.velocity = moveInput * PlayerStatsManager.Instance.moveSpeed;
+        //if (rb.velocity.sqrMagnitude > 0) afterImage.Activate(true);
+        //else afterImage.Activate(false);
         animator.SetFloat("Speed", moveInput.sqrMagnitude);
 
         //Roll

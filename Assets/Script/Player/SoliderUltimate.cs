@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SoliderUltimate : UltimateBase
 {
-    public int healAmount = 10;
+    public int healAmount = 10 + Timer.Instance.minutes * 4 + Timer.Instance.seconds * 2;
     public override float UltDuration => 5f;
 
     private float _healTimer;
@@ -24,7 +24,7 @@ public class SoliderUltimate : UltimateBase
         _healTimer += Time.deltaTime;
         if (_healTimer >= 1f)
         {
-            PlayerStatsManager.Instance.TakeDmg(-healAmount); // Assuming Player has a Heal method
+            PlayerStatsManager.Instance.TakeDmg(-healAmount); 
             _healTimer = 0;
         }
     }

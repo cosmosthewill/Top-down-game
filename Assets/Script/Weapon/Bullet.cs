@@ -8,7 +8,9 @@ public class Bullet : MonoBehaviour
 {
     public int damage;
     public bool isPlayerBullet;
-
+    [Header("StatusApply")]
+    public EnemyBasic.EnemyStatus enemyStatus;
+    public float duration;
     public void Init(int bulletDamage, bool isPlayerBullet)
     {
         this.damage = bulletDamage;
@@ -18,6 +20,7 @@ public class Bullet : MonoBehaviour
     {
         if (isPlayerBullet && collision.gameObject.tag == "Enemy")
         {
+            collision.gameObject.GetComponent<EnemyBasic>().ApplyStatus(enemyStatus, duration);
             collision.gameObject.GetComponent<EnemyBasic>().TakeDamage(damage);
             Destroy(gameObject);
         }
