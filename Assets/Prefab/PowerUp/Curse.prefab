@@ -162,6 +162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dc0f156ac68f1c499412ea6a4c421dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _spawnTime: 1
   baseDmg: 20
   moveSpeed: 30
 --- !u!95 &8253931716687114146

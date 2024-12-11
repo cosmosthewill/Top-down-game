@@ -200,14 +200,15 @@ MonoBehaviour:
   fireCd: 2
   monsterDmg: 0
   popupDamage: {fileID: 5848908426540080612, guid: 002a10d4319732841a98429e20c6bb28, type: 3}
-  expGain: 100
-  manaGain: 100
   itemDrop: {fileID: 2806206630459991220, guid: 3caaf2ada1a5f924ca8ef9783802c480, type: 3}
   chanceDropItem: 1
   baseSpd: 300
   baseHp: 3000
   baseDmg: 0
+  baseExpGain: 0
+  baseManaGain: 0
   updateMoveCd: 4
+  ailen: {fileID: 655919163543229615, guid: 82c23a63b8c16214490cfd4a825e0d5e, type: 3}
 --- !u!114 &7370829936141347055
 MonoBehaviour:
   m_ObjectHideFlags: 0

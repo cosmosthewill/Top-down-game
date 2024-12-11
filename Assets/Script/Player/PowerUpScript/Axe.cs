@@ -24,7 +24,7 @@ namespace Script.Player.PowerUpScript
 
         private float _cdtimer;
         private int _lvl;
-        private float _spawnTime;
+        public float _spawnTime;
         private bool isReturn;
         private Rigidbody2D rb;
         Vector2 ThrowDirection()

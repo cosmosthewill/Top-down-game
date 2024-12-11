@@ -12,6 +12,10 @@ public class UFO : EnemyBasic
     private AfterImage afterImage;
     private float shotTime = 7f;
     private float spriralShotcd = 5f;
+    //summon
+    [SerializeField] private GameObject ailen;
+    private float summonTime = 8f;
+    private float _summonTime = 0f;
     private void Start()
     {
         isBoss = true;
@@ -30,7 +34,8 @@ public class UFO : EnemyBasic
     private void Update()
     {
         shotTime += Time.deltaTime;
-        //HandleStatusEffects();
+        _summonTime += Time.deltaTime;
+        HandleStatusEffects();
         //moving
         move();
         if (shotTime >= spriralShotcd) 
@@ -38,16 +43,18 @@ public class UFO : EnemyBasic
             EnemyShot();
             shotTime = 0f;
         }
-        //Debug.Log($"Velocity: {rb.velocity.sqrMagnitude}");
         if (rb.velocity.sqrMagnitude > 0)
         {
             afterImage.Activate(true);
-            //Debug.Log("Boss is moving. Activating AfterImage.");
         }
         else
         {
-            //Debug.Log("Boss is idle. Deactivating AfterImage.");
             afterImage.Activate(false);
+        }
+        if (_summonTime >= summonTime) 
+        {
+            Summon(transform.position);
+            _summonTime = 0f;
         }
 
     }
@@ -72,5 +79,23 @@ public class UFO : EnemyBasic
             if (currentAngle >= 360f) currentAngle -= 360f;
             yield return new WaitForSeconds(fireRate);
         }
+    }
+    private void Summon(Vector3 positon)
+    {
+        GameObject _ailen = Instantiate(ailen, positon, Quaternion.identity);
+        Rigidbody2D rb = _ailen.GetComponent<Rigidbody2D>();
+        EnemyBasic enemy = _ailen.GetComponent<EnemyBasic>();
+        Vector2 distance = Player.Instance.ReturnPlayerCenter() - _ailen.transform.position;
+        enemy.ApplyKnockback(distance.normalized * 90);
+        //Debug.Log(distance * 700);
+    }
+    public override void OnDeath()
+    {
+        for (int i = 0; i < 4; i++)
+        {
+            Vector3 randomPos = transform.position + new Vector3(Random.Range(0, 4), Random.Range(0, 4), 0);
+            Summon(randomPos);
+        }
+        base.OnDeath();    
     }
 }

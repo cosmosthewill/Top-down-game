@@ -9,7 +9,6 @@ public class PlayerHealth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        PlayerStatsManager.Instance.currentHealth = PlayerStatsManager.Instance.maxHealth;
         healthSlider.maxValue = PlayerStatsManager.Instance.maxHealth;
         healthSlider.value = PlayerStatsManager.Instance.currentHealth;
     }
@@ -18,5 +17,6 @@ public class PlayerHealth : MonoBehaviour
     void Update()
     {
         healthSlider.value = PlayerStatsManager.Instance.currentHealth;
+        healthSlider.maxValue = PlayerStatsManager.Instance.maxHealth;
     }
 }

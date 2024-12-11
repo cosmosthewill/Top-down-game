@@ -187,3 +187,4 @@ MonoBehaviour:
   baseDmg: 20
   orbitRadius: 15
   orbitSpeed: 20
+  _spawnTime: 2

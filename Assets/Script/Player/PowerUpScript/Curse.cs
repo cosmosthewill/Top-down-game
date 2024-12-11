@@ -19,7 +19,7 @@ namespace Script.Player.PowerUpScript
             get => _spawnTime;
             set => _spawnTime = value;
         }
-        private float _spawnTime;
+        public float _spawnTime;
 
         [SerializeField] private float baseDmg = 20f;
         [SerializeField] private float moveSpeed = 30f;

@@ -5,8 +5,10 @@ namespace Script.Player.PowerUpScript.Detail
     public class BombPowerUpDetail : PowerUpDetail
     {
         [SerializeField] private PowerUp prefab;
+        [SerializeField] private Sprite icon;
+        public override Sprite Icon => icon;
         private int nextLevel = 0;
-        public override string PowerUpName => "Bomb";
+        public override string PowerUpName { get; set; }
 
         public override string PowerUpDescription
         {
@@ -19,16 +21,16 @@ namespace Script.Player.PowerUpScript.Detail
                         description = "Unlock Bomb";
                         break;
                     case 2:
-                        description = "Level 2";
+                        description = "Increase Damage and Explosion Radious";
                         break;
                     case 3:
-                        description = "Level 3";
+                        description = "Increase Damage and Explosion Radious";
                         break;
                     case 4:
-                        description = "Level 4";
+                        description = "Increase Damage and Explosion Radious";
                         break;
                     case 5:
-                        description = "Level 5";
+                        description = "Add Knockback Effect";
                         break;
                 }
                 return description;
@@ -40,10 +42,12 @@ namespace Script.Player.PowerUpScript.Detail
             var powerUp = WeaponPowerUpManager.Instance.GetWeaponPowerUp(typeof(Bomb));
             if (powerUp == null)
             {
+                PowerUpName = "Bomb";
                 nextLevel = 1;
             }
             else
             {
+                PowerUpName = "Bomb Level Up";
                 nextLevel = powerUp.lvl + 1;
             }
         }

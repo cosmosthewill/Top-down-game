@@ -136,6 +136,7 @@ public class EnemyBasic : MonoBehaviour
     }
     public virtual void OnDeath()
     {
+        if (isBoss) SoundManager.Instance.PlaySfx(SfxType.BossDeath);
         PlayerExpBar.instance.GainExp(expGain);
         PlayerStatsManager.Instance.GainMana(manaGain);
         if (itemDrop != null)
@@ -165,8 +166,8 @@ public class EnemyBasic : MonoBehaviour
         //Debug.Log("abc");
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
-        //afterImage = GetComponent<AfterImage>();
         InitStat();
+        if (isBoss) SoundManager.Instance.PlaySfx(SfxType.BossAppear);
     }
 
     // Update is called once per frame
@@ -233,6 +234,7 @@ public class EnemyBasic : MonoBehaviour
 
     protected virtual void move()
     {
+        if (isKnockedBack) return;
         updateMove += Time.deltaTime;
         if (updateMove >= updateMoveCd) updateMove = 0f;
         else if (isRange)
@@ -271,10 +273,11 @@ public class EnemyBasic : MonoBehaviour
 
     private IEnumerator KnockbackCoroutine(Vector2 knockbackForce)
     {
+        Debug.Log("abc");
         isKnockedBack = true;
         rb.velocity = Vector2.zero;
         rb.AddForce(knockbackForce, ForceMode2D.Impulse);
-
+        //rb.velocity = knockbackForce;
         yield return new WaitForSeconds(knockbackDuration);
         isKnockedBack = false;
 

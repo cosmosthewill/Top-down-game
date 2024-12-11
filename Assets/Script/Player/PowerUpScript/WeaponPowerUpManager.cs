@@ -68,7 +68,7 @@ namespace Script.Player.PowerUpScript
         {
             for (int i = 0; i < slots.Length; i++)
             {
-                if (slots[i] != null && powerUpType == slots[i].GetType())
+                if (slots[i] != null && powerUpType == slots[i].GetType()) //increase level powerup
                 {
                     slots[i].lvl++;
                     return;

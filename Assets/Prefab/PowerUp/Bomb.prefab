@@ -101,4 +101,4 @@ MonoBehaviour:
   explosionForce: 50
   explosionRadius: 5
   baseDmg: 20
-  _spawnTime: 2.5
+  _spawnTime: 2

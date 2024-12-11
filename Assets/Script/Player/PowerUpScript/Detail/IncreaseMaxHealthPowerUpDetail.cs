@@ -4,6 +4,8 @@ namespace Script.Player.PowerUpScript.Detail
 {
     public class IncreaseMaxHealthPowerUpDetail : PowerUpDetail
     {
+        [SerializeField] private Sprite icon;
+        public override Sprite Icon => icon;
         private int[] randPercent = { 10, 15, 20, 25 };
         private int randId = 0;
         public override string PowerUpName => "Increase Max Health";
@@ -12,7 +14,7 @@ namespace Script.Player.PowerUpScript.Detail
         {
             get
             {
-                return $"Increase the max health by {randPercent[randId]}%";
+                return $"Increase the max health and heal by {randPercent[randId]}%";
             }
         }
 

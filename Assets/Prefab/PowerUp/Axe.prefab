@@ -187,3 +187,4 @@ MonoBehaviour:
   baseDmg: 20
   maxDistance: 50
   moveSpeed: 70
+  _spawnTime: 1.5

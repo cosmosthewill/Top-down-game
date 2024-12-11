@@ -18,8 +18,12 @@ namespace Script.Player.PowerUpScript
             var statPowerUp0 = powerUpManifest.GetRandomStatPowerUp();
             statPowerUp0.Init();
             powerUpDetail[0].SetUp(statPowerUp0);
-            
-            var statPowerUp1 = powerUpManifest.GetRandomStatPowerUp();
+
+            PowerUpDetail statPowerUp1;
+            do
+            {
+                statPowerUp1 = powerUpManifest.GetRandomStatPowerUp();
+            } while (statPowerUp1 == statPowerUp0);
             statPowerUp1.Init();
             powerUpDetail[1].SetUp(statPowerUp1);
 
@@ -27,7 +31,7 @@ namespace Script.Player.PowerUpScript
 
             switch (remainSlots)
             {
-                case 2:
+                case 2: 
                     var weaponPowerUp2 = powerUpManifest.GetRandomWeaponPowerUp();
                     weaponPowerUp2.Init();
                     powerUpDetail[2].SetUp(weaponPowerUp2);

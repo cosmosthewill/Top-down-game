@@ -185,4 +185,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 1858753001291181832}
   baseDmg: 20
-  _spawnTime: 6.5
+  _spawnTime: 2.5

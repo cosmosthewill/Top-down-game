@@ -28,7 +28,7 @@ namespace Script.Player.PowerUpScript
         private Rigidbody2D rb;
         private bool isOrbiting;
         private float currentAngle = 0f;
-        private float _spawnTime;
+        public float _spawnTime;
         private int _lvl;
         private void Start()
         {
