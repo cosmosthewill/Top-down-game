@@ -8,7 +8,7 @@ namespace Script.Player.PowerUpScript.Detail
         [SerializeField] private Sprite icon;
         public override Sprite Icon => icon;
         private int nextLevel = 0;
-        public override string PowerUpName { get; set; }
+        public override string PowerUpName => "Bomb";
 
         public override string PowerUpDescription
         {
@@ -42,12 +42,10 @@ namespace Script.Player.PowerUpScript.Detail
             var powerUp = WeaponPowerUpManager.Instance.GetWeaponPowerUp(typeof(Bomb));
             if (powerUp == null)
             {
-                PowerUpName = "Bomb";
                 nextLevel = 1;
             }
             else
             {
-                PowerUpName = "Bomb Level Up";
                 nextLevel = powerUp.lvl + 1;
             }
         }

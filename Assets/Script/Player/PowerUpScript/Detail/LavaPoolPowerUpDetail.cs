@@ -7,7 +7,7 @@ namespace Script.Player.PowerUpScript.Detail
         [SerializeField] private PowerUp prefab;
         [SerializeField] private Sprite icon;
         private int nextLevel = 0;
-        public override string PowerUpName { get; set; }
+        public override string PowerUpName => "Lava Pool";
 
         public override Sprite Icon => icon;
 
@@ -43,12 +43,10 @@ namespace Script.Player.PowerUpScript.Detail
             var powerUp = WeaponPowerUpManager.Instance.GetWeaponPowerUp(typeof(LavaPool));
             if (powerUp == null)
             {
-                PowerUpName = "Lava Pool";
                 nextLevel = 1;
             }
             else
             {
-                PowerUpName = "Lava Pool Level Up";
                 nextLevel = powerUp.lvl + 1;
             }
         }

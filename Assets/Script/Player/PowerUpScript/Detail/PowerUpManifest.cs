@@ -45,7 +45,7 @@ namespace Script.Player.PowerUpScript.Detail
     [Serializable]
     public class PowerUpDetail : MonoBehaviour 
     {
-        public virtual string PowerUpName { get; set; }
+        public virtual string PowerUpName { get; }
         
         public virtual string PowerUpDescription { get; }
 
