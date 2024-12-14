@@ -12,7 +12,7 @@ public class AfterImage : MonoBehaviour
     private bool isActive = false;
     private float interval;
     private Vector3 previousPos;
-
+    private List<GameObject> activeTrailParts = new List<GameObject>();
     private void Start()
     {
         baseRenderer = GetComponent<SpriteRenderer>();
@@ -54,6 +54,9 @@ public class AfterImage : MonoBehaviour
         trailPart.transform.rotation = transform.rotation;
         trailPart.transform.localScale = transform.lossyScale;
 
+        // Add to active list
+        activeTrailParts.Add(trailPart);
+
         // Sprite rotation
         //trailPart.AddComponent<CameraSpriteRotater>();
 
@@ -86,5 +89,14 @@ public class AfterImage : MonoBehaviour
         copy.sortingLayerID = original.sortingLayerID;
         copy.sortingLayerName = original.sortingLayerName;
         copy.sortingOrder = original.sortingOrder;
+    }
+    private void OnDestroy()
+    {
+        // Clean up any remaining trail parts
+        foreach (var trailPart in activeTrailParts)
+        {
+            if (trailPart != null)
+                Destroy(trailPart);
+        }
     }
 }

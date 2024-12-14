@@ -1,3 +1,4 @@
+using Pathfinding;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,6 +17,10 @@ public class Fox_boss : EnemyBasic
         sr = GetComponent<SpriteRenderer>();
         InitStat();
         afterImage = GetComponent<AfterImage>();
+        seeker = GetComponent<Seeker>();
+        nextWayPointDistance = 1f;
+        if (isRange) InvokeRepeating("UpdatePath", 0f, 1f);
+        else InvokeRepeating("UpdatePath", 0f, 1f);
     }
     private void Update()
     {
@@ -25,7 +30,7 @@ public class Fox_boss : EnemyBasic
         if (shotTime >= waveShotCd)
         {
             shotTime = 0f;
-            BossShotting();
+            if(Vector3.Distance(transform.position, Player.Instance.ReturnPlayerCenter()) < 100f) BossShotting();
         }
         if (rb.velocity.sqrMagnitude > 0) afterImage.Activate(true);
         else afterImage.Activate(false);
@@ -33,10 +38,6 @@ public class Fox_boss : EnemyBasic
     public void BossShotting()
     {
         StartCoroutine(ShotAllDirection());
-    }
-    protected override void move()
-    {
-        base.move();
     }
     protected override void EnemyShot(Vector2 direction)
     {

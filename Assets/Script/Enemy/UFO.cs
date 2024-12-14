@@ -1,3 +1,4 @@
+using Pathfinding;
 using System.Collections;
 using System.Collections.Generic;
 using System.Xml.Schema;
@@ -16,6 +17,7 @@ public class UFO : EnemyBasic
     [SerializeField] private GameObject ailen;
     private float summonTime = 8f;
     private float _summonTime = 0f;
+    private bool _isShotting = false;
     private void Start()
     {
         isBoss = true;
@@ -25,6 +27,11 @@ public class UFO : EnemyBasic
         Vector3 directionToPlayer = Player.Instance.ReturnPlayerCenter() - transform.position;
         currentAngle = Mathf.Atan2(directionToPlayer.y, directionToPlayer.x) * Mathf.Rad2Deg;
         afterImage = GetComponent<AfterImage>();
+
+        seeker = GetComponent<Seeker>();
+        nextWayPointDistance = 1f;
+        if (isRange) InvokeRepeating("UpdatePath", 0f, 1f);
+        else InvokeRepeating("UpdatePath", 0f, 1f);
     }
 
     protected override void EnemyShot()
@@ -37,11 +44,11 @@ public class UFO : EnemyBasic
         _summonTime += Time.deltaTime;
         HandleStatusEffects();
         //moving
-        move();
-        if (shotTime >= spriralShotcd) 
+        if(!_isShotting) move();
+        if (shotTime >= spriralShotcd)
         {
-            EnemyShot();
             shotTime = 0f;
+            if (Vector3.Distance(transform.position, Player.Instance.ReturnPlayerCenter()) < 100f) EnemyShot();
         }
         if (rb.velocity.sqrMagnitude > 0)
         {
@@ -51,7 +58,7 @@ public class UFO : EnemyBasic
         {
             afterImage.Activate(false);
         }
-        if (_summonTime >= summonTime) 
+        if (_summonTime >= summonTime)
         {
             Summon(transform.position);
             _summonTime = 0f;
@@ -61,6 +68,7 @@ public class UFO : EnemyBasic
     
     private IEnumerator SpiralShoot()
     {
+        _isShotting = true;
         float totalRotation = 0f;
         while(totalRotation < 360f)
         {
@@ -79,6 +87,7 @@ public class UFO : EnemyBasic
             if (currentAngle >= 360f) currentAngle -= 360f;
             yield return new WaitForSeconds(fireRate);
         }
+        _isShotting = false;
     }
     private void Summon(Vector3 positon)
     {

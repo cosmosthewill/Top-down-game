@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Runtime.CompilerServices;
+using Pathfinding;
 
 public class EnemyBasic : MonoBehaviour
 {
@@ -43,6 +44,8 @@ public class EnemyBasic : MonoBehaviour
     protected float knockbackDuration = 0.2f;
     protected Coroutine knockbackRoutine;
     protected GameObject _debuffAni;
+    private bool isBlocked = false;
+    protected bool deadByPlayer = true;
     //floating damage
     public UnityEngine.GameObject popupDamage;
 
@@ -62,6 +65,14 @@ public class EnemyBasic : MonoBehaviour
     private int manaGain;
     //test
     //private AfterImage afterImage;
+    public Seeker seeker;
+    public float nextWayPointDistance;
+    protected Path path;
+    protected int currentWayPoint = 0;
+    protected bool reachEndOfPath = false;
+
+    public float separationDistance = 2f; // Minimum distance between enemies
+    public float separationForce = 2f;
     protected Vector3 FindTarget()
     {
         Vector3 playerPos = Player.Instance.ReturnPlayerCenter();
@@ -90,7 +101,27 @@ public class EnemyBasic : MonoBehaviour
     }
     protected virtual void EnemyShot(Vector2 direction) { }
     //Collision
+    //non trigger collier
+    /*protected virtual void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            rb.velocity = Vector2.zero;
+            isBlocked = true;
+            InvokeRepeating("DamagePlayer", 0, 1.5f);//time to take dmg here
+        }
+        else if (collision.gameObject.CompareTag("Enemy")) isBlocked = true;
+    }
 
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            isBlocked = false;
+            CancelInvoke("DamagePlayer");
+        }
+        else if (collision.gameObject.CompareTag("Enemy")) isBlocked = false;
+    }*/
     protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
@@ -99,7 +130,7 @@ public class EnemyBasic : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    protected void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
@@ -131,11 +162,17 @@ public class EnemyBasic : MonoBehaviour
         }
         if (currentHealth < 0) //dead
         {
+            deadByPlayer = true;
             OnDeath();
         }
     }
     public virtual void OnDeath()
     {
+        if (!deadByPlayer) 
+        {
+            Destroy(gameObject);
+            return;
+        }
         if (isBoss) SoundManager.Instance.PlaySfx(SfxType.BossDeath);
         PlayerExpBar.instance.GainExp(expGain);
         PlayerStatsManager.Instance.GainMana(manaGain);
@@ -144,6 +181,7 @@ public class EnemyBasic : MonoBehaviour
             Instantiate(itemDrop, transform.position, Quaternion.identity);
         }
         CoinDropManager.Instance.GenerateCoin(transform.position, isBoss);
+        //EnemySpawner.Instance.EnemyDestryed();
         Destroy(gameObject);
     }
     public void InitStat()
@@ -168,8 +206,27 @@ public class EnemyBasic : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         InitStat();
         if (isBoss) SoundManager.Instance.PlaySfx(SfxType.BossAppear);
+        //
+        seeker = GetComponent<Seeker>();
+        //nextWayPointDistance = 0.3f;
+        if (isRange) InvokeRepeating("UpdatePath", 0f, 2f);
+        else InvokeRepeating("UpdatePath", 0f, 0.5f);
+    }
+    public void UpdatePath()
+    {
+        Vector2 target = FindTarget();
+        if (seeker.IsDone())
+            seeker.StartPath(transform.position, target , OnPathComplete);
     }
 
+    public void OnPathComplete (Path p)
+    {
+        if (!p.error)
+        {
+            path = p;
+            currentWayPoint = 1;
+        }
+    }
     // Update is called once per frame
     void Update()
     {
@@ -184,7 +241,7 @@ public class EnemyBasic : MonoBehaviour
             if (_fireTime < 0)
             {
                 _fireTime = fireCd;
-                EnemyShot();
+                if(Vector3.Distance(transform.position, Player.Instance.ReturnPlayerCenter()) < 100f) EnemyShot();
             }
         }
         if(currentHealth < 0) OnDeath();
@@ -234,17 +291,54 @@ public class EnemyBasic : MonoBehaviour
 
     protected virtual void move()
     {
-        if (isKnockedBack) return;
-        updateMove += Time.deltaTime;
-        if (updateMove >= updateMoveCd) updateMove = 0f;
-        else if (isRange)
+        if (isKnockedBack || isBlocked || path == null) return;
+        Vector2 separation = CalculateSeparation();
+        //updateMove += Time.deltaTime;
+        //pathfindingtest
+        if (currentWayPoint >= path.vectorPath.Count)
         {
-            float distance = Vector3.Distance(Player.Instance.ReturnPlayerCenter(), transform.position);
-            if (distance >= 15f && distance <= 40f) rb.velocity = Vector3.zero;
+            reachEndOfPath = true;
             return;
         }
+        else
+        {
+            reachEndOfPath = false;
+        }
+        Vector2 testD = ((Vector2) path.vectorPath[currentWayPoint] - (Vector2) transform.position).normalized;
+        //Debug.Log(testD);
+        rb.velocity = testD * moveSpeed + separation;
+        float testDistance = Vector2.Distance(transform.position, path.vectorPath[currentWayPoint]);
+        Debug.Log(testDistance);
+        /* if (testDistance < nextWayPointDistance)
+        {
+            
+            //rb.velocity = Vector3.zero;
+            currentWayPoint++;
+        }*/
+        // Handle overshooting and skip waypoints if necessary
+        while (testDistance < nextWayPointDistance && currentWayPoint < path.vectorPath.Count - 1)
+        {
+            currentWayPoint++;
+            testDistance = Vector2.Distance(transform.position, path.vectorPath[currentWayPoint]);
+        }
 
-        if (FindTarget() != null && !isKnockedBack)
+        // If close to the final waypoint, stop movement
+        if (currentWayPoint == path.vectorPath.Count - 1 && testDistance < nextWayPointDistance)
+        {
+            rb.velocity = Vector2.zero;
+            Debug.Log("Final waypoint reached.");
+        }
+        //if (updateMove >= updateMoveCd) updateMove = 0f;
+        if (isRange)
+        {
+            float distance = Vector3.Distance(Player.Instance.ReturnPlayerCenter(), transform.position);
+            if (distance >= 15f && distance <= 40f)
+            {
+                rb.velocity = Vector3.zero;
+                return;
+            }
+        }
+        if (FindTarget() != null)
         {
             moveDirection = FindTarget() - transform.position;
 
@@ -255,7 +349,9 @@ public class EnemyBasic : MonoBehaviour
             }
             else transform.eulerAngles = new Vector3(0, 180, 0);
 
-            rb.velocity = moveDirection.normalized * moveSpeed;
+            //transform.position += (Vector3)(testD * moveSpeed) * Time.deltaTime;
+          
+            //rb.velocity = testD * moveSpeed + separation;
             //animator.SetFloat("Speed", moveDirection.sqrMagnitude);
         }
 
@@ -281,6 +377,25 @@ public class EnemyBasic : MonoBehaviour
         yield return new WaitForSeconds(knockbackDuration);
         isKnockedBack = false;
 
+    }
+    private Vector2 CalculateSeparation()
+    {
+        Vector2 separationVector = Vector2.zero;
+        Collider2D[] nearbyEnemies = Physics2D.OverlapCircleAll(transform.position, separationDistance, LayerMask.GetMask("Enemy"));
+
+        foreach (Collider2D enemy in nearbyEnemies)
+        {
+            if (enemy.gameObject != gameObject)
+            {
+                Vector2 awayFromEnemy = (Vector2)(transform.position - enemy.transform.position);
+                float distance = awayFromEnemy.magnitude;
+
+                // Apply separation force inversely proportional to distance
+                separationVector += awayFromEnemy.normalized / distance;
+            }
+        }
+
+        return separationVector * separationForce;
     }
 }
 

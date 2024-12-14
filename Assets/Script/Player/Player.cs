@@ -28,6 +28,11 @@ public class Player : MonoBehaviour
     protected Coroutine knockbackRoutine;
     protected bool isKnockedBack = false;
     protected float knockbackDuration = 0.2f;
+    private bool isBlocked = false;
+
+    //bounds
+    private float playerWidth;
+    private float playerHeight;
     void Awake()
     {
         if (Instance == null)
@@ -41,6 +46,8 @@ public class Player : MonoBehaviour
     }
     private void Start()
     {
+        playerWidth = transform.GetComponentInChildren<SpriteRenderer>().bounds.size.x / 2;
+        playerHeight = transform.GetComponentInChildren<SpriteRenderer>().bounds.size.y / 2;
         attractionRadius = 20f;
         attractionSpeed = 50f;
         //animator = GetComponent<Animator>();
@@ -52,6 +59,23 @@ public class Player : MonoBehaviour
             CollectItem(other.gameObject);
         }
     }
+    /*private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            Debug.Log("aa");
+            isBlocked = true;
+            rb.velocity = Vector2.zero;
+        }
+    }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            Debug.Log("bb");
+            isBlocked = false;
+        }
+    }*/
     //Collect Items
     void CollectItem(UnityEngine.GameObject item)
     {
@@ -115,7 +139,13 @@ public class Player : MonoBehaviour
     }
     private void Update()
     {
-        if (isKnockedBack) return;
+        //inside the map
+        Vector3 viewPos = transform.position;
+        viewPos.x = Mathf.Clamp(viewPos.x, MapBound.Instance.minBoundary.x + playerWidth, MapBound.Instance.maxBoundary.x - playerWidth);
+        viewPos.y = Mathf.Clamp(viewPos.y, MapBound.Instance.minBoundary.y + playerHeight, MapBound.Instance.maxBoundary.y - playerHeight);
+        transform.position = viewPos;
+
+        if (isKnockedBack && isBlocked) return;
         Vector2 moveInput = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         rb.velocity = moveInput * PlayerStatsManager.Instance.moveSpeed;
         //if (rb.velocity.sqrMagnitude > 0) afterImage.Activate(true);
