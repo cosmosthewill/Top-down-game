@@ -5,29 +5,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7eee735a-3046-41fe-a0d8-441b41fcdf0a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Script/UI/CharacterElementDetail.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Script/UI/CharacterElementDetail.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Script/UI/UICharacterShopView.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Script/UI/UICharacterShopView.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Script/UI/UIMainMenu.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Script/UI/UIMainMenu.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Script/UI/UIMainMenuQuitButton.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Script/UI/UIMainMenuQuitButton.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Script/UI/UIMainMenuSettingButton.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Script/UI/UIMainMenuSettingButton.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Script/UI/UIMainMenuShopButton.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Script/UI/UIMainMenuShopButton.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Script/UI/UIMainMenuStartButton.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Script/UI/UIMainMenuStartButton.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Script/UI/UISettingPopUp.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Script/UI/UISettingPopUp.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Script/UI/UIShopPopUp.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Script/UI/UIShopPopUp.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Script/UI/UIShopStatsElement.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Script/UI/UIShopStatsElement.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Script/UI/UIStartPopUp.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Script/UI/UIStartPopUp.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Script/UI/UIStatsShopView.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Script/UI/UIStatsShopView.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TDG/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TDG/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PowerUp/Details/Bomb.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PowerUp/Details/Bomb.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PowerUp/Details/LavaPool.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PowerUp/Details/LavaPool.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PowerUp/PowerUpManifest.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PowerUp/PowerUpManifest.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab/PowerUp/LavaPool.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/PowerUp/LavaPool.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab/PowerUp/bombimg.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab/PowerUp/bombimg.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab/UI/LevelUpPopUp.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/UI/LevelUpPopUp.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Player/Player.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Player/PlayerExpBar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Player/PlayerExpBar.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Player/PowerUpScript/Axe.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Player/PowerUpScript/Axe.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Player/PowerUpScript/Bomb.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Player/PowerUpScript/Bomb.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Player/PowerUpScript/Curse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Player/PowerUpScript/Curse.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Player/PowerUpScript/Detail/BombPowerUpDetail.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Player/PowerUpScript/Detail/BombPowerUpDetail.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Player/PowerUpScript/Detail/IncreaseMaxHealthPowerUpDetail.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Player/PowerUpScript/Detail/IncreaseMaxHealthPowerUpDetail.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Player/PowerUpScript/Detail/LavaPoolPowerUpDetail.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Player/PowerUpScript/Detail/LavaPoolPowerUpDetail.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Player/PowerUpScript/Detail/PowerUpManifest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Player/PowerUpScript/Detail/PowerUpManifest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Player/PowerUpScript/GlowStick.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Player/PowerUpScript/GlowStick.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Player/PowerUpScript/LavaPool.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Player/PowerUpScript/LavaPool.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Player/PowerUpScript/LevelUpPopUp.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Player/PowerUpScript/LevelUpPopUp.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Player/PowerUpScript/PowerUp.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Player/PowerUpScript/PowerUp.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Player/PowerUpScript/WeaponPowerUpManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Player/PowerUpScript/WeaponPowerUpManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Player/Electro.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/Player/Electro.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Player/Solider.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/Player/Solider.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI assets/Button/PNG/Double/button_grey.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI assets/Button/PNG/Double/button_grey.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI assets/Button/PNG/Double/button_red.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI assets/Button/PNG/Double/button_red.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI assets/Button/PNG/Double/panel_grey_bolts_blue.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI assets/Button/PNG/Double/panel_grey_bolts_blue.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI assets/Button/PNG/Double/panel_grey_dark.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI assets/Button/PNG/Double/panel_grey_dark.png.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +128,10 @@
       <workItem from="1732707142675" duration="3949000" />
       <workItem from="1732933503457" duration="8059000" />
       <workItem from="1732952970596" duration="7442000" />
-      <workItem from="1733296577529" duration="5511000" />
+      <workItem from="1733296577529" duration="6214000" />
+      <workItem from="1734164950975" duration="1368000" />
+      <workItem from="1734249888851" duration="6789000" />
+      <workItem from="1734401240134" duration="12690000" />
     </task>
     <servers />
   </component>
