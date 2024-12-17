@@ -38,15 +38,23 @@ public class EnemySpawner : MonoBehaviour
     public LayerMask spawnLayerMask;
     public float spawnRadius = 5f;
     const int maxAttempts = 15;
+
+    public static int score = 0;
     private void Awake()
     {
         if (Instance == null)
             Instance = this;
         spawnLayerMask = LayerMask.GetMask("Enemy", "Obstacles");
     }
-    public void EnemyDestryed()
+    public void EnemyDestryed(bool deadByPlayer, bool isBoss)
     {
+        if (deadByPlayer) scoreCount(isBoss);
         totalEnemiesOnField--;
+    }
+    public void scoreCount(bool isBoss)
+    {
+        if (isBoss) score += 200 * Timer.Instance.minutes * 2;
+        else score += 5 * Timer.Instance.minutes * 2;
     }
     Vector3 RandomPosNearPlayer()
     {

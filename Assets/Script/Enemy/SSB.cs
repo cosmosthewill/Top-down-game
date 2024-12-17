@@ -7,19 +7,17 @@ public class SSB : EnemyBasic
     public float explosiveRange = 15f;
     public GameObject explodeAni;
     private Coroutine isStartCountDown;
-    private bool isMove = true;
     private bool selfDeath = false;
     private void Update()
     {
         HandleStatusEffects();
-        if(isMove) move();
         if (Vector3.Distance(transform.position, Player.Instance.ReturnPlayerCenter()) <= explosiveRange)
         {
             if (isStartCountDown == null)
             {
                 isStartCountDown = StartCoroutine(StartCountdown());
                 rb.velocity = Vector3.zero;
-                isMove = false;
+                canMove = false;
             }
         }
         if (currentHealth < 0 && !selfDeath) OnDeath();

@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 1442713919517550384}
   - component: {fileID: 7704450567023480812}
   - component: {fileID: -4023309830536234472}
-  - component: {fileID: -4282470550904027880}
+  - component: {fileID: -867356211058217546}
+  - component: {fileID: 5354402388056722367}
   m_Layer: 9
   m_Name: Deadboat
   m_TagString: Enemy
@@ -104,7 +105,7 @@ CircleCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 640
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -118,7 +119,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.22373319}
@@ -210,7 +211,45 @@ MonoBehaviour:
   updateMoveCd: 2
   seeker: {fileID: 0}
   nextWayPointDistance: 0
---- !u!114 &-4282470550904027880
+  updatePathTime: 1
+  separationDistance: 2
+  separationForce: 4
+--- !u!58 &-867356211058217546
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6407870162615636511}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.22373319}
+  serializedVersion: 2
+  m_Radius: 2.1437333
+--- !u!114 &5354402388056722367
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

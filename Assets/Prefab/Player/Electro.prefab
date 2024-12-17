@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1910965378333042132}
   - component: {fileID: 7630323291922613763}
   - component: {fileID: 7656026910923149759}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: weaponR1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -113,7 +113,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8796222430718110054}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FIrePos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -148,7 +148,7 @@ GameObject:
   - component: {fileID: 1775489848466521585}
   - component: {fileID: 6814232522594042811}
   - component: {fileID: 4102847212374640663}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Electro
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -254,6 +254,9 @@ MonoBehaviour:
   attractionSpeed: 100
   powerUpSlot1: {fileID: 6253002645885080100, guid: 5d6ba2cfe45ccb3418ebb8eda7fb528b, type: 3}
   debuffAni: {fileID: 4960081531694143134, guid: 4a2f08881a1e54a4fac75531fc21a174, type: 3}
+  avatar: {fileID: 21300000, guid: 5f461a5c20293844e975d91ac34765b3, type: 3}
+  img: {fileID: 0}
+  rollImg: {fileID: 0}
 --- !u!114 &4102847212374640663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -279,7 +282,7 @@ GameObject:
   - component: {fileID: 5135853588454226871}
   - component: {fileID: 2764896449801152274}
   - component: {fileID: 9020475727164461552}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}

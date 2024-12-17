@@ -1,6 +1,8 @@
+using Script.Player.PowerUpScript.Detail;
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Script.Player.PowerUpScript
 {
@@ -9,6 +11,8 @@ namespace Script.Player.PowerUpScript
         public static WeaponPowerUpManager Instance;
         private const int NUMBER_OF_SLOTS = 2;
         private PowerUp[] slots = new PowerUp[NUMBER_OF_SLOTS];
+        [SerializeField] private Image[] slotsImage = new Image[NUMBER_OF_SLOTS];
+        [SerializeField] private PowerUpManifest powerUpManifest;
 
         private void Awake()
         {
@@ -48,6 +52,10 @@ namespace Script.Player.PowerUpScript
                 {
                     slots[i] = powerUp;
                     slots[i].lvl = 1;
+                    slotsImage[i].sprite = powerUpManifest.GetPowerUpByName(powerUp.powerUpName).Icon;
+                    Color currentColor = slotsImage[i].color;
+                    currentColor.a = 1.0f;
+                    slotsImage[i].color = currentColor;
                     StartCoroutine(AddWeapon(i));
                     return;
                 }

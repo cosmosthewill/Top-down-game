@@ -8,36 +8,32 @@ public class Fox_boss : EnemyBasic
     private float shotTime = 0f;
     public float waveShotCd = 4f;
     public float angleBetweenDirections = 45f;
-    private AfterImage afterImage;
-    private void Start()
-    {
-        updateMoveCd = 2f;
-        isBoss = true;
-        rb = GetComponent<Rigidbody2D>();
-        sr = GetComponent<SpriteRenderer>();
-        InitStat();
-        afterImage = GetComponent<AfterImage>();
-        seeker = GetComponent<Seeker>();
-        nextWayPointDistance = 1f;
-        if (isRange) InvokeRepeating("UpdatePath", 0f, 1f);
-        else InvokeRepeating("UpdatePath", 0f, 1f);
-    }
+    public AfterImage afterImage;
+    private int cnt = 0;
+    Coroutine ShottingC;
     private void Update()
     {
+        MovementDetect();
         shotTime += Time.deltaTime;
         HandleStatusEffects();
-        move();
         if (shotTime >= waveShotCd)
         {
             shotTime = 0f;
             if(Vector3.Distance(transform.position, Player.Instance.ReturnPlayerCenter()) < 100f) BossShotting();
         }
-        if (rb.velocity.sqrMagnitude > 0) afterImage.Activate(true);
+        if(cnt == 8)
+        {
+            canMove = true;
+            cnt = 0;
+        }
+        if (isMoving) afterImage.Activate(true);
         else afterImage.Activate(false);
     }
     public void BossShotting()
     {
-        StartCoroutine(ShotAllDirection());
+        //Debug.LogWarning(canMove);
+        if (ShottingC != null) StopCoroutine(ShotAllDirection());
+        ShottingC = StartCoroutine(ShotAllDirection());
     }
     protected override void EnemyShot(Vector2 direction)
     {
@@ -54,6 +50,7 @@ public class Fox_boss : EnemyBasic
 
     private IEnumerator ShotAllDirection()
     {
+        canMove = false;
         for (int i = 0; i < 8; i++) // 8 directions
         {
             Vector2 direction = new Vector2(Mathf.Cos(Mathf.Deg2Rad * (i * angleBetweenDirections)),
@@ -71,6 +68,7 @@ public class Fox_boss : EnemyBasic
             EnemyShot(direction);
             yield return new WaitForSeconds(0.2f);
         }
+        ++cnt;
     }
 
 }

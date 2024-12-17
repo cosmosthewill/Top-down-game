@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Script.Player.PowerUpScript
@@ -18,7 +19,7 @@ namespace Script.Player.PowerUpScript
         }
 
 
-        [SerializeField] private float pushBackForce = 10f;
+        [SerializeField] private float pushBackForce = 200f;
         [SerializeField] private float baseDmg = 20f;
 
         public float orbitRadius = 2f;          // Radius of the orbit around the player
@@ -30,6 +31,7 @@ namespace Script.Player.PowerUpScript
         private float currentAngle = 0f;
         public float _spawnTime;
         private int _lvl;
+        HashSet<EnemyBasic> processedEnemies = new HashSet<EnemyBasic>();
         private void Start()
         {
             rb = GetComponent<Rigidbody2D>();
@@ -68,12 +70,18 @@ namespace Script.Player.PowerUpScript
         {
             if (collision.CompareTag("Enemy"))
             {
-                float dmg = (PlayerStatsManager.Instance.damage + baseDmg) * (1 + lvl / 2);
-                collision.gameObject.GetComponent<EnemyBasic>().TakeDamage((int)dmg);
-                if (lvl == 5) //knockback
+                EnemyBasic enemy = collision.GetComponent<EnemyBasic>();
+                if (!processedEnemies.Contains(enemy))
                 {
-                    Vector2 distance = collision.gameObject.GetComponent<EnemyBasic>().transform.position - transform.position;
-                    collision.gameObject.GetComponent<EnemyBasic>().ApplyKnockback(distance * pushBackForce);
+                    processedEnemies.Add(enemy);
+                    float dmg = (PlayerStatsManager.Instance.damage + baseDmg) * (1 + lvl / 2);
+                    collision.gameObject.GetComponent<EnemyBasic>().TakeDamage((int)dmg);
+                    if (lvl == 5) //knockback
+                    {
+                        Vector2 distance = collision.gameObject.GetComponent<EnemyBasic>().transform.position - transform.position;
+                        collision.gameObject.GetComponent<EnemyBasic>().ApplyKnockback(distance * pushBackForce);
+                    }
+
                 }
             }
         }

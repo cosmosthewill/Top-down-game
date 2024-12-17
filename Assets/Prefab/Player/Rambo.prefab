@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8395708995803108337}
   - component: {fileID: 2133575764659925532}
   - component: {fileID: 8782654500098699178}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,7 +117,7 @@ GameObject:
   - component: {fileID: 658821295958270426}
   - component: {fileID: 9069066200943801674}
   - component: {fileID: 5375913130378325242}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: weaponR1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -223,7 +223,7 @@ GameObject:
   - component: {fileID: 19073039915990349}
   - component: {fileID: 7890863103230792718}
   - component: {fileID: 5838330128469861865}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Rambo
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -327,8 +327,11 @@ MonoBehaviour:
   characterSR: {fileID: 2133575764659925532}
   attractionRadius: 20
   attractionSpeed: 100
-  powerUpSlot1: {fileID: 6253002645885080100, guid: 5d6ba2cfe45ccb3418ebb8eda7fb528b, type: 3}
+  powerUpSlot1: {fileID: 3766402147424706777, guid: 838d492e2dacb5b4bbd560d513f8b917, type: 3}
   debuffAni: {fileID: 4960081531694143134, guid: 4a2f08881a1e54a4fac75531fc21a174, type: 3}
+  avatar: {fileID: 21300000, guid: cd7bce633d086324698bdcee2b18d5a1, type: 3}
+  img: {fileID: 0}
+  rollImg: {fileID: 0}
 --- !u!114 &5838330128469861865
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -352,7 +355,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 326302416557737735}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FIrePos
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 6965962669069491462}
   - component: {fileID: 6368899693375747740}
   - component: {fileID: 2403402044215901263}
-  - component: {fileID: 8107854348182407435}
+  - component: {fileID: 7449873407299780360}
+  - component: {fileID: -463082790471313176}
   m_Layer: 9
   m_Name: Monster
   m_TagString: Enemy
@@ -53,7 +54,7 @@ CircleCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 640
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -67,7 +68,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.02804563}
@@ -190,6 +191,9 @@ MonoBehaviour:
   updateMoveCd: 2
   seeker: {fileID: 0}
   nextWayPointDistance: 0
+  updatePathTime: 1
+  separationDistance: 2
+  separationForce: 4
 --- !u!95 &2403402044215901263
 Animator:
   serializedVersion: 5
@@ -211,7 +215,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &8107854348182407435
+--- !u!114 &7449873407299780360
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -239,6 +243,41 @@ MonoBehaviour:
   tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   graphMask:
     value: -1
+--- !u!58 &-463082790471313176
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1330997194386975117}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.02804563}
+  serializedVersion: 2
+  m_Radius: 0.28943154
 --- !u!1 &7258643480362880596
 GameObject:
   m_ObjectHideFlags: 0

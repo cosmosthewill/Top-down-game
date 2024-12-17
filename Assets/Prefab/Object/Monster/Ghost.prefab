@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 1336193515314018332}
   - component: {fileID: 8994999406940492377}
   - component: {fileID: 2934627210887858610}
-  - component: {fileID: 4267150138984434115}
+  - component: {fileID: -807049547761958746}
+  - component: {fileID: 675793529000551780}
   m_Layer: 9
   m_Name: Ghost
   m_TagString: Enemy
@@ -131,7 +132,7 @@ CircleCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 640
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -145,7 +146,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.3278494, y: 0.021140099}
@@ -189,6 +190,9 @@ MonoBehaviour:
   updateMoveCd: 2
   seeker: {fileID: 0}
   nextWayPointDistance: 0
+  updatePathTime: 1
+  separationDistance: 2
+  separationForce: 4
 --- !u!95 &2934627210887858610
 Animator:
   serializedVersion: 5
@@ -210,7 +214,42 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &4267150138984434115
+--- !u!58 &-807049547761958746
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8895264513967183943}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.3278494, y: 0.021140099}
+  serializedVersion: 2
+  m_Radius: 2.5
+--- !u!114 &675793529000551780
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

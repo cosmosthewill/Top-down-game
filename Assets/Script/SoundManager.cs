@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -61,7 +62,7 @@ public class SoundManager : MonoBehaviour
     // Initialize a pool of AudioSource components for SFX
     private void InitializeSFXAudioSources()
     {
-        for (int i = 0; i < 5; i++) // You can adjust the size of the pool as needed
+        for (int i = 0; i < 10; i++) // You can adjust the size of the pool as needed
         {
             AudioSource newAudioSource = gameObject.AddComponent<AudioSource>();
             newAudioSource.playOnAwake = false;
@@ -72,7 +73,7 @@ public class SoundManager : MonoBehaviour
     // Get an available AudioSource from the pool
     private AudioSource GetAvailableSFXAudioSource()
     {
-        if (activeSfxQueue.Count < 5) // If there are less than 5 active sounds, use an available one from the pool
+        if (activeSfxQueue.Count < 10) // If there are less than 5 active sounds, use an available one from the pool
         {
             foreach (var audioSource in sfxAudioSources)
             {
@@ -89,30 +90,33 @@ public class SoundManager : MonoBehaviour
         return oldestAudioSource;
     }
 
-    public void PlaySfx(SfxType sound, bool loop = false, float volumeScale = 1f)
+    public void PlaySfx(SfxType sound, bool loop = false, float duration = 0f, float volumeScale = 1f)
     {
         if (Instance == null) return;
         AudioClip clip = Instance.sfxList[(int)sound];
         float finalVolume = Instance.sfxVolume * volumeScale;
-        AudioSource audioSource = GetAvailableSFXAudioSource();
+        //AudioSource audioSource = GetAvailableSFXAudioSource();
 
         if (loop)
         {
+            AudioSource audioSource = gameObject.AddComponent<AudioSource>();
             audioSource.clip = clip;
             audioSource.volume = finalVolume;
             audioSource.loop = true;
             audioSource.Play();
+            Destroy(audioSource, duration);
         }
         else
         {
+            AudioSource audioSource = GetAvailableSFXAudioSource();
             audioSource.loop = false;
             audioSource.PlayOneShot(clip, finalVolume);
+            activeSfxQueue.Enqueue(audioSource);
         }
 
         // Track active sound in the queue
-        activeSfxQueue.Enqueue(audioSource);
+        
     }
-
     public void PlayBackgroundMusic(BGMType musicType, bool loop = true)
     {
         AudioClip musicClip = bgmList[(int)musicType];

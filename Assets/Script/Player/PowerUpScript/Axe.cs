@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Script.Player.PowerUpScript
@@ -17,7 +18,7 @@ namespace Script.Player.PowerUpScript
             set => _spawnTime = value;
         }
 
-        [SerializeField] private float pushBackForce = 10f;
+        [SerializeField] private float pushBackForce = 400f;
         [SerializeField] private float baseDmg = 20f;
         [SerializeField] private float maxDistance;
         [SerializeField] private float moveSpeed;
@@ -27,6 +28,7 @@ namespace Script.Player.PowerUpScript
         public float _spawnTime;
         private bool isReturn;
         private Rigidbody2D rb;
+        HashSet<EnemyBasic> processedEnemies = new HashSet<EnemyBasic>();
         Vector2 ThrowDirection()
         {
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -65,12 +67,18 @@ namespace Script.Player.PowerUpScript
             }
             if(collision.CompareTag("Enemy"))
             {
-                float dmg = (PlayerStatsManager.Instance.damage + baseDmg) * (1 + lvl / 2);
-                collision.gameObject.GetComponent<EnemyBasic>().TakeDamage((int)dmg);
-                if (lvl == 5)
+                EnemyBasic enemy = collision.GetComponent<EnemyBasic>();              
+                if (!processedEnemies.Contains(enemy))
                 {
-                    Vector2 distance = collision.gameObject.GetComponent<EnemyBasic>().transform.position - transform.position;
-                    collision.gameObject.GetComponent<EnemyBasic>().ApplyKnockback(distance * pushBackForce);
+                    processedEnemies.Add(enemy);
+                    float dmg = (PlayerStatsManager.Instance.damage + baseDmg) * (1 + lvl / 2);
+                    collision.gameObject.GetComponent<EnemyBasic>().TakeDamage((int)dmg);
+                    if (lvl == 5)
+                    {
+                        Vector2 distance = collision.gameObject.GetComponent<EnemyBasic>().transform.position - transform.position;
+                        collision.gameObject.GetComponent<EnemyBasic>().ApplyKnockback(ThrowDirection().normalized * pushBackForce);
+                    }
+
                 }
             }
         }

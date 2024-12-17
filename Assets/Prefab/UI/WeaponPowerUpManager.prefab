@@ -44,3 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04bd8ca8bd6440e7ab296b3788d421a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slotsImage:
+  - {fileID: 0}
+  - {fileID: 0}
+  powerUpManifest: {fileID: 11400000, guid: 2a913a649b4051143b95a6892aa15968, type: 2}

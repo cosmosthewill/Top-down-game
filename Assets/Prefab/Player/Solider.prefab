@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5439013891176339081}
   - component: {fileID: 2856516809657321818}
   - component: {fileID: 8608109588748577065}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: weaponR1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,7 +102,7 @@ MonoBehaviour:
   shootingMode: 0
   bullet: {fileID: 5730617486613446530, guid: 1a81be979b3f0fc4f9a1ab0432507401, type: 3}
   firePos: {fileID: 6926458591627539247}
-  fireCd: 0.2
+  fireCd: 0.4
   bulletForce: 100
 --- !u!1 &3803789663380917521
 GameObject:
@@ -113,7 +113,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6926458591627539247}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FIrePos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -148,7 +148,7 @@ GameObject:
   - component: {fileID: 5152305422501456886}
   - component: {fileID: 9113226445380915336}
   - component: {fileID: 5202133476670535998}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Solider
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -254,6 +254,9 @@ MonoBehaviour:
   attractionSpeed: 100
   powerUpSlot1: {fileID: 6253002645885080100, guid: 5d6ba2cfe45ccb3418ebb8eda7fb528b, type: 3}
   debuffAni: {fileID: 4960081531694143134, guid: 4a2f08881a1e54a4fac75531fc21a174, type: 3}
+  avatar: {fileID: 21300000, guid: ec4dc42fb1788ee4b8ae0a2b31598060, type: 3}
+  img: {fileID: 0}
+  rollImg: {fileID: 0}
 --- !u!114 &5202133476670535998
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -279,7 +282,7 @@ GameObject:
   - component: {fileID: 1913151039517100238}
   - component: {fileID: 6589738738273819258}
   - component: {fileID: 866298439637769441}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}

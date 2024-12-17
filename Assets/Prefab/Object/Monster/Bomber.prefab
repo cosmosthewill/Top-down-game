@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 1874447368553467543}
   - component: {fileID: 8566471674705864688}
   - component: {fileID: 6716493691626079594}
-  - component: {fileID: -367553816055849422}
+  - component: {fileID: 5985183550615463644}
+  - component: {fileID: -5541433372175215362}
   m_Layer: 9
   m_Name: Bomber
   m_TagString: Enemy
@@ -104,7 +105,7 @@ CircleCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 640
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -118,7 +119,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.9661977}
@@ -210,8 +211,11 @@ MonoBehaviour:
   updateMoveCd: 2
   seeker: {fileID: 0}
   nextWayPointDistance: 0
+  updatePathTime: 0
+  separationDistance: 2
+  separationForce: 4
   explodeAni: {fileID: 4222198492486496644, guid: f10e77a2e44df4b4b8828ad45c1f97d0, type: 3}
---- !u!114 &-367553816055849422
+--- !u!114 &5985183550615463644
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -239,3 +243,38 @@ MonoBehaviour:
   tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   graphMask:
     value: -1
+--- !u!58 &-5541433372175215362
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8668365441646935021}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.9661977}
+  serializedVersion: 2
+  m_Radius: 2.3261979
