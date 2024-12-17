@@ -45,7 +45,7 @@ public class EnemyBasic : MonoBehaviour
     protected Coroutine knockbackRoutine;
     protected GameObject _debuffAni;
     private bool isBlocked = false;
-    protected bool deadByPlayer = true;
+    protected bool deadByPlayer = false;
     //floating damage
     public UnityEngine.GameObject popupDamage;
 
@@ -66,13 +66,18 @@ public class EnemyBasic : MonoBehaviour
     //test
     //private AfterImage afterImage;
     public Seeker seeker;
-    public float nextWayPointDistance;
+    public float nextWayPointDistance = 2f;
     protected Path path;
     protected int currentWayPoint = 0;
-    protected bool reachEndOfPath = false;
+    protected bool reachEndOfPath = true;
+    Coroutine moveTest;
+    public bool updatePathTime;
 
     public float separationDistance = 2f; // Minimum distance between enemies
-    public float separationForce = 2f;
+    public float separationForce = 4f;
+    protected bool canMove = true;
+    protected Vector3 previousPosition;
+    protected bool isMoving = false;
     protected Vector3 FindTarget()
     {
         Vector3 playerPos = Player.Instance.ReturnPlayerCenter();
@@ -168,28 +173,41 @@ public class EnemyBasic : MonoBehaviour
     }
     public virtual void OnDeath()
     {
+        EnemySpawner.Instance.EnemyDestryed(deadByPlayer, isBoss);
+        if(_debuffAni != null) Destroy(_debuffAni);
         if (!deadByPlayer) 
         {
             Destroy(gameObject);
             return;
         }
         if (isBoss) SoundManager.Instance.PlaySfx(SfxType.BossDeath);
-        PlayerExpBar.instance.GainExp(expGain);
         PlayerStatsManager.Instance.GainMana(manaGain);
         if (itemDrop != null)
         {
-            Instantiate(itemDrop, transform.position, Quaternion.identity);
+            CoinDropManager.Instance.GenerateExp(transform.position, isBoss, itemDrop, expGain);
         }
         CoinDropManager.Instance.GenerateCoin(transform.position, isBoss);
-        //EnemySpawner.Instance.EnemyDestryed();
+        CoinDropManager.Instance.GenerateFood(transform.position, isBoss);
         Destroy(gameObject);
+    }
+    protected void MovementDetect()
+    {
+        if (Vector3.Distance(transform.position, previousPosition) > 0.01f)
+        {
+            isMoving = true;
+        }
+        else
+        {
+            isMoving = false;
+        }
+        previousPosition = transform.position;
     }
     public void InitStat()
     {
-        maxHealth = baseHp * (1 + Timer.Instance.minutes * 0.8f);
-        moveSpeed = baseSpd * (1 + 0.3f * Timer.Instance.minutes);
-        if (isRange) moveSpeed = baseSpd * (1 + 0.15f * Timer.Instance.minutes);
-        monsterDmg = (int)(baseDmg * (1 + Timer.Instance.minutes * 0.8f));
+        maxHealth = baseHp * (1 + Timer.Instance.minutes * 0.3f);
+        moveSpeed = Mathf.Min(baseSpd * (1 + 0.15f * Timer.Instance.minutes), 100);
+        if (isRange) moveSpeed = baseSpd * (1 + 0.06f * Timer.Instance.minutes);
+        monsterDmg = (int)(baseDmg * (1 + Timer.Instance.minutes * 0.2f));
 
         //drop
         expGain = baseExpGain + Timer.Instance.minutes * 10;
@@ -197,42 +215,79 @@ public class EnemyBasic : MonoBehaviour
         currentStatus = EnemyStatus.Normal;
         normalSpeed = moveSpeed;
         currentHealth = maxHealth;
+
+        previousPosition = transform.position;
+        isMoving = false;
     }
     // Start is called before the first frame update
     void Start()
     {
-        //Debug.Log("abc");
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         InitStat();
         if (isBoss) SoundManager.Instance.PlaySfx(SfxType.BossAppear);
         //
         seeker = GetComponent<Seeker>();
-        //nextWayPointDistance = 0.3f;
-        if (isRange) InvokeRepeating("UpdatePath", 0f, 2f);
-        else InvokeRepeating("UpdatePath", 0f, 0.5f);
+        nextWayPointDistance = 1f;
+        InvokeRepeating("UpdatePath", 0f, 0.2f);
     }
     public void UpdatePath()
     {
+        if (!canMove || isKnockedBack) return;
         Vector2 target = FindTarget();
-        if (seeker.IsDone())
-            seeker.StartPath(transform.position, target , OnPathComplete);
+        if (seeker.IsDone() && (reachEndOfPath))
+            seeker.StartPath(transform.position, target, OnPathComplete);
     }
 
-    public void OnPathComplete (Path p)
+    public void OnPathComplete(Path p)
     {
         if (!p.error)
         {
             path = p;
-            currentWayPoint = 1;
+            //currentWayPoint = 1;
+            MoveWithA();
         }
+    }
+    public void MoveWithA()
+    {
+        if (!canMove || isKnockedBack) return;
+        if (moveTest != null) StopCoroutine(moveTest);
+        moveTest = StartCoroutine(moveai());
+
+    }
+    public IEnumerator moveai()
+    {
+        currentWayPoint = 0;
+        reachEndOfPath = false;
+        while (currentWayPoint < path.vectorPath.Count)
+        {
+            Vector2 dir = (path.vectorPath[currentWayPoint] - transform.position).normalized;
+            Vector2 f = dir * moveSpeed;
+            rb.velocity = Vector2.zero;
+            //rb.velocity = f;
+            transform.position += (Vector3)f * Time.deltaTime;
+            if (f.x > 0)
+            {
+                transform.eulerAngles = Vector3.zero;
+            }
+            else transform.eulerAngles = new Vector3(0, 180, 0);
+            //rb.AddForce(f, ForceMode2D.Impulse);
+            float distance = Vector2.Distance(transform.position, path.vectorPath[currentWayPoint]);
+            if (distance < nextWayPointDistance)
+            {
+                currentWayPoint++;
+            }
+            yield return null;
+        }
+        reachEndOfPath = true;
     }
     // Update is called once per frame
     void Update()
     {
         HandleStatusEffects();
+        MovementDetect();
         //moving
-        move();
+        //move();
 
         //shoting
         if (isShotable)
@@ -289,14 +344,17 @@ public class EnemyBasic : MonoBehaviour
         statusDuration = duration;
     }
 
-    protected virtual void move()
+    protected virtual void moveold()
     {
-        if (isKnockedBack || isBlocked || path == null) return;
+        if (isKnockedBack) return;
         Vector2 separation = CalculateSeparation();
-        //updateMove += Time.deltaTime;
-        //pathfindingtest
+        updateMove += Time.deltaTime;
+        if (updateMove >= updateMoveCd) updateMove = 0f;
+        /*//pathfindingtest
         if (currentWayPoint >= path.vectorPath.Count)
         {
+            Debug.LogWarning("end");
+            rb.velocity = Vector2.zero;
             reachEndOfPath = true;
             return;
         }
@@ -309,13 +367,13 @@ public class EnemyBasic : MonoBehaviour
         rb.velocity = testD * moveSpeed + separation;
         float testDistance = Vector2.Distance(transform.position, path.vectorPath[currentWayPoint]);
         Debug.Log(testDistance);
-        /* if (testDistance < nextWayPointDistance)
+        if (testDistance < nextWayPointDistance)
         {
-            
+
             //rb.velocity = Vector3.zero;
             currentWayPoint++;
         }*/
-        // Handle overshooting and skip waypoints if necessary
+        /*// Handle overshooting and skip waypoints if necessary
         while (testDistance < nextWayPointDistance && currentWayPoint < path.vectorPath.Count - 1)
         {
             currentWayPoint++;
@@ -327,16 +385,12 @@ public class EnemyBasic : MonoBehaviour
         {
             rb.velocity = Vector2.zero;
             Debug.Log("Final waypoint reached.");
-        }
-        //if (updateMove >= updateMoveCd) updateMove = 0f;
-        if (isRange)
+        }*/
+        else if (isRange)
         {
             float distance = Vector3.Distance(Player.Instance.ReturnPlayerCenter(), transform.position);
-            if (distance >= 15f && distance <= 40f)
-            {
-                rb.velocity = Vector3.zero;
-                return;
-            }
+            if (distance >= 15f && distance <= 40f) rb.velocity = Vector3.zero;
+            return;
         }
         if (FindTarget() != null)
         {
@@ -351,7 +405,7 @@ public class EnemyBasic : MonoBehaviour
 
             //transform.position += (Vector3)(testD * moveSpeed) * Time.deltaTime;
           
-            //rb.velocity = testD * moveSpeed + separation;
+            rb.velocity = moveDirection.normalized * moveSpeed + (Vector3)separation;
             //animator.SetFloat("Speed", moveDirection.sqrMagnitude);
         }
 
@@ -369,10 +423,11 @@ public class EnemyBasic : MonoBehaviour
 
     private IEnumerator KnockbackCoroutine(Vector2 knockbackForce)
     {
-        Debug.Log("abc");
+        Debug.LogWarning("enemy knockback");
         isKnockedBack = true;
-        rb.velocity = Vector2.zero;
-        rb.AddForce(knockbackForce, ForceMode2D.Impulse);
+        transform.position += (Vector3)knockbackForce * 0.2f;
+        //rb.velocity = Vector2.zero;
+        //rb.AddForce(knockbackForce, ForceMode2D.Impulse);
         //rb.velocity = knockbackForce;
         yield return new WaitForSeconds(knockbackDuration);
         isKnockedBack = false;
@@ -387,7 +442,7 @@ public class EnemyBasic : MonoBehaviour
         {
             if (enemy.gameObject != gameObject)
             {
-                Vector2 awayFromEnemy = (Vector2)(transform.position - enemy.transform.position);
+                Vector2 awayFromEnemy = (Vector2)(enemy.transform.position  - transform.position);
                 float distance = awayFromEnemy.magnitude;
 
                 // Apply separation force inversely proportional to distance

@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 1336193515314018332}
   - component: {fileID: 8994999406940492377}
   - component: {fileID: 8637511812612429337}
-  - component: {fileID: 8614139546780081973}
+  - component: {fileID: -4711497330014065768}
+  - component: {fileID: -7636250517099067711}
   m_Layer: 9
   m_Name: Knight
   m_TagString: Enemy
@@ -131,7 +132,7 @@ CircleCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 640
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -145,7 +146,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.0016546249, y: 0.4696579}
@@ -187,8 +188,11 @@ MonoBehaviour:
   baseExpGain: 10
   baseManaGain: 5
   updateMoveCd: 2
-  seeker: {fileID: 8614139546780081973}
-  nextWayPointDistance: 2
+  seeker: {fileID: 0}
+  nextWayPointDistance: 0
+  updatePathTime: 1
+  separationDistance: 2
+  separationForce: 4
 --- !u!95 &8637511812612429337
 Animator:
   serializedVersion: 5
@@ -210,7 +214,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &8614139546780081973
+--- !u!114 &-4711497330014065768
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -238,3 +242,38 @@ MonoBehaviour:
   tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   graphMask:
     value: -1
+--- !u!58 &-7636250517099067711
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8895264513967183943}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0016546249, y: 0.4696579}
+  serializedVersion: 2
+  m_Radius: 2.622323

@@ -28,7 +28,7 @@ public class Lancer : EnemyBasic
         {
             if (FindTarget() != null)
             {
-                yield return new WaitForSeconds(1.5f);
+                yield return new WaitForSeconds(1f);
                 Vector3 targetPosition = FindTarget();
                 moveDirection = targetPosition - transform.position;
                 yield return new WaitForSeconds(0.5f);//charge to previous 1s target
@@ -43,7 +43,7 @@ public class Lancer : EnemyBasic
                     transform.eulerAngles = Vector3.zero;
                 }
                 else transform.eulerAngles = new Vector3(0, 180, 0);
-                yield return new WaitForSeconds(0.2f);
+                yield return new WaitForSeconds(1f);
                 rb.velocity = Vector2.zero; // Stop moving
                 isCharging = false;
                 afterImage.Activate(false);

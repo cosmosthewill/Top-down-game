@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Script.Player.PowerUpScript
@@ -22,6 +23,7 @@ namespace Script.Player.PowerUpScript
         [SerializeField] private float explosionRadius = 5f;
         [SerializeField] private float baseDmg = 20f;
 
+        HashSet<EnemyBasic> processedEnemies = new HashSet<EnemyBasic>();
         private float timer;
         private bool isExploded = false;
         private int _lvl;
@@ -32,8 +34,9 @@ namespace Script.Player.PowerUpScript
             foreach (var hit in hitcolliders) 
             {
                 EnemyBasic enemy = hit.GetComponent<EnemyBasic>();
-                if (enemy != null) 
+                if (enemy != null && !processedEnemies.Contains(enemy)) 
                 {
+                    processedEnemies.Add(enemy);
                     float dmg = (PlayerStatsManager.Instance.damage + baseDmg) * (1 + lvl / 5);
                     enemy.TakeDamage((int)dmg);
                     if (lvl == 5)//knockBack

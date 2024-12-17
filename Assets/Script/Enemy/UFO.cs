@@ -27,11 +27,15 @@ public class UFO : EnemyBasic
         Vector3 directionToPlayer = Player.Instance.ReturnPlayerCenter() - transform.position;
         currentAngle = Mathf.Atan2(directionToPlayer.y, directionToPlayer.x) * Mathf.Rad2Deg;
         afterImage = GetComponent<AfterImage>();
-
+        if (isBoss) SoundManager.Instance.PlaySfx(SfxType.BossAppear);
+        //
         seeker = GetComponent<Seeker>();
         nextWayPointDistance = 1f;
-        if (isRange) InvokeRepeating("UpdatePath", 0f, 1f);
-        else InvokeRepeating("UpdatePath", 0f, 1f);
+        InvokeRepeating("UpdatePath", 0f, 0.2f);
+        //seeker = GetComponent<Seeker>();
+        //nextWayPointDistance = 1f;
+        //if (isRange) InvokeRepeating("UpdatePath", 0f, 1f);
+        //else InvokeRepeating("UpdatePath", 0f, 1f);
     }
 
     protected override void EnemyShot()
@@ -43,14 +47,15 @@ public class UFO : EnemyBasic
         shotTime += Time.deltaTime;
         _summonTime += Time.deltaTime;
         HandleStatusEffects();
+        MovementDetect();
         //moving
-        if(!_isShotting) move();
+        //move();
         if (shotTime >= spriralShotcd)
         {
             shotTime = 0f;
             if (Vector3.Distance(transform.position, Player.Instance.ReturnPlayerCenter()) < 100f) EnemyShot();
         }
-        if (rb.velocity.sqrMagnitude > 0)
+        if (isMoving)
         {
             afterImage.Activate(true);
         }
@@ -68,7 +73,7 @@ public class UFO : EnemyBasic
     
     private IEnumerator SpiralShoot()
     {
-        _isShotting = true;
+        canMove = false;
         float totalRotation = 0f;
         while(totalRotation < 360f)
         {
@@ -87,7 +92,7 @@ public class UFO : EnemyBasic
             if (currentAngle >= 360f) currentAngle -= 360f;
             yield return new WaitForSeconds(fireRate);
         }
-        _isShotting = false;
+        canMove = true;
     }
     private void Summon(Vector3 positon)
     {

@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.PlayerLoop;
 using static CollectibleItems;
 using static UnityEditor.Progress;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -20,10 +21,16 @@ public class Player : MonoBehaviour
     public float attractionSpeed;  // Speed at which items move toward the player
     public GameObject powerUpSlot1;
     public GameObject debuffAni;
+    public Sprite avatar;
+    public Image img;
+    public Image rollImg;
     //public AfterImage afterImage;
     //private
 
     private float rollTime;
+    private float rollCD = 3f;
+    private bool isRollCd = false;
+    private float _rollCD = 0f;
     private Vector3 playerCenterOffset = new Vector3(0, -5f, 0);
     protected Coroutine knockbackRoutine;
     protected bool isKnockedBack = false;
@@ -46,6 +53,7 @@ public class Player : MonoBehaviour
     }
     private void Start()
     {
+        img.sprite = avatar;
         playerWidth = transform.GetComponentInChildren<SpriteRenderer>().bounds.size.x / 2;
         playerHeight = transform.GetComponentInChildren<SpriteRenderer>().bounds.size.y / 2;
         attractionRadius = 20f;
@@ -111,6 +119,8 @@ public class Player : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position + playerCenterOffset, 15f);
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position + playerCenterOffset, 40f);
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position + playerCenterOffset, 20f);
     }
 
     public Vector3 ReturnPlayerCenter()
@@ -132,7 +142,7 @@ public class Player : MonoBehaviour
         isKnockedBack = true;
         rb.velocity = Vector2.zero;
         rb.AddForce(knockbackForce, ForceMode2D.Impulse);
-
+        //transform.position += (Vector3) knockbackForce;
         yield return new WaitForSeconds(knockbackDuration);
         isKnockedBack = false;
 
@@ -153,8 +163,20 @@ public class Player : MonoBehaviour
         animator.SetFloat("Speed", moveInput.sqrMagnitude);
 
         //Roll
-        if (Input.GetKeyDown(KeyCode.Space) && rollTime <= 0)
+        _rollCD -= Time.deltaTime;
+        if(isRollCd) 
         {
+            rollImg.fillAmount += 1 / rollCD * Time.deltaTime;
+            if ( rollImg.fillAmount >= 1)
+            {
+                rollImg.fillAmount = 1;
+                isRollCd = false;
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.Space) && rollTime <= 0 && _rollCD <= 0)
+        {
+            isRollCd = true;
+            rollImg.fillAmount = 0;
             animator.SetBool("Roll", true);
             PlayerStatsManager.Instance.moveSpeed += PlayerStatsManager.Instance.rollBoost;
             rollTime = PlayerStatsManager.Instance.rollDuration;

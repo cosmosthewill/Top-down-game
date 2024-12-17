@@ -54,5 +54,6 @@ public class PlayerStatsManager : MonoBehaviour
     public void AddSpeed(float amount)
     {
         moveSpeed += amount;
+        moveSpeed = Mathf.Min(moveSpeed, 100f);
     }
 }
