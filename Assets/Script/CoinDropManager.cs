@@ -21,8 +21,8 @@ public class CoinDropManager : MonoBehaviour
         position.x += Random.Range(2, 4);
         position.y += Random.Range(2, 4);
         GameObject coinDrop = Instantiate(coin,position,Quaternion.identity);
-        if (isBoss) amount = Random.Range(Timer.Instance.minutes * 20, Timer.Instance.minutes * 60);
-        else amount = Random.Range(Timer.Instance.minutes * 5, Timer.Instance.minutes * 10);
+        if (isBoss) amount = Random.Range((Timer.Instance.minutes + 1) * 20, (Timer.Instance.minutes + 1) * 60);
+        else amount = Random.Range((Timer.Instance.minutes + 1) * 5, (Timer.Instance.minutes + 1) * 10);
         CollectibleItems _coin = coinDrop.GetComponent<CollectibleItems>();
         _coin.SetValue(amount);
     }

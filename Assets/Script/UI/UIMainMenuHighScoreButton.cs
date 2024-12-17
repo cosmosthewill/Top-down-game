@@ -3,13 +3,13 @@ using UnityEngine.EventSystems;
 
 namespace Script.UI
 {
-    public class UIMainMenuSettingButton : UIMainMenuButton
+    public class UIMainMenuHighScoreButton : UIMainMenuButton
     {
-        [SerializeField] private GameObject settingMenu;
+        [SerializeField] private GameObject highScoreMenu;
         
         public override void OnPointerClick(PointerEventData eventData)
         {
-            settingMenu.SetActive(true);
+            highScoreMenu.SetActive(true);
         }
     }
 }

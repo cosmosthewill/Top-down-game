@@ -39,7 +39,7 @@ public class EnemySpawner : MonoBehaviour
     public float spawnRadius = 5f;
     const int maxAttempts = 15;
 
-    public static int score = 0;
+    private int score = 0;
     private void Awake()
     {
         if (Instance == null)
@@ -53,9 +53,17 @@ public class EnemySpawner : MonoBehaviour
     }
     public void scoreCount(bool isBoss)
     {
-        if (isBoss) score += 200 * Timer.Instance.minutes * 2;
-        else score += 5 * Timer.Instance.minutes * 2;
+        if (isBoss) score += 200 * (Timer.Instance.minutes + 1) * 2;
+        else score += 5 * (Timer.Instance.minutes + 1) * 2;
+        
+        Debug.Log("New score " + score);
     }
+
+    public int GetScore()
+    {
+        return score;
+    }
+    
     Vector3 RandomPosNearPlayer()
     {
         for (int i = 0; i < maxAttempts; i++)
@@ -74,8 +82,14 @@ public class EnemySpawner : MonoBehaviour
         return new Vector3(0, 0, 0);
     }
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
+        StartCoroutine(WaitToSpawn());
+    }
+
+    IEnumerator WaitToSpawn()
+    {
+        yield return new WaitForSeconds(5f);
         //Normal
         spawnNormalCoroutine = StartCoroutine(SpawnEnemy(spawnInterval, spawnNormal, RandomPosNearPlayer()));
         spawnWaveNormalCoroutine = StartCoroutine(WaveSpawmEnemy(spawnNormal, normalPerWave, normalWaveInterval));

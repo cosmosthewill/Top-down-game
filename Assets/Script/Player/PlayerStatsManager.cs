@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using Script;
 using UnityEditor.Build.Content;
 using UnityEngine;
 
 public class PlayerStatsManager : MonoBehaviour
 {
     public static PlayerStatsManager Instance;
+    [SerializeField] private GameObject gameOverPopUp;
 
     [Header("Combat Stats")]
     public int damage;
@@ -42,7 +44,8 @@ public class PlayerStatsManager : MonoBehaviour
         if (currentHealth < 0)
         {
             Destroy(gameObject);
-            Time.timeScale = 0;
+            GamePause.PauseGame();
+            gameOverPopUp.SetActive(true);
         }
         if (currentHealth > maxHealth) currentHealth = maxHealth;
     }

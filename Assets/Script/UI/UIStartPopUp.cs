@@ -38,6 +38,7 @@ namespace Script.UI
 
         public void OnStartPlay()
         {
+            PlayerPrefs.SetInt("CharacterSelectedIndex", selectedIndex);
             SceneManager.LoadScene(1);
         }
 

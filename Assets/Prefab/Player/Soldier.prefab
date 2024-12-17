@@ -149,7 +149,7 @@ GameObject:
   - component: {fileID: 9113226445380915336}
   - component: {fileID: 5202133476670535998}
   m_Layer: 7
-  m_Name: Solider
+  m_Name: Soldier
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

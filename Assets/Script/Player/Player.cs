@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using Script;
+using Script.Player;
 using Script.Player.PowerUpScript;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -105,7 +107,7 @@ public class Player : MonoBehaviour
                 PlayerStatsManager.Instance.GainMana(item.GetComponent<CollectibleItems>().value);
                 break;
             case ItemType.Coin:
-                //missing
+                PlayerManager.Instance.CollectCoin(item.GetComponent<CollectibleItems>().value);
                 break;
 
         }

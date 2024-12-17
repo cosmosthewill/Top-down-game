@@ -12,6 +12,7 @@ namespace Script.UI
         [SerializeField] private Text costText;
         [SerializeField] private string descriptionBase;
         [SerializeField] private int cost;
+        [SerializeField] private float changePerLevel = 5f;
         private int level = -1;
         private bool purchasable = false;
         
@@ -19,7 +20,7 @@ namespace Script.UI
         {
             level = PlayerPrefs.GetInt($"{savedStatsName}_lvl", 0);
             costText.text = cost.ToString();
-            descriptionText.text = $"{descriptionBase} {(level + 1) * 5}%";
+            descriptionText.text = $"{descriptionBase} {(level + 1) * changePerLevel}%";
             if (cost > coinAmount)
             {
                 costText.color = Color.red;
