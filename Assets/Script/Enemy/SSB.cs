@@ -7,7 +7,6 @@ public class SSB : EnemyBasic
     public float explosiveRange = 15f;
     public GameObject explodeAni;
     private Coroutine isStartCountDown;
-    private bool selfDeath = false;
     private void Update()
     {
         HandleStatusEffects();
@@ -20,12 +19,15 @@ public class SSB : EnemyBasic
                 canMove = false;
             }
         }
-        if (currentHealth < 0 && !selfDeath) OnDeath();
-        if (currentHealth < 0 && selfDeath)
+        if (!deadByPlayer)
         {
             if (Vector3.Distance(transform.position, Player.Instance.ReturnPlayerCenter()) <= explosiveRange * 2)
                 PlayerStatsManager.Instance.TakeDmg(monsterDmg);
             Destroy(gameObject);
+        }
+        else if (currentHealth <= 0)
+        {
+            OnDeath();
         }
     }
     private IEnumerator StartCountdown()
@@ -42,7 +44,7 @@ public class SSB : EnemyBasic
             yield return new WaitForSeconds(1f);
         }
         currentHealth = -1;
-        selfDeath = true;
+        deadByPlayer = false;
         if (explodeAni != null)
         {
             SoundManager.Instance.PlaySfx(SfxType.Explode);

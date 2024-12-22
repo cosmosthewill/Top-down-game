@@ -18,6 +18,7 @@ namespace Script.UI
 
             SaveCoin();
             SaveHighScore();
+            SoundManager.Instance.PlayBackgroundMusic(BGMType.VictoryTheme);
         }
 
         private void SaveCoin()
@@ -54,12 +55,14 @@ namespace Script.UI
         {
             SceneManager.LoadScene(1);
             GamePause.ContinueGame();
+            SoundManager.Instance.PlayBackgroundMusic(BGMType.GamePlay);
         }
 
         public void OnBackToMainMenu()
         {
             SceneManager.LoadScene(0);
             GamePause.ContinueGame();
+            SoundManager.Instance.PlayBackgroundMusic(BGMType.MainMenu);
         }
     }
 }

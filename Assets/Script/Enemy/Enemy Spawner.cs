@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemySpawner : MonoBehaviour
 {
@@ -15,7 +16,7 @@ public class EnemySpawner : MonoBehaviour
     //normal
     private float normalWaveInterval = 30f;
     private int normalPerWave = 7;
-    private float minDistance = 20f;
+    private float minDistance = 30f;
     private float maxDistance = 60f;
     private Coroutine spawnNormalCoroutine;
     private Coroutine spawnWaveNormalCoroutine;
@@ -33,8 +34,8 @@ public class EnemySpawner : MonoBehaviour
     private Coroutine spawnBossCoroutine;
 
     //control
-    private int totalEnemiesOnField = 0;
-    private int maxEnemiesOnField = 50;
+    public int totalEnemiesOnField = 0;
+    private int maxEnemiesOnField = 60;
     public LayerMask spawnLayerMask;
     public float spawnRadius = 5f;
     const int maxAttempts = 15;
@@ -76,7 +77,7 @@ public class EnemySpawner : MonoBehaviour
             // Check if there's overlap with any other objects
             if (!Physics2D.OverlapCircle(spawnPosition, spawnRadius, spawnLayerMask))
             {
-                return spawnPosition; // Valid position found
+                return spawnPosition;
             }
         }
         return new Vector3(0, 0, 0);
@@ -89,7 +90,10 @@ public class EnemySpawner : MonoBehaviour
 
     IEnumerator WaitToSpawn()
     {
-        yield return new WaitForSeconds(5f);
+        while (!SceneManager.GetActiveScene().isLoaded)
+        {
+            yield return null; // Wait for the next frame
+        }
         //Normal
         spawnNormalCoroutine = StartCoroutine(SpawnEnemy(spawnInterval, spawnNormal, RandomPosNearPlayer()));
         spawnWaveNormalCoroutine = StartCoroutine(WaveSpawmEnemy(spawnNormal, normalPerWave, normalWaveInterval));

@@ -46,6 +46,7 @@ namespace Script.UI
         {
             SceneManager.LoadScene(0);
             GamePause.ContinueGame();
+            SoundManager.Instance.PlayBackgroundMusic(BGMType.MainMenu);
         }
     }
 }

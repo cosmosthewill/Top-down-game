@@ -11,6 +11,7 @@ public class Bullet : MonoBehaviour
     [Header("StatusApply")]
     public EnemyBasic.EnemyStatus enemyStatus;
     public float duration;
+    private bool hasCollided = false;
     public void Init(int bulletDamage, bool isPlayerBullet)
     {
         this.damage = bulletDamage;
@@ -20,6 +21,8 @@ public class Bullet : MonoBehaviour
     {
         if (isPlayerBullet && collision.gameObject.tag == "Enemy")
         {
+            if (hasCollided) return; // Prevent double processing
+            hasCollided = true;
             collision.gameObject.GetComponent<EnemyBasic>().ApplyStatus(enemyStatus, duration);
             collision.gameObject.GetComponent<EnemyBasic>().TakeDamage(damage);
             Destroy(gameObject);

@@ -58,7 +58,7 @@ public class Player : MonoBehaviour
         img.sprite = avatar;
         playerWidth = transform.GetComponentInChildren<SpriteRenderer>().bounds.size.x / 2;
         playerHeight = transform.GetComponentInChildren<SpriteRenderer>().bounds.size.y / 2;
-        attractionRadius = 20f;
+        attractionRadius = PlayerStatsManager.Instance.basePickUpRange;
         attractionSpeed = 50f;
         //animator = GetComponent<Animator>();
     }
@@ -165,7 +165,7 @@ public class Player : MonoBehaviour
         animator.SetFloat("Speed", moveInput.sqrMagnitude);
 
         //Roll
-        _rollCD -= Time.deltaTime;
+        //_rollCD -= Time.deltaTime;
         if(isRollCd) 
         {
             rollImg.fillAmount += 1 / rollCD * Time.deltaTime;
@@ -175,7 +175,7 @@ public class Player : MonoBehaviour
                 isRollCd = false;
             }
         }
-        if (Input.GetKeyDown(KeyCode.Space) && rollTime <= 0 && _rollCD <= 0)
+        if (Input.GetKeyDown(KeyCode.Space) && rollTime <= 0 && !isRollCd)
         {
             isRollCd = true;
             rollImg.fillAmount = 0;

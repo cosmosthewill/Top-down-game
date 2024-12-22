@@ -40,6 +40,7 @@ namespace Script.UI
         {
             PlayerPrefs.SetInt("CharacterSelectedIndex", selectedIndex);
             SceneManager.LoadScene(1);
+            SoundManager.Instance.PlayBackgroundMusic(BGMType.GamePlay);
         }
 
         public void OnClose()

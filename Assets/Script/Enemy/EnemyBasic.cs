@@ -45,10 +45,10 @@ public class EnemyBasic : MonoBehaviour
     protected Coroutine knockbackRoutine;
     protected GameObject _debuffAni;
     private bool isBlocked = false;
-    protected bool deadByPlayer = false;
+    protected bool deadByPlayer = true;
     //floating damage
     public UnityEngine.GameObject popupDamage;
-
+    private int isPopUp;
     //drop
     [Header("Combat Stat")]
     [SerializeField] private UnityEngine.GameObject itemDrop;
@@ -154,21 +154,24 @@ public class EnemyBasic : MonoBehaviour
         {
             amount *= PlayerStatsManager.Instance.critMultiplier;
             currentHealth -= amount;
-            UnityEngine.GameObject points = Instantiate(popupDamage, transform.position, Quaternion.identity) as UnityEngine.GameObject;
-            points.transform.localScale = new Vector3(1.5f, 1.5f, 1);
-            points.transform.GetChild(0).GetComponent<TextMesh>().text = amount.ToString();
-            points.transform.GetChild(0).GetComponent<TextMesh>().color = Color.red;
+            if (isPopUp == 1)
+            {
+                UnityEngine.GameObject points = Instantiate(popupDamage, transform.position, Quaternion.identity) as UnityEngine.GameObject;
+                points.transform.localScale = new Vector3(1.5f, 1.5f, 1);
+                points.transform.GetChild(0).GetComponent<TextMesh>().text = amount.ToString();
+                points.transform.GetChild(0).GetComponent<TextMesh>().color = Color.red;
+            }
+            return;
         }
         else //non-crit
         {
             currentHealth -= amount;
-            UnityEngine.GameObject points = Instantiate(popupDamage, transform.position, Quaternion.identity) as UnityEngine.GameObject;
-            points.transform.GetChild(0).GetComponent<TextMesh>().text = amount.ToString();
-        }
-        if (currentHealth < 0) //dead
-        {
-            deadByPlayer = true;
-            OnDeath();
+            if (isPopUp == 1)
+            {
+                UnityEngine.GameObject points = Instantiate(popupDamage, transform.position, Quaternion.identity) as UnityEngine.GameObject;
+                points.transform.GetChild(0).GetComponent<TextMesh>().text = amount.ToString();
+            }
+            return;
         }
     }
     public virtual void OnDeath()
@@ -218,6 +221,7 @@ public class EnemyBasic : MonoBehaviour
 
         previousPosition = transform.position;
         isMoving = false;
+        isPopUp = PlayerPrefs.GetInt("PopUpDmg" , 1);
     }
     // Start is called before the first frame update
     void Start()
@@ -261,6 +265,7 @@ public class EnemyBasic : MonoBehaviour
         reachEndOfPath = false;
         while (currentWayPoint < path.vectorPath.Count)
         {
+            if (!canMove) break;
             Vector2 dir = (path.vectorPath[currentWayPoint] - transform.position).normalized;
             Vector2 f = dir * moveSpeed;
             rb.velocity = Vector2.zero;
@@ -299,7 +304,7 @@ public class EnemyBasic : MonoBehaviour
                 if(Vector3.Distance(transform.position, Player.Instance.ReturnPlayerCenter()) < 100f) EnemyShot();
             }
         }
-        if(currentHealth < 0) OnDeath();
+        if(currentHealth <= 0) OnDeath();
     }
 
     protected void HandleStatusEffects()

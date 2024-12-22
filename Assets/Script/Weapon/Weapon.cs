@@ -122,7 +122,7 @@ public class Weapon : MonoBehaviour
             switch (character)
             {
                 case Character.Solider:
-                    SoundManager.Instance.PlaySfx(SfxType.SoliderGunSound);
+                    SoundManager.Instance.PlaySfx(SfxType.SoliderGunSound, false, 0f, 0.1f);
                     break;
                 case Character.Electro:
                     SoundManager.Instance.PlaySfx(SfxType.ElectroGunSound);

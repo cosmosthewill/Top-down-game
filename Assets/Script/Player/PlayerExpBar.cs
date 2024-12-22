@@ -44,7 +44,7 @@ public class PlayerExpBar : MonoBehaviour
         {
             playerLvl++;
             currentExp -= maxExp;
-            maxExp *= 1.2f;
+            maxExp *= 1.3f;
             lvlText.text = "Lv: " + playerLvl.ToString();
             GamePause.PauseGame();
             levelUpPopUp.SetActive(true);

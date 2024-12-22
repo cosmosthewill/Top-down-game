@@ -28,6 +28,7 @@ public class Fox_boss : EnemyBasic
         }
         if (isMoving) afterImage.Activate(true);
         else afterImage.Activate(false);
+        if (currentHealth <= 0) OnDeath();
     }
     public void BossShotting()
     {

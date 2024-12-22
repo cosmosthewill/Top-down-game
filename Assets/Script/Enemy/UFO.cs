@@ -68,7 +68,7 @@ public class UFO : EnemyBasic
             Summon(transform.position);
             _summonTime = 0f;
         }
-
+        if (currentHealth <= 0) OnDeath();
     }
     
     private IEnumerator SpiralShoot()

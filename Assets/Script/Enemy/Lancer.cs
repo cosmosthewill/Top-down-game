@@ -15,10 +15,6 @@ public class Lancer : EnemyBasic
         afterImage = GetComponent<AfterImage>();
         StartCoroutine(LancerBehavior());
     }
-    private void Update()
-    {
-        HandleStatusEffects();
-    }
     private bool isCharging = false;
     private AfterImage afterImage;
     //public float chargeDuration = 0.2f;

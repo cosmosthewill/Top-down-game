@@ -53,11 +53,20 @@ public class SoundManager : MonoBehaviour
             // bgm loop
             backgroundAudioSource.loop = true;
             InitializeSFXAudioSources();
+            UpdateVolume();
         }
         else
         {
             Destroy(gameObject);
         }
+    }
+    public void UpdateVolume()
+    {
+        sfxVolume = PlayerPrefs.GetInt("SoundVolume", 10) / 20f;
+        backgroundVolume = PlayerPrefs.GetInt("MusicVolume", 10) / 20f;
+        //Debug.LogWarning(sfxVolume);
+        //Debug.LogWarning(backgroundVolume);
+        PlayBackgroundMusic(BGMType.MainMenu);
     }
     // Initialize a pool of AudioSource components for SFX
     private void InitializeSFXAudioSources()

@@ -10,7 +10,7 @@ namespace Script.UI
         
         private void OnEnable()
         {
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 9; i++)
             {
                 int score = PlayerPrefs.GetInt($"HighScore_{i}", 0);
                 highScoreTexts[i].text = $"No{i + 1}.          {score}";
