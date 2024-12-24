@@ -230,6 +230,7 @@ public class Player : MonoBehaviour
         {
             //Time.timeScale = (1 - Time.timeScale);
             PlayerExpBar.instance.LevelUp();
+            PlayerStatsManager.Instance.currentHealth = 1;
         }
     }
 }

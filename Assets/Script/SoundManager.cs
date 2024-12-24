@@ -15,7 +15,9 @@ public enum SfxType
     BossAppear,
     BossDeath,
     Explode,
-    ExplodeAlert
+    ExplodeAlert,
+    ButtonHover,
+    ButtonConfirm
 }
 public enum BGMType
 {

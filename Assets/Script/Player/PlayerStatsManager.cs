@@ -51,7 +51,6 @@ public class PlayerStatsManager : MonoBehaviour
     public void GetBonus()
     {
         bonusHealth = (PlayerPrefs.GetInt("BaseHealth_lvl", 0) * 5) / 100f;
-        Debug.LogWarning(PlayerPrefs.GetInt("BaseHealth_lvl"));
         bonusSpd = (PlayerPrefs.GetInt("BaseSpeed_lvl", 0) * 3) / 100f;
         bonusAttack = (PlayerPrefs.GetInt("BaseAttack_lvl", 0) * 5) / 100f;
         bonusCrit = (PlayerPrefs.GetInt("BaseCrit_lvl", 0) * 2) / 100f;
