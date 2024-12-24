@@ -22,7 +22,7 @@ namespace Script.UI
             HPText.text = PlayerStatsManager.Instance.currentHealth.ToString();
             DamgeText.text = PlayerStatsManager.Instance.damage.ToString();
             SpeedText.text = PlayerStatsManager.Instance.moveSpeed.ToString();
-            CritText.text = PlayerStatsManager.Instance.critChance.ToString();
+            CritText.text = (PlayerStatsManager.Instance.critChance * 100).ToString() + "%";
         }
 
         public void OnPause()

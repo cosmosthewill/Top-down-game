@@ -90,10 +90,14 @@ public class EnemySpawner : MonoBehaviour
 
     IEnumerator WaitToSpawn()
     {
-        while (!SceneManager.GetActiveScene().isLoaded)
+        //yield return new WaitForSeconds (3f);
+        while (Player.Instance == null)
         {
-            yield return null; // Wait for the next frame
+            yield return null;
         }
+
+        // Wait one more frame to ensure everything is set
+        yield return null;
         //Normal
         spawnNormalCoroutine = StartCoroutine(SpawnEnemy(spawnInterval, spawnNormal, RandomPosNearPlayer()));
         spawnWaveNormalCoroutine = StartCoroutine(WaveSpawmEnemy(spawnNormal, normalPerWave, normalWaveInterval));

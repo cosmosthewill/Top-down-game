@@ -567,7 +567,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Soldier
   cost: -1
-  description: 
+  gunIcon: {fileID: -2139279517, guid: 51404aa3b53f65c45ba99c3160c6ae3b, type: 3}
+  ultIcon: {fileID: 198062484, guid: efbfcaa0d163ad441aaa16583c0c986a, type: 3}
+  gunDescription: Shot normal bullet. Nothing special
+  ultDescription: Continous healing for short time
 --- !u!4 &750675755
 Transform:
   m_ObjectHideFlags: 0
@@ -713,7 +716,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Electro
   cost: 5000
-  description: 
+  gunIcon: {fileID: 1577027043, guid: f2c231748615a8240aeb755ed3e8b309, type: 3}
+  ultIcon: {fileID: 21300000, guid: 8b250534f687d1e4d9e74f92b5683846, type: 3}
+  gunDescription: Shot slow bullet which reduce enemy speed
+  ultDescription: Summon a circle of electro around self and apply electric shock
+    to enemies
 --- !u!4 &960437427
 Transform:
   m_ObjectHideFlags: 0
@@ -767,10 +774,6 @@ PrefabInstance:
       propertyPath: renderCamera
       value: 
       objectReference: {fileID: 1184037055}
-    - target: {fileID: 7253295513764617178, guid: 3245768f182bc5341b38c6016f00b17f, type: 3}
-      propertyPath: characters.Array.size
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 7253295513764617178, guid: 3245768f182bc5341b38c6016f00b17f, type: 3}
       propertyPath: characters.Array.data[0]
       value: 
@@ -1918,6 +1921,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1067616418}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1879509424 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6032875273694504735, guid: d54af81794bdabb488439310539be4ca, type: 3}
+  m_PrefabInstance: {fileID: 2085809732}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1916333232
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2044,6 +2058,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1184037055}
     - target: {fileID: 897394963081956466, guid: d54af81794bdabb488439310539be4ca, type: 3}
+      propertyPath: characterUltext
+      value: 
+      objectReference: {fileID: 1879509424}
+    - target: {fileID: 897394963081956466, guid: d54af81794bdabb488439310539be4ca, type: 3}
       propertyPath: characters.Array.data[0]
       value: 
       objectReference: {fileID: 750675754}
@@ -2055,6 +2073,10 @@ PrefabInstance:
       propertyPath: characters.Array.data[2]
       value: 
       objectReference: {fileID: 960437426}
+    - target: {fileID: 2793235046328802586, guid: d54af81794bdabb488439310539be4ca, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3641725673071415834, guid: d54af81794bdabb488439310539be4ca, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -2272,7 +2294,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Rambo
   cost: 2500
-  description: 
+  gunIcon: {fileID: -1515668271, guid: 51d20a58ab927ba47b1a55796dd9b82c, type: 3}
+  ultIcon: {fileID: 308989377, guid: fda9e9bd6213db74698cce0f4f174048, type: 3}
+  gunDescription: Shot multiple bullet for short radius
+  ultDescription: Temporary increase crit rate and crit damage
 --- !u!4 &2117714290
 Transform:
   m_ObjectHideFlags: 0

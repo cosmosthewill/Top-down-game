@@ -10,7 +10,10 @@ namespace Script.UI
         [SerializeField] private CharacterElementDetail[] characters;
         [SerializeField] private Camera renderCamera;
         [SerializeField] private Text characterNameText;
-        [SerializeField] private Text characterDescriptionText;
+        [SerializeField] private Image characterGunIcon;
+        [SerializeField] private Text characterGunText;
+        [SerializeField] private Image characterUltIcon;
+        [SerializeField] private Text characterUltext;
         [SerializeField] private GameObject playButton;
         private int selectedIndex = 0;
         private void OnEnable()
@@ -23,7 +26,12 @@ namespace Script.UI
         {
             renderCamera.transform.position = characters[selectedIndex].transform.position + new Vector3(0, -5f, -10f);
             characterNameText.text = characters[selectedIndex].CharacterName;
-            characterDescriptionText.text = characters[selectedIndex].Description;
+            characterGunIcon.preserveAspect = true;
+            characterGunIcon.sprite = characters[selectedIndex].GunIcon;
+            characterGunText.text = characters[selectedIndex].GunDescription;
+            characterUltIcon.preserveAspect = true;
+            characterUltIcon.sprite = characters[selectedIndex].UltIcon;
+            characterUltext.text = characters[selectedIndex].UltDescription;
 
             playButton.SetActive(characters[selectedIndex].HadBought == 1);
         }

@@ -160,8 +160,6 @@ public class Player : MonoBehaviour
         if (isKnockedBack && isBlocked) return;
         Vector2 moveInput = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         rb.velocity = moveInput * PlayerStatsManager.Instance.moveSpeed;
-        //if (rb.velocity.sqrMagnitude > 0) afterImage.Activate(true);
-        //else afterImage.Activate(false);
         animator.SetFloat("Speed", moveInput.sqrMagnitude);
 
         //Roll
