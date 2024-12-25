@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,7 +10,11 @@ namespace Script.UI
         [SerializeField] private Text backgroundMusicText, soundText;
         private int backgroundMusicVolume, soundVolume;
         [SerializeField] private Toggle popupDmg;
+        [SerializeField] private Toggle fullscreenTog;
         private int popup;
+        public List<ResItem> resolution = new List<ResItem>();
+        private int selectedResIndex;
+        public Text resolutionLabel;
         private void OnEnable()
         {
             backgroundMusicVolume = PlayerPrefs.GetInt("MusicVolume", 10);
@@ -18,6 +23,27 @@ namespace Script.UI
             soundText.text = soundVolume.ToString();
             popup = PlayerPrefs.GetInt("PopUpDmg", 1);
             popupDmg.isOn = popup == 1;
+            fullscreenTog.isOn = Screen.fullScreen;
+            bool foundRes = false;
+            for (int i = 0; i < resolution.Count; i++) 
+            {
+                if (Screen.width == resolution[i].horizontal && Screen.height == resolution[i].vertical)
+                {
+                    foundRes = true;
+                    selectedResIndex = i;
+                    UpdateResLabel();
+                }
+            }
+            if (!foundRes)
+            {
+                ResItem newRes = new ResItem();
+                newRes.horizontal = Screen.width;
+                newRes.vertical = Screen.height;
+
+                resolution.Add(newRes);
+                selectedResIndex = resolution.Count - 1;
+                UpdateResLabel();
+            }
         }
 
         public void OnChangeMusicChange(int change)
@@ -45,6 +71,7 @@ namespace Script.UI
             PlayerPrefs.SetInt("SoundVolume", soundVolume);
             PlayerPrefs.SetInt("PopUpDmg", popup);
             SoundManager.Instance.UpdateVolume();
+            Screen.SetResolution(resolution[selectedResIndex].horizontal, resolution[selectedResIndex].vertical,fullscreenTog.isOn);
             OnReturn();
         }
 
@@ -52,5 +79,21 @@ namespace Script.UI
         {
             gameObject.SetActive(false);
         }
+        public void ResChange(int change)
+        {
+            selectedResIndex += change;
+            if (selectedResIndex < 0) selectedResIndex = 0;
+            if (selectedResIndex > resolution.Count - 1) selectedResIndex = resolution.Count - 1;
+            UpdateResLabel();
+        }
+        public void UpdateResLabel()
+        {
+            resolutionLabel.text = resolution[selectedResIndex].horizontal.ToString() + "x" + resolution[selectedResIndex].vertical.ToString(); 
+        }
     }
+}
+[System.Serializable]
+public class ResItem
+{
+    public int horizontal, vertical;
 }

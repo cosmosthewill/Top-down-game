@@ -881,6 +881,7 @@ GameObject:
   - component: {fileID: 22705037}
   - component: {fileID: 22705039}
   - component: {fileID: 22705038}
+  - component: {fileID: 22705040}
   m_Layer: 8
   m_Name: BG_castlefloor (13)
   m_TagString: Untagged
@@ -1004,6 +1005,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &22705040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 22705036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &28233341
 GameObject:
   m_ObjectHideFlags: 0
@@ -1295,9 +1308,10 @@ GameObject:
   - component: {fileID: 33343046}
   - component: {fileID: 33343048}
   - component: {fileID: 33343047}
+  - component: {fileID: 33343049}
   m_Layer: 8
   m_Name: BG_castlefloor (12)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1418,6 +1432,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &33343049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 33343045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &41060939
 GameObject:
   m_ObjectHideFlags: 0
@@ -1997,9 +2023,10 @@ GameObject:
   - component: {fileID: 73978607}
   - component: {fileID: 73978609}
   - component: {fileID: 73978608}
+  - component: {fileID: 73978610}
   m_Layer: 8
   m_Name: BG_castlefloor (2)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2120,6 +2147,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &73978610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 73978606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &81167596
 GameObject:
   m_ObjectHideFlags: 0
@@ -2355,9 +2394,10 @@ GameObject:
   - component: {fileID: 89242689}
   - component: {fileID: 89242691}
   - component: {fileID: 89242690}
+  - component: {fileID: 89242692}
   m_Layer: 8
   m_Name: BG_castlefloor (12)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2478,6 +2518,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &89242692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 89242688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &103407146
 GameObject:
   m_ObjectHideFlags: 0
@@ -2628,9 +2680,10 @@ GameObject:
   - component: {fileID: 112437080}
   - component: {fileID: 112437082}
   - component: {fileID: 112437081}
+  - component: {fileID: 112437083}
   m_Layer: 8
   m_Name: BG_castlefloor (7)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2751,6 +2804,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &112437083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 112437079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &118571481
 GameObject:
   m_ObjectHideFlags: 0
@@ -2762,7 +2827,7 @@ GameObject:
   - component: {fileID: 118571482}
   m_Layer: 0
   m_Name: TopEdge
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2776,7 +2841,7 @@ Transform:
   m_GameObject: {fileID: 118571481}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 523.7, z: 0}
+  m_LocalPosition: {x: 0, y: 532, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3005,10 +3070,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -3070,9 +3135,10 @@ GameObject:
   - component: {fileID: 126537715}
   - component: {fileID: 126537717}
   - component: {fileID: 126537716}
+  - component: {fileID: 126537718}
   m_Layer: 8
   m_Name: BG_castlefloor (7)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3193,6 +3259,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &126537718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 126537714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &129865153
 GameObject:
   m_ObjectHideFlags: 0
@@ -3617,6 +3695,7 @@ GameObject:
   - component: {fileID: 174388295}
   - component: {fileID: 174388297}
   - component: {fileID: 174388296}
+  - component: {fileID: 174388298}
   m_Layer: 8
   m_Name: BG_castlefloor (18)
   m_TagString: Untagged
@@ -3740,6 +3819,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &174388298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 174388294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &175203840
 GameObject:
   m_ObjectHideFlags: 0
@@ -3938,9 +4029,10 @@ GameObject:
   - component: {fileID: 198640237}
   - component: {fileID: 198640239}
   - component: {fileID: 198640238}
+  - component: {fileID: 198640240}
   m_Layer: 8
   m_Name: BG_castlefloor
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4061,6 +4153,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &198640240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 198640236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &199026333 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1913151039517100238, guid: 2c71c26091cb3664d9ec97cd537203e1, type: 3}
@@ -4213,9 +4317,10 @@ GameObject:
   - component: {fileID: 224995078}
   - component: {fileID: 224995080}
   - component: {fileID: 224995079}
+  - component: {fileID: 224995081}
   m_Layer: 8
   m_Name: BG_castlefloor (20)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4336,6 +4441,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &224995081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 224995077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &241706841
 GameObject:
   m_ObjectHideFlags: 0
@@ -4936,9 +5053,10 @@ GameObject:
   - component: {fileID: 268355631}
   - component: {fileID: 268355633}
   - component: {fileID: 268355632}
+  - component: {fileID: 268355634}
   m_Layer: 8
   m_Name: BG_castlefloor (15)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5059,6 +5177,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &268355634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 268355630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &273518454
 GameObject:
   m_ObjectHideFlags: 0
@@ -5345,6 +5475,7 @@ GameObject:
   - component: {fileID: 282440764}
   - component: {fileID: 282440766}
   - component: {fileID: 282440765}
+  - component: {fileID: 282440767}
   m_Layer: 8
   m_Name: BG_castlefloor (5)
   m_TagString: Untagged
@@ -5468,6 +5599,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &282440767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 282440763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &283318715
 GameObject:
   m_ObjectHideFlags: 0
@@ -5785,9 +5928,10 @@ GameObject:
   - component: {fileID: 303657443}
   - component: {fileID: 303657445}
   - component: {fileID: 303657444}
+  - component: {fileID: 303657446}
   m_Layer: 8
   m_Name: BG_castlefloor (9)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5908,6 +6052,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &303657446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 303657442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &311359659
 GameObject:
   m_ObjectHideFlags: 0
@@ -5919,6 +6075,7 @@ GameObject:
   - component: {fileID: 311359660}
   - component: {fileID: 311359662}
   - component: {fileID: 311359661}
+  - component: {fileID: 311359663}
   m_Layer: 8
   m_Name: BG_castlefloor (1)
   m_TagString: Untagged
@@ -6042,6 +6199,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &311359663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 311359659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &312116698
 GameObject:
   m_ObjectHideFlags: 0
@@ -6189,7 +6358,7 @@ GameObject:
   - component: {fileID: 325270876}
   m_Layer: 0
   m_Name: BotEdge
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6203,7 +6372,7 @@ Transform:
   m_GameObject: {fileID: 325270875}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6243,9 +6412,10 @@ GameObject:
   - component: {fileID: 330278482}
   - component: {fileID: 330278484}
   - component: {fileID: 330278483}
+  - component: {fileID: 330278485}
   m_Layer: 8
   m_Name: BG_castlefloor (10)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6366,6 +6536,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &330278485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 330278481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &332934188
 GameObject:
   m_ObjectHideFlags: 0
@@ -6377,9 +6559,10 @@ GameObject:
   - component: {fileID: 332934189}
   - component: {fileID: 332934191}
   - component: {fileID: 332934190}
+  - component: {fileID: 332934192}
   m_Layer: 8
   m_Name: BG_castlefloor (12)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6500,6 +6683,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &332934192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 332934188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &334547708
 GameObject:
   m_ObjectHideFlags: 0
@@ -6652,7 +6847,7 @@ GameObject:
   - component: {fileID: 335241221}
   m_Layer: 0
   m_Name: RightEdge
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6666,15 +6861,18 @@ Transform:
   m_GameObject: {fileID: 335241220}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 526, y: 0, z: 0}
+  m_LocalPosition: {x: 532, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 380613741}
+  - {fileID: 926325372}
   - {fileID: 1002746263}
   - {fileID: 2115394954}
   - {fileID: 1743538091}
   - {fileID: 174388295}
+  - {fileID: 1982709206}
+  - {fileID: 797659000}
   - {fileID: 1416772778}
   - {fileID: 1821294012}
   - {fileID: 1041924072}
@@ -6703,6 +6901,7 @@ GameObject:
   - component: {fileID: 340364405}
   - component: {fileID: 340364407}
   - component: {fileID: 340364406}
+  - component: {fileID: 340364408}
   m_Layer: 8
   m_Name: BG_castlefloor (3)
   m_TagString: Untagged
@@ -6826,6 +7025,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &340364408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 340364404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &351383865
 GameObject:
   m_ObjectHideFlags: 0
@@ -7150,7 +7361,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1735293145}
   m_Father: {fileID: 1115979374}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
@@ -7282,6 +7494,7 @@ GameObject:
   - component: {fileID: 380613741}
   - component: {fileID: 380613743}
   - component: {fileID: 380613742}
+  - component: {fileID: 380613744}
   m_Layer: 8
   m_Name: BG_castlefloor
   m_TagString: Untagged
@@ -7405,6 +7618,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &380613744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 380613740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &383083814
 GameObject:
   m_ObjectHideFlags: 0
@@ -7829,9 +8054,10 @@ GameObject:
   - component: {fileID: 406768278}
   - component: {fileID: 406768280}
   - component: {fileID: 406768279}
+  - component: {fileID: 406768281}
   m_Layer: 8
   m_Name: BG_castlefloor (6)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7952,6 +8178,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &406768281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 406768277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &413967982
 GameObject:
   m_ObjectHideFlags: 0
@@ -8099,9 +8337,10 @@ GameObject:
   - component: {fileID: 430990990}
   - component: {fileID: 430990992}
   - component: {fileID: 430990991}
+  - component: {fileID: 430990993}
   m_Layer: 8
   m_Name: BG_castlefloor (11)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8222,6 +8461,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &430990993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 430990989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &438463581
 GameObject:
   m_ObjectHideFlags: 0
@@ -8233,9 +8484,10 @@ GameObject:
   - component: {fileID: 438463582}
   - component: {fileID: 438463584}
   - component: {fileID: 438463583}
+  - component: {fileID: 438463585}
   m_Layer: 8
   m_Name: BG_castlefloor (19)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8356,6 +8608,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &438463585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 438463581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &447468358
 GameObject:
   m_ObjectHideFlags: 0
@@ -8767,6 +9031,153 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &457803692
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 457803693}
+  - component: {fileID: 457803695}
+  - component: {fileID: 457803694}
+  - component: {fileID: 457803696}
+  m_Layer: 8
+  m_Name: BG_castlefloor (21)
+  m_TagString: Obstacle
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &457803693
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 457803692}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -263, y: 269, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1036169950}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!60 &457803694
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 457803692}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 25.6, y: 25.6}
+    newSize: {x: 25.6, y: 25.6}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -12.8, y: 12.8}
+      - {x: -12.8, y: -12.8}
+      - {x: 12.8, y: -12.8}
+      - {x: 12.8, y: 12.8}
+  m_UseDelaunayMesh: 0
+--- !u!212 &457803695
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 457803692}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 74302928d5374014db264ad889aee48b, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 25.6, y: 25.6}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!114 &457803696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 457803692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &464546947
 GameObject:
   m_ObjectHideFlags: 0
@@ -8778,9 +9189,10 @@ GameObject:
   - component: {fileID: 464546948}
   - component: {fileID: 464546950}
   - component: {fileID: 464546949}
+  - component: {fileID: 464546951}
   m_Layer: 8
   m_Name: BG_castlefloor (15)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8901,6 +9313,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &464546951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 464546947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &471158331
 GameObject:
   m_ObjectHideFlags: 0
@@ -9236,9 +9660,10 @@ GameObject:
   - component: {fileID: 505551061}
   - component: {fileID: 505551063}
   - component: {fileID: 505551062}
+  - component: {fileID: 505551064}
   m_Layer: 8
   m_Name: BG_castlefloor (3)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9359,6 +9784,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &505551064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 505551060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &518942770
 GameObject:
   m_ObjectHideFlags: 0
@@ -9915,9 +10352,10 @@ GameObject:
   - component: {fileID: 553824443}
   - component: {fileID: 553824445}
   - component: {fileID: 553824444}
+  - component: {fileID: 553824446}
   m_Layer: 8
   m_Name: BG_castlefloor (4)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10038,6 +10476,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &553824446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 553824442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &589076147
 GameObject:
   m_ObjectHideFlags: 0
@@ -10502,9 +10952,10 @@ GameObject:
   - component: {fileID: 596036448}
   - component: {fileID: 596036450}
   - component: {fileID: 596036449}
+  - component: {fileID: 596036451}
   m_Layer: 8
   m_Name: BG_castlefloor (8)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10625,6 +11076,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &596036451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 596036447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &597721528
 GameObject:
   m_ObjectHideFlags: 0
@@ -10636,6 +11099,7 @@ GameObject:
   - component: {fileID: 597721529}
   - component: {fileID: 597721531}
   - component: {fileID: 597721530}
+  - component: {fileID: 597721532}
   m_Layer: 8
   m_Name: BG_castlefloor (7)
   m_TagString: Untagged
@@ -10759,6 +11223,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &597721532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 597721528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &603906260
 GameObject:
   m_ObjectHideFlags: 0
@@ -11211,6 +11687,7 @@ GameObject:
   - component: {fileID: 610222844}
   - component: {fileID: 610222846}
   - component: {fileID: 610222845}
+  - component: {fileID: 610222847}
   m_Layer: 8
   m_Name: BG_castlefloor (11)
   m_TagString: Untagged
@@ -11334,6 +11811,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &610222847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 610222843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &617301284
 GameObject:
   m_ObjectHideFlags: 0
@@ -11856,9 +12345,10 @@ GameObject:
   - component: {fileID: 665850266}
   - component: {fileID: 665850268}
   - component: {fileID: 665850267}
+  - component: {fileID: 665850269}
   m_Layer: 8
   m_Name: BG_castlefloor (18)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11979,6 +12469,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &665850269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 665850265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &668291231
 GameObject:
   m_ObjectHideFlags: 0
@@ -12422,6 +12924,7 @@ GameObject:
   - component: {fileID: 687900331}
   - component: {fileID: 687900333}
   - component: {fileID: 687900332}
+  - component: {fileID: 687900334}
   m_Layer: 8
   m_Name: BG_castlefloor (2)
   m_TagString: Untagged
@@ -12545,6 +13048,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &687900334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 687900330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &712777474
 GameObject:
   m_ObjectHideFlags: 0
@@ -12556,9 +13071,10 @@ GameObject:
   - component: {fileID: 712777475}
   - component: {fileID: 712777477}
   - component: {fileID: 712777476}
+  - component: {fileID: 712777478}
   m_Layer: 8
   m_Name: BG_castlefloor (5)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12679,6 +13195,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &712777478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 712777474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &713267207
 GameObject:
   m_ObjectHideFlags: 0
@@ -12850,9 +13378,10 @@ GameObject:
   - component: {fileID: 721541477}
   - component: {fileID: 721541479}
   - component: {fileID: 721541478}
+  - component: {fileID: 721541480}
   m_Layer: 8
   m_Name: BG_castlefloor (5)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12973,6 +13502,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &721541480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 721541476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &733771404
 GameObject:
   m_ObjectHideFlags: 0
@@ -13331,6 +13872,7 @@ GameObject:
   - component: {fileID: 750944476}
   - component: {fileID: 750944478}
   - component: {fileID: 750944477}
+  - component: {fileID: 750944479}
   m_Layer: 8
   m_Name: BG_castlefloor (12)
   m_TagString: Untagged
@@ -13454,6 +13996,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &750944479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 750944475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &757988062
 GameObject:
   m_ObjectHideFlags: 0
@@ -14157,9 +14711,10 @@ GameObject:
   - component: {fileID: 781671769}
   - component: {fileID: 781671771}
   - component: {fileID: 781671770}
+  - component: {fileID: 781671772}
   m_Layer: 8
   m_Name: BG_castlefloor (8)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14280,6 +14835,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &781671772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 781671768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &782365277
 GameObject:
   m_ObjectHideFlags: 0
@@ -14427,9 +14994,10 @@ GameObject:
   - component: {fileID: 788384893}
   - component: {fileID: 788384895}
   - component: {fileID: 788384894}
+  - component: {fileID: 788384896}
   m_Layer: 8
   m_Name: BG_castlefloor (17)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14550,6 +15118,165 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &788384896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 788384892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &797658999
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 797659000}
+  - component: {fileID: 797659002}
+  - component: {fileID: 797659001}
+  - component: {fileID: 797659003}
+  m_Layer: 8
+  m_Name: BG_castlefloor (22)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &797659000
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 797658999}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -263, y: 269, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 335241221}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!60 &797659001
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 797658999}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 25.6, y: 25.6}
+    newSize: {x: 25.6, y: 25.6}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -12.8, y: 12.8}
+      - {x: -12.8, y: -12.8}
+      - {x: 12.8, y: -12.8}
+      - {x: 12.8, y: 12.8}
+  m_UseDelaunayMesh: 0
+--- !u!212 &797659002
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 797658999}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 74302928d5374014db264ad889aee48b, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 25.6, y: 25.6}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!114 &797659003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 797658999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &798561681
 GameObject:
   m_ObjectHideFlags: 0
@@ -14993,6 +15720,7 @@ GameObject:
   - component: {fileID: 897848035}
   - component: {fileID: 897848037}
   - component: {fileID: 897848036}
+  - component: {fileID: 897848038}
   m_Layer: 8
   m_Name: BG_castlefloor (4)
   m_TagString: Untagged
@@ -15116,6 +15844,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &897848038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 897848034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &901216314
 GameObject:
   m_ObjectHideFlags: 0
@@ -15263,9 +16003,10 @@ GameObject:
   - component: {fileID: 906277577}
   - component: {fileID: 906277579}
   - component: {fileID: 906277578}
+  - component: {fileID: 906277580}
   m_Layer: 8
   m_Name: BG_castlefloor (9)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15386,6 +16127,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &906277580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 906277576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &913410699
 GameObject:
   m_ObjectHideFlags: 0
@@ -15472,9 +16225,10 @@ GameObject:
   - component: {fileID: 925286949}
   - component: {fileID: 925286951}
   - component: {fileID: 925286950}
+  - component: {fileID: 925286952}
   m_Layer: 8
   m_Name: BG_castlefloor (13)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15595,6 +16349,165 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &925286952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 925286948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &926325371
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 926325372}
+  - component: {fileID: 926325374}
+  - component: {fileID: 926325373}
+  - component: {fileID: 926325375}
+  m_Layer: 8
+  m_Name: BG_castlefloor (20)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &926325372
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 926325371}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -263, y: -269, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 335241221}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!60 &926325373
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 926325371}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 25.6, y: 25.6}
+    newSize: {x: 25.6, y: 25.6}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -12.8, y: 12.8}
+      - {x: -12.8, y: -12.8}
+      - {x: 12.8, y: -12.8}
+      - {x: 12.8, y: 12.8}
+  m_UseDelaunayMesh: 0
+--- !u!212 &926325374
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 926325371}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 74302928d5374014db264ad889aee48b, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 25.6, y: 25.6}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!114 &926325375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 926325371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &926383022
 GameObject:
   m_ObjectHideFlags: 0
@@ -15933,9 +16846,10 @@ GameObject:
   - component: {fileID: 990694701}
   - component: {fileID: 990694703}
   - component: {fileID: 990694702}
+  - component: {fileID: 990694704}
   m_Layer: 8
   m_Name: BG_castlefloor (9)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16056,6 +16970,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &990694704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 990694700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1002746262
 GameObject:
   m_ObjectHideFlags: 0
@@ -16067,6 +16993,7 @@ GameObject:
   - component: {fileID: 1002746263}
   - component: {fileID: 1002746265}
   - component: {fileID: 1002746264}
+  - component: {fileID: 1002746266}
   m_Layer: 8
   m_Name: BG_castlefloor (8)
   m_TagString: Untagged
@@ -16190,6 +17117,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1002746266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1002746262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1003301005
 GameObject:
   m_ObjectHideFlags: 0
@@ -16201,9 +17140,10 @@ GameObject:
   - component: {fileID: 1003301006}
   - component: {fileID: 1003301008}
   - component: {fileID: 1003301007}
+  - component: {fileID: 1003301009}
   m_Layer: 8
   m_Name: BG_castlefloor (2)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16324,6 +17264,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1003301009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1003301005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1007059562
 GameObject:
   m_ObjectHideFlags: 0
@@ -16335,6 +17287,7 @@ GameObject:
   - component: {fileID: 1007059563}
   - component: {fileID: 1007059565}
   - component: {fileID: 1007059564}
+  - component: {fileID: 1007059566}
   m_Layer: 8
   m_Name: BG_castlefloor (15)
   m_TagString: Untagged
@@ -16458,6 +17411,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1007059566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1007059562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1013143436
 GameObject:
   m_ObjectHideFlags: 0
@@ -16608,9 +17573,10 @@ GameObject:
   - component: {fileID: 1031584154}
   - component: {fileID: 1031584156}
   - component: {fileID: 1031584155}
+  - component: {fileID: 1031584157}
   m_Layer: 8
   m_Name: BG_castlefloor (16)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16731,6 +17697,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1031584157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1031584153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1036169949
 GameObject:
   m_ObjectHideFlags: 0
@@ -16742,7 +17720,7 @@ GameObject:
   - component: {fileID: 1036169950}
   m_Layer: 0
   m_Name: LeftEdge
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16756,15 +17734,18 @@ Transform:
   m_GameObject: {fileID: 1036169949}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -6, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2098990895}
+  - {fileID: 1972652109}
   - {fileID: 596036448}
   - {fileID: 1031584154}
   - {fileID: 788384893}
   - {fileID: 2141465606}
+  - {fileID: 1850508102}
+  - {fileID: 457803693}
   - {fileID: 1685012841}
   - {fileID: 906277577}
   - {fileID: 1748449259}
@@ -16793,6 +17774,7 @@ GameObject:
   - component: {fileID: 1041924072}
   - component: {fileID: 1041924074}
   - component: {fileID: 1041924073}
+  - component: {fileID: 1041924075}
   m_Layer: 8
   m_Name: BG_castlefloor (10)
   m_TagString: Untagged
@@ -16916,6 +17898,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1041924075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1041924071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1044197786
 GameObject:
   m_ObjectHideFlags: 0
@@ -17063,9 +18057,10 @@ GameObject:
   - component: {fileID: 1058692062}
   - component: {fileID: 1058692064}
   - component: {fileID: 1058692063}
+  - component: {fileID: 1058692065}
   m_Layer: 8
   m_Name: BG_castlefloor (14)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17186,6 +18181,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1058692065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1058692061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1065271395
 GameObject:
   m_ObjectHideFlags: 0
@@ -17346,9 +18353,10 @@ GameObject:
   - component: {fileID: 1090776514}
   - component: {fileID: 1090776516}
   - component: {fileID: 1090776515}
+  - component: {fileID: 1090776517}
   m_Layer: 8
   m_Name: BG_castlefloor (13)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17469,6 +18477,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1090776517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1090776513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1096662800
 GameObject:
   m_ObjectHideFlags: 0
@@ -17616,9 +18636,10 @@ GameObject:
   - component: {fileID: 1100734346}
   - component: {fileID: 1100734348}
   - component: {fileID: 1100734347}
+  - component: {fileID: 1100734349}
   m_Layer: 8
   m_Name: BG_castlefloor (6)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17739,6 +18760,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1100734349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1100734345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1102638889
 GameObject:
   m_ObjectHideFlags: 0
@@ -17750,6 +18783,7 @@ GameObject:
   - component: {fileID: 1102638890}
   - component: {fileID: 1102638892}
   - component: {fileID: 1102638891}
+  - component: {fileID: 1102638893}
   m_Layer: 8
   m_Name: BG_castlefloor (6)
   m_TagString: Untagged
@@ -17873,6 +18907,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1102638893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1102638889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1103626375
 GameObject:
   m_ObjectHideFlags: 0
@@ -17884,9 +18930,10 @@ GameObject:
   - component: {fileID: 1103626376}
   - component: {fileID: 1103626378}
   - component: {fileID: 1103626377}
+  - component: {fileID: 1103626379}
   m_Layer: 8
   m_Name: BG_castlefloor (4)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18007,6 +19054,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1103626379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1103626375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1105546306
 GameObject:
   m_ObjectHideFlags: 0
@@ -18399,9 +19458,10 @@ GameObject:
   - component: {fileID: 1136755570}
   - component: {fileID: 1136755572}
   - component: {fileID: 1136755571}
+  - component: {fileID: 1136755573}
   m_Layer: 8
   m_Name: BG_castlefloor (13)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18522,6 +19582,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1136755573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1136755569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1186692065
 GameObject:
   m_ObjectHideFlags: 0
@@ -18533,9 +19605,10 @@ GameObject:
   - component: {fileID: 1186692066}
   - component: {fileID: 1186692068}
   - component: {fileID: 1186692067}
+  - component: {fileID: 1186692069}
   m_Layer: 8
   m_Name: BG_castlefloor (21)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18656,6 +19729,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1186692069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1186692065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1214601230
 GameObject:
   m_ObjectHideFlags: 0
@@ -18806,9 +19891,10 @@ GameObject:
   - component: {fileID: 1229500488}
   - component: {fileID: 1229500490}
   - component: {fileID: 1229500489}
+  - component: {fileID: 1229500491}
   m_Layer: 8
   m_Name: BG_castlefloor (16)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18929,6 +20015,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1229500491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1229500487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1232786069
 GameObject:
   m_ObjectHideFlags: 0
@@ -19104,6 +20202,85 @@ Transform:
   - {fileID: 1979604364}
   m_Father: {fileID: 538657449}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1242002946
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1242002947}
+  - component: {fileID: 1242002949}
+  - component: {fileID: 1242002948}
+  m_Layer: 5
+  m_Name: Text (Legacy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1242002947
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1242002946}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1371599500}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1242002948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1242002946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 0abdfdcb129349e40bcc655aacdda39e, type: 3}
+    m_FontSize: 25
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 44
+    m_Alignment: 2
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 
+--- !u!222 &1242002949
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1242002946}
+  m_CullTransparentMesh: 1
 --- !u!1 &1249805907
 GameObject:
   m_ObjectHideFlags: 0
@@ -19724,9 +20901,10 @@ GameObject:
   - component: {fileID: 1281007453}
   - component: {fileID: 1281007455}
   - component: {fileID: 1281007454}
+  - component: {fileID: 1281007456}
   m_Layer: 8
   m_Name: BG_castlefloor (5)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19847,6 +21025,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1281007456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1281007452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1288967060
 GameObject:
   m_ObjectHideFlags: 0
@@ -19858,9 +21048,10 @@ GameObject:
   - component: {fileID: 1288967061}
   - component: {fileID: 1288967063}
   - component: {fileID: 1288967062}
+  - component: {fileID: 1288967064}
   m_Layer: 8
   m_Name: BG_castlefloor (3)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19981,6 +21172,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1288967064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1288967060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1289383480
 GameObject:
   m_ObjectHideFlags: 0
@@ -19992,9 +21195,10 @@ GameObject:
   - component: {fileID: 1289383481}
   - component: {fileID: 1289383483}
   - component: {fileID: 1289383482}
+  - component: {fileID: 1289383484}
   m_Layer: 8
   m_Name: BG_castlefloor (22)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20115,6 +21319,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1289383484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1289383480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1293764966
 GameObject:
   m_ObjectHideFlags: 0
@@ -20398,9 +21614,10 @@ GameObject:
   - component: {fileID: 1311133736}
   - component: {fileID: 1311133738}
   - component: {fileID: 1311133737}
+  - component: {fileID: 1311133739}
   m_Layer: 8
   m_Name: BG_castlefloor (3)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20521,6 +21738,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1311133739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1311133735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1316448149
 GameObject:
   m_ObjectHideFlags: 0
@@ -20992,9 +22221,10 @@ GameObject:
   - component: {fileID: 1340717137}
   - component: {fileID: 1340717139}
   - component: {fileID: 1340717138}
+  - component: {fileID: 1340717140}
   m_Layer: 8
   m_Name: BG_castlefloor (14)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21115,6 +22345,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1340717140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1340717136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1355680758
 GameObject:
   m_ObjectHideFlags: 0
@@ -21567,9 +22809,10 @@ GameObject:
   - component: {fileID: 1365158419}
   - component: {fileID: 1365158421}
   - component: {fileID: 1365158420}
+  - component: {fileID: 1365158422}
   m_Layer: 8
   m_Name: BG_castlefloor (1)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21690,6 +22933,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1365158422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1365158418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1371599497
 GameObject:
   m_ObjectHideFlags: 0
@@ -21757,7 +23012,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1242002947}
   m_Father: {fileID: 1115979374}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
@@ -21776,9 +23032,10 @@ GameObject:
   - component: {fileID: 1381332545}
   - component: {fileID: 1381332547}
   - component: {fileID: 1381332546}
+  - component: {fileID: 1381332548}
   m_Layer: 8
   m_Name: BG_castlefloor (22)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21899,6 +23156,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1381332548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1381332544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1395233109
 GameObject:
   m_ObjectHideFlags: 0
@@ -22185,9 +23454,10 @@ GameObject:
   - component: {fileID: 1412541780}
   - component: {fileID: 1412541782}
   - component: {fileID: 1412541781}
+  - component: {fileID: 1412541783}
   m_Layer: 8
   m_Name: BG_castlefloor (17)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22308,6 +23578,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1412541783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1412541779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1416772777
 GameObject:
   m_ObjectHideFlags: 0
@@ -22319,6 +23601,7 @@ GameObject:
   - component: {fileID: 1416772778}
   - component: {fileID: 1416772780}
   - component: {fileID: 1416772779}
+  - component: {fileID: 1416772781}
   m_Layer: 8
   m_Name: BG_castlefloor (19)
   m_TagString: Untagged
@@ -22442,6 +23725,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1416772781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1416772777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1420214571
 GameObject:
   m_ObjectHideFlags: 0
@@ -22453,9 +23748,10 @@ GameObject:
   - component: {fileID: 1420214572}
   - component: {fileID: 1420214574}
   - component: {fileID: 1420214573}
+  - component: {fileID: 1420214575}
   m_Layer: 8
   m_Name: BG_castlefloor (18)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22576,6 +23872,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1420214575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1420214571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1424803117
 GameObject:
   m_ObjectHideFlags: 0
@@ -22587,9 +23895,10 @@ GameObject:
   - component: {fileID: 1424803118}
   - component: {fileID: 1424803120}
   - component: {fileID: 1424803119}
+  - component: {fileID: 1424803121}
   m_Layer: 8
   m_Name: BG_castlefloor (2)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22710,6 +24019,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1424803121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1424803117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1426389213
 GameObject:
   m_ObjectHideFlags: 0
@@ -22993,9 +24314,10 @@ GameObject:
   - component: {fileID: 1436625680}
   - component: {fileID: 1436625682}
   - component: {fileID: 1436625681}
+  - component: {fileID: 1436625683}
   m_Layer: 8
   m_Name: BG_castlefloor (15)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23116,6 +24438,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1436625683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1436625679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1438636336
 GameObject:
   m_ObjectHideFlags: 0
@@ -23944,6 +25278,7 @@ GameObject:
   - component: {fileID: 1504214754}
   - component: {fileID: 1504214756}
   - component: {fileID: 1504214755}
+  - component: {fileID: 1504214757}
   m_Layer: 8
   m_Name: BG_castlefloor (14)
   m_TagString: Untagged
@@ -24067,6 +25402,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1504214757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1504214753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1509168822
 GameObject:
   m_ObjectHideFlags: 0
@@ -24078,9 +25425,10 @@ GameObject:
   - component: {fileID: 1509168823}
   - component: {fileID: 1509168825}
   - component: {fileID: 1509168824}
+  - component: {fileID: 1509168826}
   m_Layer: 8
   m_Name: BG_castlefloor (11)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24201,6 +25549,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1509168826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1509168822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1509617989
 GameObject:
   m_ObjectHideFlags: 0
@@ -24371,9 +25731,10 @@ GameObject:
   - component: {fileID: 1515884279}
   - component: {fileID: 1515884281}
   - component: {fileID: 1515884280}
+  - component: {fileID: 1515884282}
   m_Layer: 8
   m_Name: BG_castlefloor (1)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24494,6 +25855,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1515884282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1515884278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1530734337
 GameObject:
   m_ObjectHideFlags: 0
@@ -24641,9 +26014,10 @@ GameObject:
   - component: {fileID: 1535259252}
   - component: {fileID: 1535259254}
   - component: {fileID: 1535259253}
+  - component: {fileID: 1535259255}
   m_Layer: 8
   m_Name: BG_castlefloor (14)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24764,6 +26138,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1535259255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1535259251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1545988838
 GameObject:
   m_ObjectHideFlags: 0
@@ -24775,9 +26161,10 @@ GameObject:
   - component: {fileID: 1545988839}
   - component: {fileID: 1545988841}
   - component: {fileID: 1545988840}
+  - component: {fileID: 1545988842}
   m_Layer: 8
   m_Name: BG_castlefloor (19)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24898,6 +26285,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1545988842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1545988838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1547023690
 GameObject:
   m_ObjectHideFlags: 0
@@ -24974,10 +26373,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -410.15634, y: 300.83322}
-      - {x: -411.33545, y: -208.88664}
-      - {x: 99.785736, y: -207.77979}
-      - {x: 98.4988, y: 299.3553}
+    - - {x: -436.47345, y: 327.78854}
+      - {x: -435.51547, y: -233.5923}
+      - {x: 126.593994, y: -234.06241}
+      - {x: 125.832756, y: 328.26617}
   m_UseDelaunayMesh: 0
 --- !u!1 &1548720130
 GameObject:
@@ -25265,9 +26664,10 @@ GameObject:
   - component: {fileID: 1575952231}
   - component: {fileID: 1575952233}
   - component: {fileID: 1575952232}
+  - component: {fileID: 1575952234}
   m_Layer: 8
   m_Name: BG_castlefloor (17)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25388,6 +26788,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1575952234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1575952230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1604750179
 GameObject:
   m_ObjectHideFlags: 0
@@ -25538,9 +26950,10 @@ GameObject:
   - component: {fileID: 1607306728}
   - component: {fileID: 1607306730}
   - component: {fileID: 1607306729}
+  - component: {fileID: 1607306731}
   m_Layer: 8
   m_Name: BG_castlefloor (7)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25661,6 +27074,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1607306731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1607306727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1620617644
 GameObject:
   m_ObjectHideFlags: 0
@@ -26035,9 +27460,10 @@ GameObject:
   - component: {fileID: 1649385738}
   - component: {fileID: 1649385740}
   - component: {fileID: 1649385739}
+  - component: {fileID: 1649385741}
   m_Layer: 8
   m_Name: BG_castlefloor (4)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26158,6 +27584,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1649385741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1649385737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1671071753
 GameObject:
   m_ObjectHideFlags: 0
@@ -26169,9 +27607,10 @@ GameObject:
   - component: {fileID: 1671071754}
   - component: {fileID: 1671071756}
   - component: {fileID: 1671071755}
+  - component: {fileID: 1671071757}
   m_Layer: 8
   m_Name: BG_castlefloor (21)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26292,6 +27731,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1671071757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1671071753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1675039108
 GameObject:
   m_ObjectHideFlags: 0
@@ -26674,9 +28125,10 @@ GameObject:
   - component: {fileID: 1685012841}
   - component: {fileID: 1685012843}
   - component: {fileID: 1685012842}
+  - component: {fileID: 1685012844}
   m_Layer: 8
   m_Name: BG_castlefloor (19)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26797,6 +28249,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1685012844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1685012840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1697796015
 GameObject:
   m_ObjectHideFlags: 0
@@ -27463,6 +28927,85 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1735293144
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1735293145}
+  - component: {fileID: 1735293147}
+  - component: {fileID: 1735293146}
+  m_Layer: 5
+  m_Name: Text (Legacy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1735293145
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1735293144}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 372119843}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1735293146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1735293144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 0abdfdcb129349e40bcc655aacdda39e, type: 3}
+    m_FontSize: 25
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 44
+    m_Alignment: 2
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 
+--- !u!222 &1735293147
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1735293144}
+  m_CullTransparentMesh: 1
 --- !u!1 &1743538090
 GameObject:
   m_ObjectHideFlags: 0
@@ -27474,6 +29017,7 @@ GameObject:
   - component: {fileID: 1743538091}
   - component: {fileID: 1743538093}
   - component: {fileID: 1743538092}
+  - component: {fileID: 1743538094}
   m_Layer: 8
   m_Name: BG_castlefloor (17)
   m_TagString: Untagged
@@ -27597,6 +29141,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1743538094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1743538090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1744490006
 GameObject:
   m_ObjectHideFlags: 0
@@ -27744,9 +29300,10 @@ GameObject:
   - component: {fileID: 1748449259}
   - component: {fileID: 1748449261}
   - component: {fileID: 1748449260}
+  - component: {fileID: 1748449262}
   m_Layer: 8
   m_Name: BG_castlefloor (10)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27867,6 +29424,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1748449262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1748449258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1749445459
 GameObject:
   m_ObjectHideFlags: 0
@@ -28286,9 +29855,10 @@ GameObject:
   - component: {fileID: 1768639723}
   - component: {fileID: 1768639725}
   - component: {fileID: 1768639724}
+  - component: {fileID: 1768639726}
   m_Layer: 8
   m_Name: BG_castlefloor
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28409,6 +29979,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1768639726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1768639722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1769437068
 GameObject:
   m_ObjectHideFlags: 0
@@ -28692,9 +30274,10 @@ GameObject:
   - component: {fileID: 1778523667}
   - component: {fileID: 1778523669}
   - component: {fileID: 1778523668}
+  - component: {fileID: 1778523670}
   m_Layer: 8
   m_Name: BG_castlefloor (16)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28815,6 +30398,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1778523670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1778523666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1778830889
 GameObject:
   m_ObjectHideFlags: 0
@@ -28962,9 +30557,10 @@ GameObject:
   - component: {fileID: 1780361666}
   - component: {fileID: 1780361668}
   - component: {fileID: 1780361667}
+  - component: {fileID: 1780361669}
   m_Layer: 8
   m_Name: BG_castlefloor (11)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29085,6 +30681,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1780361669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1780361665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1790895161
 GameObject:
   m_ObjectHideFlags: 0
@@ -29217,7 +30825,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: -142}
-  m_SizeDelta: {x: -1720, y: 65}
+  m_SizeDelta: {x: -1720, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1795502693
 GameObject:
@@ -29507,6 +31115,7 @@ GameObject:
   - component: {fileID: 1821294012}
   - component: {fileID: 1821294014}
   - component: {fileID: 1821294013}
+  - component: {fileID: 1821294015}
   m_Layer: 8
   m_Name: BG_castlefloor (9)
   m_TagString: Untagged
@@ -29630,6 +31239,165 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1821294015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1821294011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1850508101
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1850508102}
+  - component: {fileID: 1850508104}
+  - component: {fileID: 1850508103}
+  - component: {fileID: 1850508105}
+  m_Layer: 8
+  m_Name: BG_castlefloor (20)
+  m_TagString: Obstacle
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1850508102
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1850508101}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -263, y: 254.6, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1036169950}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!60 &1850508103
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1850508101}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 25.6, y: 25.6}
+    newSize: {x: 25.6, y: 25.6}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -12.8, y: 12.8}
+      - {x: -12.8, y: -12.8}
+      - {x: 12.8, y: -12.8}
+      - {x: 12.8, y: 12.8}
+  m_UseDelaunayMesh: 0
+--- !u!212 &1850508104
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1850508101}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 74302928d5374014db264ad889aee48b, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 25.6, y: 25.6}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!114 &1850508105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1850508101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1850724539
 GameObject:
   m_ObjectHideFlags: 0
@@ -30008,7 +31776,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   data:
-    dataString: UEsDBBQAAAgIAAA4IexnvEJ5bQIAACUFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVE1zmzAQ/SsenesM4K9xby12nB6SeOJ2cuEi0GI0FhIjidhOxv+9KwGG0hPivX2rtx/wRbg0FWRW6Z3m7FkxIN8nxJ3Jt0lPPsGFHpU88E/oYt45s4ULoj7mjVquEA+dzKgSrObZD3kULjhAsJY8V7rcsiPEyliDcE6FAaS0sk4tEfqakAs+pmsnueIpWrnTJ57WweSGxwykBd2Hzh8W0WwZBcuwVUyjh2C1jNbzVtfIapkJWlbAXA29ehFGrQxPPlBifW2MozIlBDetOWKvlS8+ppWpsTQMYJxisd7RDF8L4MfCjsWveW7Atp3Q9LrhGnvWZCU/VdPIkppT4+yDitobWCy9pybp83/8NPR0rlX51N0bBu4OW/Ds9EavGTV20OkhvOmNh75BZypONBXwXoB8UTutasmQtLp20tpAtOlf76XFBWSnHm+sjsC66jveDbYbq6vh5qu/xIKXqaMe5g1wEMr3228DaJzMLzTsd8W0KRB1Lv4Y+E2Pw6VqiUeujUWqrVI6e6mqtQslW98zV01tY6UleLg1XYGkwl73mMaORzjiBteOmEfqPp/28pbrvoqRxMN9fBCMqL0634dlCnV+BlO81lZwCb1pR7xgn2IlZbNhw550skOtc5oNZMeas39Xi6SL+WyVBjOWBkGap9F0Ha5SmIVBCDnLZ2FI/O5xiXVSsW+Mtu3Bqck+ucQ96/4qk52mld92pul5xz9LNWg5l7k6ZBpAvjYZ7sZB4yX4VbIt49igA1jLpZ83+UqIUNkJWHJPlPhKtxeradJnSUjFP5R1SEJi/xtJiIPvu7zX8MHh7C7vkt3I7S9QSwMEFAAACAgAADgh7D4jUphtAAAAeAAAAAkAJABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQGrVipLLSrOzM9TslIw0TPSMzTXUVBKL0osyCgGihiCOKWZKSB2tFKSqYmxeZKBcUqSgUFSWpKRrqWheVKqsaGBYWpaSpqxoaFSLFB9SWVBql9ibipET0BiSUZaZl5KZl66nntRZoo7yGil2FoAUEsBAi0AFAAACAgAADgh7Ge8QnltAgAAJQUAAAsAJAAAAAAAAAAAAAAAAAAAAGdyYXBoMC5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsBAi0AFAAACAgAADgh7D4jUphtAAAAeAAAAAkAJAAAAAAAAAAAAAAAugIAAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLBQYAAAAAAgACALgAAAByAwAAAAA=
+    dataString: UEsDBBQAAAgIAAA4IeykPhRdewIAADgFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVMFymzAQ/RWPznUGDDbj3lrsOD0k8cTt5MJFoMVoDBIjidhOxv/elQBD6cnye7urt29XfBEudA2ZkWqnOHuWDMj3GbFn8m02kE9woUcpDvwT+ph3zkxhg6iLeaOGS8R9m6ZlBUbx7Ic4ljbYQ7ARPJeq2rIjxFIbjXBOSw1IKWlstkDoa0Yu+DNf25QrnhaRPX3iae3NbnjMQBhQo1DvIYxWwTpcLYMuByEvWi2itReGiy47eFgi5IdRuJ17kavUiKykVQ3MtjUUXPqLrg6eXKDAlrsYS2WyLLnu9BJzrZ0fMa11g91iAOMU+3ciraQC+LEw0+TXPNdgOnMUvW64QhvbquSnbL2tqD61yj5o2TgBy5XT1BZ9/o+f+47Olaye+nt9z95hCp6d3ug1o9qMzB/Dm0G47ww60/JE0xLeCxAvcqdkIxiSRjU2tdGw2Ax/763FBWSnAW+lTsCmHhzvZ91P2vZwc91f4pJXqaUewhY4lNL57RYEFE7mFwp266O7EohaFX80/KbH8Z51xCNX2iDVdSmsvFQ2yoaSrfPMdtOYWCoBDu5E1yBoaa57LGOmI5xwo2snzCO1L6q7vOP6hzJJcfAQ73kTai/P92HpQp6fQRevjSm5gEG0JV7Qp1gK0W7Y2JM+7dConGajtGPD2b+rRdJlGESpF7DU89I8XczXfpRC4Hs+5CwPfJ+43eMC+6TlvhXa2YNTE0NxgXvWf2hmO0Vrt+1M0fOOf1ZyZDkXuTxkCkC8thXuwkHhJfgq2ZZxNOgAxnDh5k2+ElLK7AQsuRdKXKfbi1E0GaokpOYf0lgkIbH7siTEwvdd3iv44HC2l/fFbuT2F1BLAwQUAAAICAAAOCHsPiNSmG0AAAB4AAAACQAkAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAatWKkstKs7Mz1OyUjDRM9IzNNdRUEovSizIKAaKGII4pZkpIHa0UpKpibF5koFxSpKBQVJakpGupaF5UqqxoYFhalpKmrGhoVIsUH1JZUGqX2JuKkRPQGJJRlpmXkpmXrqee1FmijvIaKXYWgBQSwECLQAUAAAICAAAOCHspD4UXXsCAAA4BQAACwAkAAAAAAAAAAAAAAAAAAAAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwECLQAUAAAICAAAOCHsPiNSmG0AAAB4AAAACQAkAAAAAAAAAAAAAADIAgAAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsFBgAAAAACAAIAuAAAAIADAAAAAA==
     upgradeData: 
     file_cachedStartup: {fileID: 0}
     data_cachedStartup: 
@@ -30246,9 +32014,10 @@ GameObject:
   - component: {fileID: 1889930808}
   - component: {fileID: 1889930810}
   - component: {fileID: 1889930809}
+  - component: {fileID: 1889930811}
   m_Layer: 8
   m_Name: BG_castlefloor (1)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30369,6 +32138,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1889930811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1889930807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1910208567
 GameObject:
   m_ObjectHideFlags: 0
@@ -30516,9 +32297,10 @@ GameObject:
   - component: {fileID: 1947796182}
   - component: {fileID: 1947796184}
   - component: {fileID: 1947796183}
+  - component: {fileID: 1947796185}
   m_Layer: 8
   m_Name: BG_castlefloor (10)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30639,6 +32421,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1947796185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1947796181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1956846118
 GameObject:
   m_ObjectHideFlags: 0
@@ -31086,9 +32880,10 @@ GameObject:
   - component: {fileID: 1968082346}
   - component: {fileID: 1968082348}
   - component: {fileID: 1968082347}
+  - component: {fileID: 1968082349}
   m_Layer: 8
   m_Name: BG_castlefloor (8)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31209,6 +33004,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1968082349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1968082345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1970009803
 GameObject:
   m_ObjectHideFlags: 0
@@ -31258,6 +33065,153 @@ Transform:
   - {fileID: 1263501846}
   m_Father: {fileID: 538657449}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1972652108
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1972652109}
+  - component: {fileID: 1972652111}
+  - component: {fileID: 1972652110}
+  - component: {fileID: 1972652112}
+  m_Layer: 8
+  m_Name: BG_castlefloor (22)
+  m_TagString: Obstacle
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1972652109
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1972652108}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -263, y: -269, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1036169950}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!60 &1972652110
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1972652108}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 25.6, y: 25.6}
+    newSize: {x: 25.6, y: 25.6}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -12.8, y: 12.8}
+      - {x: -12.8, y: -12.8}
+      - {x: 12.8, y: -12.8}
+      - {x: 12.8, y: 12.8}
+  m_UseDelaunayMesh: 0
+--- !u!212 &1972652111
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1972652108}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 74302928d5374014db264ad889aee48b, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 25.6, y: 25.6}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!114 &1972652112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1972652108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1978821369
 GameObject:
   m_ObjectHideFlags: 0
@@ -31533,6 +33487,153 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1982709205
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1982709206}
+  - component: {fileID: 1982709208}
+  - component: {fileID: 1982709207}
+  - component: {fileID: 1982709209}
+  m_Layer: 8
+  m_Name: BG_castlefloor (21)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1982709206
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1982709205}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -263, y: 253.8, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 335241221}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!60 &1982709207
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1982709205}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 25.6, y: 25.6}
+    newSize: {x: 25.6, y: 25.6}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -12.8, y: 12.8}
+      - {x: -12.8, y: -12.8}
+      - {x: 12.8, y: -12.8}
+      - {x: 12.8, y: 12.8}
+  m_UseDelaunayMesh: 0
+--- !u!212 &1982709208
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1982709205}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 74302928d5374014db264ad889aee48b, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 25.6, y: 25.6}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!114 &1982709209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1982709205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1985577979
 GameObject:
   m_ObjectHideFlags: 0
@@ -32863,9 +34964,10 @@ GameObject:
   - component: {fileID: 2055784010}
   - component: {fileID: 2055784012}
   - component: {fileID: 2055784011}
+  - component: {fileID: 2055784013}
   m_Layer: 8
   m_Name: BG_castlefloor (20)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32986,6 +35088,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2055784013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2055784009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2068786467
 GameObject:
   m_ObjectHideFlags: 0
@@ -33131,9 +35245,10 @@ GameObject:
   - component: {fileID: 2098990895}
   - component: {fileID: 2098990897}
   - component: {fileID: 2098990896}
+  - component: {fileID: 2098990898}
   m_Layer: 8
   m_Name: BG_castlefloor
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33254,6 +35369,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2098990898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2098990894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2111107072
 GameObject:
   m_ObjectHideFlags: 0
@@ -33612,6 +35739,7 @@ GameObject:
   - component: {fileID: 2115394954}
   - component: {fileID: 2115394956}
   - component: {fileID: 2115394955}
+  - component: {fileID: 2115394957}
   m_Layer: 8
   m_Name: BG_castlefloor (16)
   m_TagString: Untagged
@@ -33735,6 +35863,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2115394957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2115394953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2133043521
 GameObject:
   m_ObjectHideFlags: 0
@@ -33882,9 +36022,10 @@ GameObject:
   - component: {fileID: 2133665464}
   - component: {fileID: 2133665466}
   - component: {fileID: 2133665465}
+  - component: {fileID: 2133665467}
   m_Layer: 8
   m_Name: BG_castlefloor (6)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34005,6 +36146,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2133665467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2133665463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2137395466
 GameObject:
   m_ObjectHideFlags: 0
@@ -34046,7 +36199,7 @@ MonoBehaviour:
   currentHealth: 0
   maxHealth: 800
   currentMana: 50
-  maxMana: 50
+  maxMana: 100
   basePickUpRange: 20
   baseCoinDropRate: 0.2
   baseExpDropRate: 0.3
@@ -34086,9 +36239,10 @@ GameObject:
   - component: {fileID: 2141465606}
   - component: {fileID: 2141465608}
   - component: {fileID: 2141465607}
+  - component: {fileID: 2141465609}
   m_Layer: 8
   m_Name: BG_castlefloor (18)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34209,6 +36363,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2141465609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2141465605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b3e94b765e4984a8ca24b8135c7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &866250068269658344
 PrefabInstance:
   m_ObjectHideFlags: 0

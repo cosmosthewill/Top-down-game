@@ -7,7 +7,6 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
 using static CollectibleItems;
-using static UnityEditor.Progress;
 using UnityEngine.UI;
 
 public class Player : MonoBehaviour
@@ -163,7 +162,6 @@ public class Player : MonoBehaviour
         animator.SetFloat("Speed", moveInput.sqrMagnitude);
 
         //Roll
-        //_rollCD -= Time.deltaTime;
         if(isRollCd) 
         {
             rollImg.fillAmount += 1 / rollCD * Time.deltaTime;

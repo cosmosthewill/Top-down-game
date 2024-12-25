@@ -19,13 +19,13 @@ public class SSB : EnemyBasic
                 canMove = false;
             }
         }
-        if (!deadByPlayer)
+        if (!deadByPlayer) //self death
         {
             if (Vector3.Distance(transform.position, Player.Instance.ReturnPlayerCenter()) <= explosiveRange * 2)
                 PlayerStatsManager.Instance.TakeDmg(monsterDmg);
-            Destroy(gameObject);
+            OnDeath();
         }
-        else if (currentHealth <= 0)
+        if (currentHealth <= 0)
         {
             OnDeath();
         }

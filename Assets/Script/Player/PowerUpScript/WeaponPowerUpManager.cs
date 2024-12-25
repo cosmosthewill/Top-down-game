@@ -56,6 +56,11 @@ namespace Script.Player.PowerUpScript
                     Color currentColor = slotsImage[i].color;
                     currentColor.a = 1.0f;
                     slotsImage[i].color = currentColor;
+                    Text childText = slotsImage[i].GetComponentInChildren<Text>();
+                    if (childText != null)
+                    {
+                        childText.text = $"Lv: {slots[i].lvl}";
+                    }
                     StartCoroutine(AddWeapon(i));
                     return;
                 }
@@ -79,6 +84,11 @@ namespace Script.Player.PowerUpScript
                 if (slots[i] != null && powerUpType == slots[i].GetType()) //increase level powerup
                 {
                     slots[i].lvl++;
+                    Text childText = slotsImage[i].GetComponentInChildren<Text>();
+                    if (childText != null)
+                    {
+                        childText.text = $"Lv: {slots[i].lvl}";
+                    }
                     return;
                 }
             }
