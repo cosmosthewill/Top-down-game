@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6246727679154960653}
   - component: {fileID: 564213976062303033}
   - component: {fileID: -6240324044539257732}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ElectroUlt
   m_TagString: UltimatePlayer
   m_Icon: {fileID: 0}
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -545712069
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 72ba6d1a6106e5d4080d0be32fa80faa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

@@ -18,6 +18,7 @@ public class UFO : EnemyBasic
     private float summonTime = 8f;
     private float _summonTime = 0f;
     private bool _isShotting = false;
+    private bool isDead = false;
     private void Start()
     {
         isBoss = true;
@@ -68,7 +69,7 @@ public class UFO : EnemyBasic
             Summon(transform.position);
             _summonTime = 0f;
         }
-        if (currentHealth <= 0) OnDeath();
+        if (currentHealth <= 0 && !isDead) OnDeath();
     }
     
     private IEnumerator SpiralShoot()
@@ -105,6 +106,7 @@ public class UFO : EnemyBasic
     }
     public override void OnDeath()
     {
+        isDead = true;
         for (int i = 0; i < 4; i++)
         {
             Vector3 randomPos = transform.position + new Vector3(Random.Range(0, 4), Random.Range(0, 4), 0);

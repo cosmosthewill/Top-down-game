@@ -138,7 +138,10 @@ public class EnemySpawner : MonoBehaviour
                 yield return new WaitForSeconds(spawnInterval);
                 GameObject enemy = spawmArray[Random.Range(0, spawmArray.Length)];
                 UnityEngine.GameObject _enemy = Instantiate(enemy, spawnPosition, Quaternion.identity);
+                EnemyBasic enemyScript = enemy.GetComponent<EnemyBasic>();
+                if (enemyScript.isBoss) BossIndicator.Instance.AddTarget(_enemy);
                 totalEnemiesOnField++;
+
             }
             else yield return null;
             //EnemyBasic _enemyScript = _enemy.GetComponent<EnemyBasic>();
@@ -157,6 +160,8 @@ public class EnemySpawner : MonoBehaviour
                 {
                     GameObject enemyToSpawn = spawmArray[Random.Range(0, spawmArray.Length)];
                     Instantiate(enemyToSpawn, RandomPosNearPlayer(), Quaternion.identity);
+                    EnemyBasic enemyScript = enemyToSpawn.GetComponent<EnemyBasic>();
+                    if (enemyScript.isBoss) BossIndicator.Instance.AddTarget(enemyToSpawn);
                     totalEnemiesOnField++;
 
                     yield return new WaitForSeconds(0.1f);

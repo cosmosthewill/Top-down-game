@@ -29,7 +29,7 @@ public class PlayerExpBar : MonoBehaviour
     void Start()
     {
         playerLvl = 1;
-        maxExp = 40;
+        maxExp = 30;
         currentExp = 0;
         lvlText.text = "Lv: " + playerLvl.ToString();
     }
