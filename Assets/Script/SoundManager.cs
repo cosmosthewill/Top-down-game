@@ -66,14 +66,12 @@ public class SoundManager : MonoBehaviour
     {
         sfxVolume = PlayerPrefs.GetInt("SoundVolume", 10) / 20f;
         backgroundVolume = PlayerPrefs.GetInt("MusicVolume", 10) / 20f;
-        //Debug.LogWarning(sfxVolume);
-        //Debug.LogWarning(backgroundVolume);
         PlayBackgroundMusic(BGMType.MainMenu);
     }
-    // Initialize a pool of AudioSource components for SFX
+    // Initialize a pool of AudioSource
     private void InitializeSFXAudioSources()
     {
-        for (int i = 0; i < 10; i++) // You can adjust the size of the pool as needed
+        for (int i = 0; i < 15; i++)
         {
             AudioSource newAudioSource = gameObject.AddComponent<AudioSource>();
             newAudioSource.playOnAwake = false;
@@ -84,7 +82,7 @@ public class SoundManager : MonoBehaviour
     // Get an available AudioSource from the pool
     private AudioSource GetAvailableSFXAudioSource()
     {
-        if (activeSfxQueue.Count < 10) // If there are less than 5 active sounds, use an available one from the pool
+        if (activeSfxQueue.Count < 15) //use an available one from the pool
         {
             foreach (var audioSource in sfxAudioSources)
             {
@@ -95,7 +93,7 @@ public class SoundManager : MonoBehaviour
             }
         }
 
-        // If more than 5 sounds are playing, remove the oldest one (from the front of the queue)
+        // If more than 15 sounds are playing, remove the oldest one
         AudioSource oldestAudioSource = activeSfxQueue.Dequeue();
         oldestAudioSource.Stop(); // Stop it before reusing
         return oldestAudioSource;
@@ -125,7 +123,6 @@ public class SoundManager : MonoBehaviour
             activeSfxQueue.Enqueue(audioSource);
         }
 
-        // Track active sound in the queue
         
     }
     public void PlayBackgroundMusic(BGMType musicType, bool loop = true)

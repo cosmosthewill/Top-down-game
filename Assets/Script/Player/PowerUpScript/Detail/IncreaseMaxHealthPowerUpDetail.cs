@@ -14,7 +14,7 @@ namespace Script.Player.PowerUpScript.Detail
         {
             get
             {
-                return $"Increase the max health and heal by {randPercent[randId]}%";
+                return $"Increase the max health by {randPercent[randId]}%";
             }
         }
 
@@ -27,7 +27,6 @@ namespace Script.Player.PowerUpScript.Detail
         {
             float increase = PlayerStatsManager.Instance.maxHealth * randPercent[randId] / 100f;
             PlayerStatsManager.Instance.maxHealth += increase;
-            PlayerStatsManager.Instance.currentHealth += increase;
         }
     }
 }

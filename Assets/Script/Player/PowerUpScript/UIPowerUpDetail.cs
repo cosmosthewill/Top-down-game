@@ -12,6 +12,8 @@ namespace Script.Player.PowerUpScript
         [SerializeField] private Image icon;
         private PowerUpDetail powerUpDetail;
 
+        private float lastClickTime;
+        private const float DOUBLE_CLICK_TIME = 0.3f;
         public void SetUp(PowerUpDetail powerUpDetail)
         {
             this.powerUpDetail = powerUpDetail;
@@ -22,8 +24,13 @@ namespace Script.Player.PowerUpScript
 
         public void OnPointerClick(PointerEventData eventData)
         {
-            powerUpDetail.SetUpPowerUp();
-            GetComponentInParent<LevelUpPopUp>().OnElementClicked();
+            if (Time.time - lastClickTime <= DOUBLE_CLICK_TIME)
+            {
+                // Double-click
+                powerUpDetail.SetUpPowerUp();
+                GetComponentInParent<LevelUpPopUp>().OnElementClicked();
+            }
+            lastClickTime = Time.time;
         }
     }
 }
